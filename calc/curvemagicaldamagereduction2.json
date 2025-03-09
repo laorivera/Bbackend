@@ -1,0 +1,49 @@
+{
+ "Name": "Magical_Damage_Reduction",
+  "Keys": [
+    {
+      "Time": -300.0,
+      "Value": -5.95
+    },
+    {
+      "Time": -15.0,
+      "Value": -0.25
+    },
+    {
+      "Time": 8.0,
+      "Value": -0.02
+    },
+    {
+      "Time": 18.0,
+      "Value": 0.03
+    },
+    {
+      "Time": 33.0,
+      "Value": 0.09
+    },
+    {
+      "Time": 53.0,
+      "Value": 0.15
+    },
+    {
+      "Time": 85.0,
+      "Value": 0.23
+    },
+    {
+      "Time": 280.0,
+      "Value": 0.62
+    },
+    {
+      "Time": 340.0,
+      "Value": 0.71
+    },
+    {
+      "Time": 430.0,
+      "Value": 0.8
+    },
+    {
+      "Time": 500.0,
+      "Value": 0.83
+    }
+  ]
+}

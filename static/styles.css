@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    color: white; /* Optional: Makes the text readable on a black background */
+}
+
+.form-container {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+}
+
+.dropdown-group {
+    margin-right: 20px; /* Space between dropdown groups */
+}
+
+.scrollable-content {
+    height: 200px; /* Set a fixed height for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    padding: 10px; /* Optional: Add some padding */
+}

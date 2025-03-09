@@ -1,0 +1,84 @@
+{
+    "Name": "Arming Sword",
+    "classes": [
+        "Fighter",
+        "Ranger",
+        "Bard"
+    ],
+    "damageRatings": {
+        "1": [
+            29
+        ],
+        "2": [
+            30,
+	    31
+        ],
+        "3": [
+	    32,
+            33
+        ],
+        "4": [
+	    34,
+	    35	
+        ],
+        "5": [
+            36,
+	    37
+        ],
+        "6": [
+            38,
+	    39
+        ]
+    },
+    "moveSpeed": -20,
+    "damageType": "Slash",  
+    "impactZones": [100, 90, 70],
+    "impactPower": 3,
+    "type": "Sword",
+    "rarities": [
+        1, 2, 3, 4, 5, 6
+    ],
+    "handType": "One Handed",
+    "slotType": "Main Hand",
+    "gearScore": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 27,
+        "4": 36,
+        "5": 54,
+        "6": 72,
+        "7": 0
+    },
+    "invWidth": 1,
+    "invHeight": 3,
+    "flavorText": "A thin blade with leather bindings, supporting a firm grip for hasty attacks that feel light to the hand.",
+    "ap": {
+        "3": 2,
+        "4": 3,
+        "5": 5,
+        "6": 8
+    },
+    "xp": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6
+    },
+    "sellPrices": {
+        "1": 0,
+        "2": 6,
+        "3": 9,
+        "4": 18,
+        "5": 30,
+        "6": 60
+    },
+    "numEnchants": {
+        "3": 1,
+        "4": 2,
+        "5": 3,
+        "6": 4
+    }
+}
