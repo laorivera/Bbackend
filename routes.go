@@ -11,15 +11,6 @@ func charBuilderHandler(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", gin.H{})
 }
 
-/*
-func testHandler(c *gin.Context) {
-	printClass := InttoClass(c.Param("classSelection"))
-
-	c.HTML(http.StatusOK, "index.html", gin.H{
-		"printclass": printClass,
-	})
-}*/
-
 func updateStatsHandler(c *gin.Context) {
 
 	//class query
@@ -191,12 +182,34 @@ func Helmet_List_Handler(c *gin.Context) {
 	imageHelmet := ImageLocation("Head", helmetList)
 
 	c.JSON(http.StatusOK, gin.H{
-		"character": imageHelmet},
+		"list": imageHelmet},
+	)
+}
+
+func Chest_List_Handler(c *gin.Context) {
+	class := "1"
+	chestList := ItemsBySlotType_Json((class), "Chest")
+	imageChest := ImageLocation("Chest", chestList)
+
+	c.JSON(http.StatusOK, gin.H{
+		"list": imageChest},
+	)
+}
+
+func Gloves_List_Handler(c *gin.Context) {
+	class := "1"
+	glovesList := ItemsBySlotType_Json((class), "Hands")
+	imageGloves := ImageLocation("Hands", glovesList)
+
+	c.JSON(http.StatusOK, gin.H{
+		"list": imageGloves},
 	)
 }
 
 func setupRoutes(r *gin.Engine) {
 	r.GET("/helmetlist/", Helmet_List_Handler)
+	r.GET("/chestlist/", Chest_List_Handler)
+	r.GET("/gloveslist/", Gloves_List_Handler)
 	r.GET("/charbuilder/", charBuilderHandler)
 	r.GET("/charbuilder/:classSelection", updateStatsHandler)
 	//r.GET("/charbuilder/:classSelection", updateStatsHandler)
