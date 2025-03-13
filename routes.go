@@ -16,23 +16,26 @@ func updateStatsHandler(c *gin.Context) {
 	//class query
 	class := c.Param("classSelection")
 	classStatSelect := SelectClass(class)
-	printClass := InttoClass(c.Param("classSelection"))
+	//*// printClass := InttoClass(c.Param("classSelection"))
 
-	rarityList := []string{"1", "2", "3", "4", "5", "6", "7"}
+	//*// rarityList := []string{"1", "2", "3", "4", "5", "6", "7"}
 
 	//list equipement query by class
-	helmetList := ItemsBySlotType(c.Param("classSelection"), "Head")
-	chestList := ItemsBySlotType(c.Param("classSelection"), "Chest")
-	glovesList := ItemsBySlotType(c.Param("classSelection"), "Hands")
-	pantsList := ItemsBySlotType(c.Param("classSelection"), "Legs")
-	bootsList := ItemsBySlotType(c.Param("classSelection"), "Foot")
-	cloakList := ItemsBySlotType(c.Param("classSelection"), "Back")
+
+	//*// helmetList := ItemsBySlotType(c.Param("classSelection"), "Head")
+	//*// chestList := ItemsBySlotType(c.Param("classSelection"), "Chest")
+	//*// glovesList := ItemsBySlotType(c.Param("classSelection"), "Hands")
+	//*// pantsList := ItemsBySlotType(c.Param("classSelection"), "Legs")
+	//*// bootsList := ItemsBySlotType(c.Param("classSelection"), "Foot")
+	//*// cloakList := ItemsBySlotType(c.Param("classSelection"), "Back")
 
 	//list weapon query by class
-	primaryWeaponList := WeaponsBySlotType(c.Param("classSelection"), "Main Hand")
+
+	//*//primaryWeaponList := WeaponsBySlotType(c.Param("classSelection"), "Main Hand")  // LIST WEAPON
 
 	//list accessory query by class
-	necklaceList := AccessoryBySlotType(c.Param("classSelection"), "Necklace")
+
+	//*//necklaceList := AccessoryBySlotType(c.Param("classSelection"), "Necklace")   // LIST ACCESSORY
 
 	//List items query selected
 	itemsSelected_Armor := []Item_Armor{
@@ -59,6 +62,7 @@ func updateStatsHandler(c *gin.Context) {
 	enchantmentSelectedOther_Accessory := []map[string]float64{
 		Enchantother(c.Query("enchantment_necklacetype"), c.Query("enchantment_necklacevalue")),
 	}
+
 	/*
 		itemsSelected_Weapon := []Item_Weapon{
 				ItemsByNameWeapon(c.Query("itemweapon")),
@@ -110,21 +114,22 @@ func updateStatsHandler(c *gin.Context) {
 		Enchantattrib(c.Query("enchantment_cloaktype"), c.Query("enchantment_cloakvalue")),
 	}
 
-	ratingListPrimaryWeapon := ItemsByNameWeapon(c.Query("itemprimaryweapon")).DamageRatings[StringtoInt(c.Query("rarityselect_weapon"))]
+	//*// ratingListPrimaryWeapon := ItemsByNameWeapon(c.Query("itemprimaryweapon")).DamageRatings[StringtoInt(c.Query("rarityselect_weapon"))]
 
 	// Lists rating values
-	ratingListHelmet := ItemsByNameArmor(c.Query("itemhelmet")).ArmorRatings[StringtoInt(c.Query("rarityselect_helmet"))]
-	ratingListChest := ItemsByNameArmor(c.Query("itemchest")).ArmorRatings[StringtoInt(c.Query("rarityselect_chest"))]
-	ratingListGloves := ItemsByNameArmor(c.Query("itemgloves")).ArmorRatings[StringtoInt(c.Query("rarityselect_gloves"))]
-	ratingListPants := ItemsByNameArmor(c.Query("itempants")).ArmorRatings[StringtoInt(c.Query("rarityselect_pants"))]
-	ratingListBoots := ItemsByNameArmor(c.Query("itemboots")).ArmorRatings[StringtoInt(c.Query("rarityselect_boots"))]
-	ratingListCloak := ItemsByNameArmor(c.Query("itemcloak")).ArmorRatings[StringtoInt(c.Query("rarityselect_cloak"))]
 
-	enchamentListHead := EchantBaseAttribExeption(EnchamentbySlot(Enchantments.Helmet), ItemsByNameArmor(c.Query("itemhelmet")))
-	enchamentListHeadValue := EnchantValuesCalc(c.Query("enchantment_helmettype"), Enchantments.Helmet)
+	//*//ratingListHelmet := ItemsByNameArmor(c.Query("itemhelmet")).ArmorRatings[StringtoInt(c.Query("rarityselect_helmet"))]
+	//*//ratingListChest := ItemsByNameArmor(c.Query("itemchest")).ArmorRatings[StringtoInt(c.Query("rarityselect_chest"))]
+	//*//ratingListGloves := ItemsByNameArmor(c.Query("itemgloves")).ArmorRatings[StringtoInt(c.Query("rarityselect_gloves"))]
+	//*//ratingListPants := ItemsByNameArmor(c.Query("itempants")).ArmorRatings[StringtoInt(c.Query("rarityselect_pants"))]
+	//*//ratingListBoots := ItemsByNameArmor(c.Query("itemboots")).ArmorRatings[StringtoInt(c.Query("rarityselect_boots"))]
+	//*//ratingListCloak := ItemsByNameArmor(c.Query("itemcloak")).ArmorRatings[StringtoInt(c.Query("rarityselect_cloak"))]
 
-	enchantmentListNecklace := EchantBaseAttribExeptionAcc(EnchamentbySlot(Enchantments.Necklace), ItemsByNameAccessory(c.Query("itemnecklace")))
-	//enchantmentListHeadTwo := EnchantTypeExeption(enchamentListHead, c.Query("enchantment_helmettype"))
+	//*//enchamentListHead := EchantBaseAttribExeption(EnchamentbySlot(Enchantments.Helmet), ItemsByNameArmor(c.Query("itemhelmet")))
+	//*//enchamentListHeadValue := EnchantValuesCalc(c.Query("enchantment_helmettype"), Enchantments.Helmet)
+
+	//*//enchantmentListNecklace := EchantBaseAttribExeptionAcc(EnchamentbySlot(Enchantments.Necklace), ItemsByNameAccessory(c.Query("itemnecklace")))
+	//*//enchantmentListHeadTwo := EnchantTypeExeption(enchamentListHead, c.Query("enchantment_helmettype"))
 
 	computedStatsOther := EnchantComputedOthers(enchantmentSelectedOther_Armor)
 	computedStatsOtherAcc := EnchantComputedOthers(enchantmentSelectedOther_Accessory)
@@ -144,34 +149,40 @@ func updateStatsHandler(c *gin.Context) {
 
 	computedStats := ComputedTotal(computedStatsCurve, computedStatsOther)
 
-	c.HTML(http.StatusOK, "charbuilder.html", gin.H{
+	/*
+		c.HTML(http.StatusOK, "charbuilder.html", gin.H{
 
-		"classpick":                class,
-		"raritylistpick":           rarityList,
-		"stats":                    updatedStats,
-		"computedstats":            computedStats,
-		"totalrating":              totalRating,
-		"helmetlist":               helmetList,
-		"chestlist":                chestList,
-		"gloveslist":               glovesList,
-		"pantslist":                pantsList,
-		"bootslist":                bootsList,
-		"cloaklist":                cloakList,
-		"necklacelist":             necklaceList,
-		"primaryweaponlist":        primaryWeaponList,
-		"printclass":               printClass,
-		"helmet_ratinglist":        ratingListHelmet,
-		"chest_ratinglist":         ratingListChest,
-		"gloves_ratinglist":        ratingListGloves,
-		"pants_ratinglist":         ratingListPants,
-		"boots_ratinglist":         ratingListBoots,
-		"cloak_ratinglist":         ratingListCloak,
-		"primaryweapon_ratinglist": ratingListPrimaryWeapon,
-		"helmet_enchantmenttype":   enchamentListHead,
-		"helmet_enchantmentvalue":  enchamentListHeadValue,
-		"necklace_enchantmenttype": enchantmentListNecklace,
-		//"helmet_enchantmenttypetwo": enchantmentListHeadTwo,
-		"test": helmetList,
+			"classpick":                class,
+			"raritylistpick":           rarityList,
+			"stats":                    updatedStats,
+			"computedstats":            computedStats,
+			"totalrating":              totalRating,
+			"helmetlist":               helmetList,
+			"chestlist":                chestList,
+			"gloveslist":               glovesList,
+			"pantslist":                pantsList,
+			"bootslist":                bootsList,
+			"cloaklist":                cloakList,
+			"necklacelist":             necklaceList,
+			"primaryweaponlist":        primaryWeaponList,
+			"printclass":               printClass,
+			"helmet_ratinglist":        ratingListHelmet,
+			"chest_ratinglist":         ratingListChest,
+			"gloves_ratinglist":        ratingListGloves,
+			"pants_ratinglist":         ratingListPants,
+			"boots_ratinglist":         ratingListBoots,
+			"cloak_ratinglist":         ratingListCloak,
+			"primaryweapon_ratinglist": ratingListPrimaryWeapon,
+			"helmet_enchantmenttype":   enchamentListHead,
+			"helmet_enchantmentvalue":  enchamentListHeadValue,
+			"necklace_enchantmenttype": enchantmentListNecklace,
+			//"helmet_enchantmenttypetwo": enchantmentListHeadTwo,
+			"test": helmetList,
+		})
+	*/
+	c.JSON(http.StatusOK, gin.H{
+		"stats":         updatedStats,
+		"computedstats": computedStats,
 	})
 
 }
@@ -212,5 +223,6 @@ func setupRoutes(r *gin.Engine) {
 	r.GET("/gloveslist/", Gloves_List_Handler)
 	r.GET("/charbuilder/", charBuilderHandler)
 	r.GET("/charbuilder/:classSelection", updateStatsHandler)
+
 	//r.GET("/charbuilder/:classSelection", updateStatsHandler)
 }
