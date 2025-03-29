@@ -188,7 +188,7 @@ func updateStatsHandler(c *gin.Context) {
 }
 
 func Helmet_List_Handler(c *gin.Context) {
-	class := "1"
+	class := c.Param("classSelection")
 	helmetList := ItemsBySlotType_Json((class), "Head")
 	imageHelmet := ImageLocation("Head", helmetList)
 
@@ -198,7 +198,7 @@ func Helmet_List_Handler(c *gin.Context) {
 }
 
 func Chest_List_Handler(c *gin.Context) {
-	class := "1"
+	class := c.Param("classSelection")
 	chestList := ItemsBySlotType_Json((class), "Chest")
 	imageChest := ImageLocation("Chest", chestList)
 
@@ -208,7 +208,7 @@ func Chest_List_Handler(c *gin.Context) {
 }
 
 func Gloves_List_Handler(c *gin.Context) {
-	class := "1"
+	class := c.Param("classSelection")
 	glovesList := ItemsBySlotType_Json((class), "Hands")
 	imageGloves := ImageLocation("Hands", glovesList)
 
@@ -217,12 +217,30 @@ func Gloves_List_Handler(c *gin.Context) {
 	)
 }
 
+func Helmet_RatingList(c *gin.Context) {
+	helmetRatingList := ItemsByNameArmor(c.Query("itemhelmet")).ArmorRatings[StringtoInt(c.Query("rarityselect_helmet"))]
+
+	c.JSON(http.StatusOK, gin.H{
+		"list": helmetRatingList},
+	)
+}
+
+func Chest_RatingList(c *gin.Context) {
+	chestRatingList := ItemsByNameArmor(c.Query("itemchest")).ArmorRatings[StringtoInt(c.Query("rarityselect_chest"))]
+	c.JSON(http.StatusOK, gin.H{
+		"list": chestRatingList},
+	)
+}
+
 func setupRoutes(r *gin.Engine) {
-	r.GET("/helmetlist/", Helmet_List_Handler)
-	r.GET("/chestlist/", Chest_List_Handler)
-	r.GET("/gloveslist/", Gloves_List_Handler)
-	r.GET("/charbuilder/", charBuilderHandler)
+	r.GET("/helmetlist/:classSelection", Helmet_List_Handler)
+	r.GET("/chestlist/:classSelection", Chest_List_Handler)
+	r.GET("/gloveslist/:classSelection", Gloves_List_Handler)
+	r.GET("/helmetratinglist/", Helmet_RatingList)
+	r.GET("/chestratinglist/", Chest_RatingList)
+
 	r.GET("/charbuilder/:classSelection", updateStatsHandler)
 
+	r.GET("/charbuilder/", charBuilderHandler)
 	//r.GET("/charbuilder/:classSelection", updateStatsHandler)
 }

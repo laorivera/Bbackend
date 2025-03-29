@@ -86,7 +86,7 @@
         "7": 50
     },
     "classes": [
-        "Fighter"
+        "Fighter", "Rogue"
     ],
     "numEnchants": {
         "3": 1,
