@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func CalculateComputedValues(stats_compute Stats, rating_armor int, rating_speed int, enchant Computed_Stats) Computed_Stats {
+func CalculateComputedValues(stats_compute Stats, rating_armor int, rating_speed int, enchant Computed_Stats, enchantacc Computed_Stats) Computed_Stats {
 
 	var result = Computed_Stats{
 
@@ -18,27 +18,27 @@ func CalculateComputedValues(stats_compute Stats, rating_armor int, rating_speed
 		RegularInteractionSpeed: runcurvehybridx(stats_compute.Agility, stats_compute.Resourcefulness, "./calc/curveregularinteractionspeed.json") * 100, //calc display adjusment
 		MoveSpeed:               runcurve(stats_compute.Agility, "./calc/curvemovespeed.json") + 300 + float64(rating_speed),                             //calc display adjusment
 		PhysicalPower:           runcurve(stats_compute.Strength, "./calc/curvephysicalpower.json"),
-		MagicalPower:            runcurve(stats_compute.Will, "./calc/curvemagicalpower.json"),                          //calc display adjusment
-		ManualDexterity:         runcurve(stats_compute.Dexterity, "./calc/curvemanualdexterity.json") * 100,            //calc display adjusment
-		EquipSpeed:              runcurve(stats_compute.Dexterity, "./calc/curveequipspeed.json") * 100,                 //calc display adjusment
-		BuffDuration:            runcurve(stats_compute.Will, "./calc/curvebuffduration.json") * 100,                    //calc display adjusment
-		DebuffDuration:          runcurve(stats_compute.Will, "./calc/curvedebuffduration.json") * 100,                  //calc display adjusment
-		MagicRating:             runcurve(stats_compute.Will, "./calc/curvemagicresistance.json") + enchant.MagicRating, //calc display adjusment
+		MagicalPower:            runcurve(stats_compute.Will, "./calc/curvemagicalpower.json"),                                                     //calc display adjusment
+		ManualDexterity:         runcurve(stats_compute.Dexterity, "./calc/curvemanualdexterity.json") * 100,                                       //calc display adjusment
+		EquipSpeed:              runcurve(stats_compute.Dexterity, "./calc/curveequipspeed.json") * 100,                                            //calc display adjusment
+		BuffDuration:            runcurve(stats_compute.Will, "./calc/curvebuffduration.json") * 100,                                               //calc display adjusment
+		DebuffDuration:          runcurve(stats_compute.Will, "./calc/curvedebuffduration.json") * 100,                                             //calc display adjusment
+		MagicRating:             runcurve(stats_compute.Will, "./calc/curvemagicresistance.json") + (enchant.MagicRating + enchantacc.MagicRating), //calc display adjusment
 		SpellRecovery:           runcurve(stats_compute.Knowledge, "./calc/curvespellrecovery.json") * 100,
 		SpellCastingSpeed:       runcurve(stats_compute.Knowledge, "./calc/curvespellcastingspeed.json") * 100,
 		MagicalInteractionSpeed: runcurve(stats_compute.Will, "./calc/curvemagicalinteractionspeed.json") * 100,
 		Persuasiveness:          runcurve(stats_compute.Resourcefulness, "./calc/curvepersuasiveness.json"),
 		CooldownReduction:       runcurve(stats_compute.Resourcefulness, "./calc/curvecooldownreduction.json") * 100,
-		PhysicalDamageReduction: runcurve(rating_armor+enchant.FromArmorRating, "./calc/curvephysicaldamagereduction.json") * 100, // 0 defense value without equipement
+		PhysicalDamageReduction: runcurve(rating_armor+(enchant.FromArmorRating+enchantacc.FromArmorRating), "./calc/curvephysicaldamagereduction.json") * 100, // 0 defense value without equipement
 
 	}
 	result.PhysicalPowerBonus = runcurve(int(result.PhysicalPower), "./calc/curvephysicaldamage.json") * 100
 	result.MagicalPowerBonus = runcurve(int(result.MagicalPower), "./calc/curvemagicaldamage.json") * 100
-	result.Health = result.Health + (result.Health * enchant.MaxHealthBonus / 100)
+	result.Health = result.Health + (result.Health * (enchant.MaxHealthBonus + enchantacc.MaxHealthBonus) / 100)
 	result.MagicalDamageReduction = runcurve(int(result.MagicRating), "./calc/curvemagicaldamagereduction2.json") * 100
 	result.MoveSpeedCalc = result.MoveSpeed / 3
 	result.FromArmorRating = rating_armor
-	result.MemoryCapacity = result.MemoryCapacity + (result.MemoryCapacity * enchant.MemoryCapacityBonus / 100)
+	result.MemoryCapacity = result.MemoryCapacity + (result.MemoryCapacity * (enchant.MemoryCapacityBonus + enchantacc.MemoryCapacityBonus) / 100)
 
 	return result
 

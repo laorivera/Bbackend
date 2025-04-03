@@ -3,34 +3,38 @@ package main
 type Item struct {
 	Armet          Item_Armor
 	CrusaderHelm   Item_Armor
+	ChapelDeFer    Item_Armor
 	Doublet        Item_Armor
 	RivetedGloves  Item_Armor
 	OccultistPants Item_Armor
 	LightfootBoots Item_Armor
 	RadiantCloak   Item_Armor
 	AdventureCloak Item_Armor
+	BarbutaHelm    Item_Armor
 	ArmingSword    Item_Weapon
 	Bardiche       Item_Weapon
+	LooseTrousers  Item_Armor
 	FoxPendant     Item_Accessory
-	BarbutaHelm    Item_Armor
-	ChapelDeFer    Item_Armor
+	RingOfCourage  Item_Accessory
 }
 
 var item = Item{
 
-	Armet:          CreateItemArmor("./data/itemArmet2.json"),
-	CrusaderHelm:   CreateItemArmor("./data/itemCrusaderHelm.json"),
-	Doublet:        CreateItemArmor("./data/itemDoublet.json"),
-	RivetedGloves:  CreateItemArmor("./data/itemRivetedGloves.json"),
-	OccultistPants: CreateItemArmor("./data/itemOccultistPants.json"),
-	LightfootBoots: CreateItemArmor("./data/itemLightfootBoots.json"),
-	RadiantCloak:   CreateItemArmor("./data/itemRadiantCloak.json"),
-	AdventureCloak: CreateItemArmor("./data/itemAdventureCloak.json"),
-	ArmingSword:    CreateItemWeapon("./data/itemArmingSword.json"),
-	Bardiche:       CreateItemWeapon("./data/itemBardiche.json"),
-	FoxPendant:     CreateItemAccessory("./data/itemFoxPendant.json"),
-	BarbutaHelm:    CreateItemArmor("./data/itemBarbutaHelm.json"),
-	ChapelDeFer:    CreateItemArmor("./data/itemChapelDeFer.json"),
+	Armet:          CreateItemArmor("./data/Armet.json"),
+	BarbutaHelm:    CreateItemArmor("./data/BarbutaHelm.json"),
+	ChapelDeFer:    CreateItemArmor("./data/ChapelDeFer.json"),
+	CrusaderHelm:   CreateItemArmor("./data/CrusaderHelm.json"),
+	Doublet:        CreateItemArmor("./data/Doublet.json"),
+	RivetedGloves:  CreateItemArmor("./data/RivetedGloves.json"),
+	LooseTrousers:  CreateItemArmor("./data/LooseTrousers.json"),
+	OccultistPants: CreateItemArmor("./data/OccultistPants.json"),
+	LightfootBoots: CreateItemArmor("./data/LightfootBoots.json"),
+	RadiantCloak:   CreateItemArmor("./data/RadiantCloak.json"),
+	AdventureCloak: CreateItemArmor("./data/AdventureCloak.json"),
+	ArmingSword:    CreateItemWeapon("./data/ArmingSword.json"),
+	Bardiche:       CreateItemWeapon("./data/Bardiche.json"),
+	FoxPendant:     CreateItemAccessory("./data/FoxPendant.json"),
+	RingOfCourage:  CreateItemAccessory("./data/RingOfCourage.json"),
 }
 
 type List_Items struct {
@@ -51,6 +55,7 @@ var Items = List_Items{
 		item.AdventureCloak,
 		item.BarbutaHelm,
 		item.ChapelDeFer,
+		item.LooseTrousers,
 	},
 	ItemsWeapon: []Item_Weapon{
 		item.ArmingSword,
@@ -58,5 +63,6 @@ var Items = List_Items{
 	},
 	ItemsAccessory: []Item_Accessory{
 		item.FoxPendant,
+		item.RingOfCourage,
 	},
 }

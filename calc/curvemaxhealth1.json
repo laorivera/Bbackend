@@ -3,23 +3,23 @@
      "Keys": [
           {
             "Time": 0.0,
-            "Value": 80.0
+            "Value": 60.0
           },
           {
-            "Time": 34.0,
-            "Value": 148.0
+            "Time": 10.0,
+            "Value": 90.0
           },
           {
             "Time": 50.0,
-            "Value": 172.0
+            "Value": 170.0
           },
           {
             "Time": 75.0,
-            "Value": 197.0
+            "Value": 195.0
           },
           {
             "Time": 100.0,
-            "Value": 209.5
+            "Value": 207.5
           }
         ]
 }

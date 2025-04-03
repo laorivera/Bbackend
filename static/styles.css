@@ -13,7 +13,7 @@ body {
 }
 
 .scrollable-content {
-    height: 200px; /* Set a fixed height for the scrollable area */
+    height: 350px; /* Set a fixed height for the scrollable area */
     overflow-y: auto; /* Enable vertical scrolling */
     border: 1px solid #ccc; /* Optional: Add a border for better visibility */
     padding: 10px; /* Optional: Add some padding */

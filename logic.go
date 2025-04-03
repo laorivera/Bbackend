@@ -10,41 +10,6 @@ import (
 // EJECUTA CALCULO ALL STATS CURVES
 
 // FIND ITEMS BY SLOT TYPE
-func ItemsBySlotType_Json(class string, slot string) []string {
-	switch class {
-	case "1":
-		class = "Fighter"
-	case "2":
-		class = "Barbarian"
-	case "3":
-		class = "Rogue"
-	case "4":
-		class = "Wizard"
-	case "5":
-		class = "Cleric"
-	case "6":
-		class = "Warlock"
-	case "7":
-		class = "Bard"
-	case "8":
-		class = "Druid"
-	case "9":
-		class = "Ranger"
-	default:
-
-	}
-	var result []string
-	for i := 0; i < len(Items.ItemsArmor); i++ {
-		for _, c := range Items.ItemsArmor[i].Classes {
-			if c == class && slot == Items.ItemsArmor[i].SlotType {
-				result = append(result, Items.ItemsArmor[i].Name)
-			}
-		}
-
-	}
-	return result
-}
-
 func ItemsBySlotType(class string, slot string) []Item_Armor {
 	switch class {
 	case "1":
@@ -73,6 +38,7 @@ func ItemsBySlotType(class string, slot string) []Item_Armor {
 		for _, c := range Items.ItemsArmor[i].Classes {
 			if c == class && slot == Items.ItemsArmor[i].SlotType {
 				result = append(result, Items.ItemsArmor[i])
+				break
 			}
 		}
 
@@ -116,7 +82,29 @@ func WeaponsBySlotType(class string, slot string) []Item_Weapon {
 	return result
 }
 
-func AccessoryBySlotType(class string, slot string) []Item_Accessory {
+func AccessoryBySlotType(slot string) []Item_Accessory {
+	var result []Item_Accessory
+	for i := 0; i < len(Items.ItemsAccessory); i++ {
+		if slot == Items.ItemsAccessory[i].SlotType {
+			result = append(result, Items.ItemsAccessory[i])
+			break
+		}
+	}
+	return result
+}
+
+func AccessoryBySlotType_Json(slot string) []string {
+	var result []string
+	for i := 0; i < len(Items.ItemsAccessory); i++ {
+		if slot == Items.ItemsAccessory[i].SlotType {
+			result = append(result, Items.ItemsAccessory[i].Name)
+			break
+		}
+	}
+	return result
+}
+
+func ItemsBySlotType_Json(class string, slot string) []string {
 	switch class {
 	case "1":
 		class = "Fighter"
@@ -139,11 +127,11 @@ func AccessoryBySlotType(class string, slot string) []Item_Accessory {
 	default:
 
 	}
-	var result []Item_Accessory
-	for i := 0; i < len(Items.ItemsAccessory); i++ {
-		for _, c := range Items.ItemsAccessory[i].Classes {
-			if c == class && slot == Items.ItemsAccessory[i].SlotType {
-				result = append(result, Items.ItemsAccessory[i])
+	var result []string
+	for i := 0; i < len(Items.ItemsArmor); i++ {
+		for _, c := range Items.ItemsArmor[i].Classes {
+			if c == class && slot == Items.ItemsArmor[i].SlotType {
+				result = append(result, Items.ItemsArmor[i].Name)
 				break
 			}
 		}
@@ -186,7 +174,7 @@ func ItemsByNameAccessory(name string) Item_Accessory {
 	return result
 }
 
-// FIND ENCHANTMENT BY TYPE
+// FIND ENCHANTMENT BY Slot
 func EnchamentbySlot(list map[string][]float32) []string {
 	keys := []string{}
 	for key := range list {
@@ -262,35 +250,61 @@ func CreateItemAccessory(itemfile string) Item_Accessory {
 	return item
 }
 
+// CALCULATE TOTAL ENCHANTMENT STATS
+func setEnchantStats(enchantments []map[string]int) Stats {
+	var totalStats Stats
+	for _, enchant := range enchantments {
+		for key, value := range enchant {
+			switch key {
+			case "Strength":
+				totalStats.Strength += value
+			case "Vigor":
+				totalStats.Vigor += value
+			case "Agility":
+				totalStats.Agility += value
+			case "Dexterity":
+				totalStats.Dexterity += value
+			case "Will":
+				totalStats.Will += value
+			case "Knowledge":
+				totalStats.Knowledge += value
+			case "Resourcefulness":
+				totalStats.Resourcefulness += value
+			}
+		}
+	}
+	return totalStats
+}
+
 // CALCULATE TOTAL ATTRIBUTE STATS OF ITEMS
-func SetItemStats(baseStats Stats, item []Item_Armor, rarity []int, enchantments []map[string]int) Stats {
+func SetItemStats(baseStats Stats, item []Item_Armor, rarity []int /* enchantments []map[string]int */) Stats {
 	// Calculate total by sum base stats and item stats
 	for i := 0; i < len(item) && i < len(rarity); i++ {
 		baseStats = Stats{
-			Strength:        baseStats.Strength + item[i].BaseAttribute.Strength[rarity[i]] + enchantments[i]["Strength"],
-			Vigor:           baseStats.Vigor + item[i].BaseAttribute.Vigor[rarity[i]] + enchantments[i]["Vigor"],
-			Agility:         baseStats.Agility + item[i].BaseAttribute.Agility[rarity[i]] + enchantments[i]["Agility"],
-			Dexterity:       baseStats.Dexterity + item[i].BaseAttribute.Dexterity[rarity[i]] + enchantments[i]["Dexterity"],
-			Will:            baseStats.Will + item[i].BaseAttribute.Will[rarity[i]] + enchantments[i]["Will"],
-			Knowledge:       baseStats.Knowledge + item[i].BaseAttribute.Knowledge[rarity[i]] + enchantments[i]["Knowledge"],
-			Resourcefulness: baseStats.Resourcefulness + item[i].BaseAttribute.Resourcefulness[rarity[i]] + enchantments[i]["Resourcefulness"],
+			Strength:        baseStats.Strength + item[i].BaseAttribute.Strength[rarity[i]],               // + enchantments[i]["Strength"],
+			Vigor:           baseStats.Vigor + item[i].BaseAttribute.Vigor[rarity[i]],                     // + enchantments[i]["Vigor"],
+			Agility:         baseStats.Agility + item[i].BaseAttribute.Agility[rarity[i]],                 // + enchantments[i]["Agility"],
+			Dexterity:       baseStats.Dexterity + item[i].BaseAttribute.Dexterity[rarity[i]],             // + enchantments[i]["Dexterity"],
+			Will:            baseStats.Will + item[i].BaseAttribute.Will[rarity[i]],                       // + enchantments[i]["Will"],
+			Knowledge:       baseStats.Knowledge + item[i].BaseAttribute.Knowledge[rarity[i]],             // + enchantments[i]["Knowledge"],
+			Resourcefulness: baseStats.Resourcefulness + item[i].BaseAttribute.Resourcefulness[rarity[i]], // + enchantments[i]["Resourcefulness"],
 		}
 	}
 	// Return the total stats struct
 	return baseStats
 }
 
-func SetItemStatsAccessory(baseStats Stats, item []Item_Accessory, rarity []int, enchantments []map[string]int) Stats {
+func SetItemStatsAccessory(baseStats Stats, item []Item_Accessory, rarity []int /*,enchantments []map[string]int*/) Stats {
 	// Calculate total by sum base stats and item stats
 	for i := 0; i < len(item) && i < len(rarity); i++ {
 		baseStats = Stats{
-			Strength:        baseStats.Strength + item[i].BaseAttribute.Strength[rarity[i]] + enchantments[i]["Strength"],
-			Vigor:           baseStats.Vigor + item[i].BaseAttribute.Vigor[rarity[i]] + enchantments[i]["Vigor"],
-			Agility:         baseStats.Agility + item[i].BaseAttribute.Agility[rarity[i]] + enchantments[i]["Agility"],
-			Dexterity:       baseStats.Dexterity + item[i].BaseAttribute.Dexterity[rarity[i]] + enchantments[i]["Dexterity"],
-			Will:            baseStats.Will + item[i].BaseAttribute.Will[rarity[i]] + enchantments[i]["Will"],
-			Knowledge:       baseStats.Knowledge + item[i].BaseAttribute.Knowledge[rarity[i]] + enchantments[i]["Knowledge"],
-			Resourcefulness: baseStats.Resourcefulness + item[i].BaseAttribute.Resourcefulness[rarity[i]] + enchantments[i]["Resourcefulness"],
+			Strength:        baseStats.Strength + item[i].BaseAttribute.Strength[rarity[i]],               // + enchantments[i]["Strength"],
+			Vigor:           baseStats.Vigor + item[i].BaseAttribute.Vigor[rarity[i]],                     // + enchantments[i]["Vigor"],
+			Agility:         baseStats.Agility + item[i].BaseAttribute.Agility[rarity[i]],                 // + enchantments[i]["Agility"],
+			Dexterity:       baseStats.Dexterity + item[i].BaseAttribute.Dexterity[rarity[i]],             // + enchantments[i]["Dexterity"],
+			Will:            baseStats.Will + item[i].BaseAttribute.Will[rarity[i]],                       // + enchantments[i]["Will"],
+			Knowledge:       baseStats.Knowledge + item[i].BaseAttribute.Knowledge[rarity[i]],             // + enchantments[i]["Knowledge"],
+			Resourcefulness: baseStats.Resourcefulness + item[i].BaseAttribute.Resourcefulness[rarity[i]], // + enchantments[i]["Resourcefulness"],
 		}
 	}
 	// Return the total stats struct
@@ -356,6 +370,57 @@ func SpeedCalc(items []Item_Armor, rarity []int) int {
 	}
 	return speedrating
 }
+
+func ComputedTotal(computedone, computedtwo, computedthree Computed_Stats) Computed_Stats {
+
+	stats := []Computed_Stats{computedone, computedtwo, computedthree}
+
+	result := Computed_Stats{}
+
+	for _, stat := range stats {
+		result.Health += stat.Health
+		result.ActionSpeed += stat.ActionSpeed
+		result.RegularInteractionSpeed += stat.RegularInteractionSpeed
+		result.MoveSpeed += stat.MoveSpeed
+		result.MoveSpeedCalc += stat.MoveSpeedCalc
+		result.PhysicalPower += stat.PhysicalPower
+		result.MagicalPower += stat.MagicalPower
+		result.HealthRecovery += stat.HealthRecovery
+		result.ManualDexterity += stat.ManualDexterity
+		result.EquipSpeed += stat.EquipSpeed
+		result.BuffDuration += stat.BuffDuration
+		result.DebuffDuration += stat.DebuffDuration
+		result.MagicalDamageReduction += stat.MagicalDamageReduction
+		result.SpellRecovery += stat.SpellRecovery
+		result.SpellCastingSpeed += stat.SpellCastingSpeed
+		result.MagicalInteractionSpeed += stat.MagicalInteractionSpeed
+		result.Persuasiveness += stat.Persuasiveness
+		result.CooldownReduction += stat.CooldownReduction
+		result.PhysicalDamageReduction += stat.PhysicalDamageReduction
+		result.PhysicalHealing += stat.PhysicalHealing
+		result.MagicalHealing += stat.MagicalHealing
+		result.Luck += stat.Luck
+		result.SpellRecoveryBonus += stat.SpellRecoveryBonus
+		result.ArmorPenetration += stat.ArmorPenetration
+		result.MagicPenetration += stat.MagicPenetration
+		result.HeadshotReduction += stat.HeadshotReduction
+		result.ProjectileReduction += stat.ProjectileReduction
+		result.FromArmorRating += stat.FromArmorRating
+		result.MemoryCapacity += stat.MemoryCapacity
+	}
+
+	result.PhysicalPowerBonus = computedone.PhysicalPowerBonus
+	result.MagicalPowerBonus = computedone.MagicalPowerBonus
+	result.MagicRating = computedone.MagicRating
+	result.BonusPhysicalDamageReduction = computedtwo.PhysicalDamageReduction
+	result.BonusMagicalDamageReduction = computedtwo.MagicalDamageReduction
+	result.BonusPhysicalPower = computedtwo.PhysicalPower
+	result.BonusMagicalPower = computedtwo.MagicalPower
+
+	return result
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 func EnchantValuesCalc(enchantmentvalue string, enchantmenttype map[string][]float32) []float32 {
 
@@ -491,101 +556,98 @@ func EnchantComputedOthers(enchant []map[string]float64) Computed_Stats {
 	return result
 }
 
-func ComputedTotal(computedone Computed_Stats, computedtwo Computed_Stats) Computed_Stats {
-	return Computed_Stats{
-		Health:                       computedone.Health + computedtwo.Health,
-		ActionSpeed:                  computedone.ActionSpeed + computedtwo.ActionSpeed,
-		RegularInteractionSpeed:      computedone.RegularInteractionSpeed + computedtwo.RegularInteractionSpeed,
-		MoveSpeed:                    computedone.MoveSpeed + computedtwo.MoveSpeed,
-		MoveSpeedCalc:                computedone.MoveSpeedCalc + computedtwo.MoveSpeedCalc,
-		PhysicalPower:                computedone.PhysicalPower + computedtwo.PhysicalPower,
-		PhysicalPowerBonus:           computedone.PhysicalPowerBonus,
-		MagicalPower:                 computedone.MagicalPower + computedtwo.MagicalPower,
-		MagicalPowerBonus:            computedone.MagicalPowerBonus,
-		HealthRecovery:               computedone.HealthRecovery + computedtwo.HealthRecovery,
-		ManualDexterity:              computedone.ManualDexterity + computedtwo.ManualDexterity,
-		EquipSpeed:                   computedone.EquipSpeed + computedtwo.EquipSpeed,
-		BuffDuration:                 computedone.BuffDuration + computedtwo.BuffDuration,
-		DebuffDuration:               computedone.DebuffDuration + computedtwo.DebuffDuration,
-		MagicRating:                  computedone.MagicRating,
-		MagicalDamageReduction:       computedone.MagicalDamageReduction + computedtwo.MagicalDamageReduction,
-		SpellRecovery:                computedone.SpellRecovery + computedtwo.SpellRecovery,
-		SpellCastingSpeed:            computedone.SpellCastingSpeed + computedtwo.SpellCastingSpeed,
-		MagicalInteractionSpeed:      computedone.MagicalInteractionSpeed + computedtwo.MagicalInteractionSpeed,
-		Persuasiveness:               computedone.Persuasiveness + computedtwo.Persuasiveness,
-		CooldownReduction:            computedone.CooldownReduction + computedtwo.CooldownReduction,
-		PhysicalDamageReduction:      computedone.PhysicalDamageReduction + computedtwo.PhysicalDamageReduction,
-		PhysicalHealing:              computedone.PhysicalHealing + computedtwo.PhysicalHealing,
-		MagicalHealing:               computedone.MagicalHealing + computedtwo.MagicalHealing,
-		Luck:                         computedone.Luck + computedtwo.Luck,
-		SpellRecoveryBonus:           computedone.SpellRecoveryBonus + computedtwo.SpellRecoveryBonus,
-		ArmorPenetration:             computedone.ArmorPenetration + computedtwo.ArmorPenetration,
-		MagicPenetration:             computedone.MagicPenetration + computedtwo.MagicPenetration,
-		HeadshotReduction:            computedone.HeadshotReduction + computedtwo.HeadshotReduction,
-		ProjectileReduction:          computedone.ProjectileReduction + computedtwo.ProjectileReduction,
-		FromArmorRating:              computedone.FromArmorRating + computedtwo.FromArmorRating,
-		MemoryCapacity:               computedone.MemoryCapacity + computedtwo.MemoryCapacity,
-		BonusPhysicalDamageReduction: computedtwo.PhysicalDamageReduction,
-		BonusMagicalDamageReduction:  computedtwo.MagicalDamageReduction,
-		BonusPhysicalPower:           computedtwo.PhysicalPower,
-		BonusMagicalPower:            computedtwo.MagicalPower,
+// ///////////////////////////////////////////////////////////////////////////////////////
+// Remove base attributes from the enchantment list
+func EnchantBaseAttribExeption(enchantmentlist []string, itemtype Item_Armor) []string {
+	// Create a map of attributes to remove
+	removeAttrs := make(map[string]bool)
+	if itemtype.BaseAttribute.Strength[1] == 1 {
+		removeAttrs["Strength"] = true
 	}
-}
+	if itemtype.BaseAttribute.Vigor[1] == 1 {
+		removeAttrs["Vigor"] = true
+	}
+	if itemtype.BaseAttribute.Agility[1] == 1 {
+		removeAttrs["Agility"] = true
+	}
+	if itemtype.BaseAttribute.Dexterity[1] == 1 {
+		removeAttrs["Dexterity"] = true
+	}
+	if itemtype.BaseAttribute.Will[1] == 1 {
+		removeAttrs["Will"] = true
+	}
+	if itemtype.BaseAttribute.Knowledge[1] == 1 {
+		removeAttrs["Knowledge"] = true
+	}
+	if itemtype.BaseAttribute.Resourcefulness[1] == 1 {
+		removeAttrs["Resourcefulness"] = true
+	}
 
-func EchantBaseAttribExeption(enchantmentlist []string, itemtype Item_Armor) []string {
-	for i := 0; i < len(enchantmentlist); i++ {
-		if itemtype.BaseAttribute.Strength[1] == 1 && enchantmentlist[i] == "Strength" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Vigor[1] == 1 && enchantmentlist[i] == "Vigor" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Agility[1] == 1 && enchantmentlist[i] == "Agility" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Dexterity[1] == 1 && enchantmentlist[i] == "Dexterity" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Will[1] == 1 && enchantmentlist[i] == "Will" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Knowledge[1] == 1 && enchantmentlist[i] == "Knowledge" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Resourcefulness[1] == 1 && enchantmentlist[i] == "Resourcefulness" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
+	// Build a new list excluding base attributes
+	result := make([]string, 0, len(enchantmentlist))
+	for _, enchant := range enchantmentlist {
+		if !removeAttrs[enchant] {
+			result = append(result, enchant)
 		}
 	}
-	return enchantmentlist
+	return result
 }
 
-func EnchantTypeExeption(enchantmentlist []string, enchantmenttype string) []string {
-	for i := 0; i < len(enchantmentlist); i++ {
-		if enchantmentlist[i] == enchantmenttype {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
+// Remove a specific enchantment type from the list
+func EnchantTypeExeption(enchantmentlist []string, previousSelections []string) []string {
+	exclude := make(map[string]bool)
+	for _, selection := range previousSelections {
+		if selection != "" {
+			exclude[selection] = true
 		}
 	}
-	return enchantmentlist
-}
 
-func EnchantValueExeption(enchantmentlist []string, enchantmenttype string) []string {
-	for i := 0; i < len(enchantmentlist); i++ {
-		if enchantmentlist[i] == enchantmenttype {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
+	result := make([]string, 0, len(enchantmentlist))
+	for _, enchant := range enchantmentlist {
+		if !exclude[enchant] {
+			result = append(result, enchant)
 		}
 	}
-	return enchantmentlist
+	return result
 }
 
+// For accessories, same logic
+func EnchantBaseAttribExeptionAcc(enchantmentlist []string, itemtype Item_Accessory) []string {
+	removeAttrs := make(map[string]bool)
+	if itemtype.BaseAttribute.Strength[1] == 1 {
+		removeAttrs["Strength"] = true
+	}
+	if itemtype.BaseAttribute.Vigor[1] == 1 {
+		removeAttrs["Vigor"] = true
+	}
+	if itemtype.BaseAttribute.Agility[1] == 1 {
+		removeAttrs["Agility"] = true
+	}
+	if itemtype.BaseAttribute.Dexterity[1] == 1 {
+		removeAttrs["Dexterity"] = true
+	}
+	if itemtype.BaseAttribute.Will[1] == 1 {
+		removeAttrs["Will"] = true
+	}
+	if itemtype.BaseAttribute.Knowledge[1] == 1 {
+		removeAttrs["Knowledge"] = true
+	}
+	if itemtype.BaseAttribute.Resourcefulness[1] == 1 {
+		removeAttrs["Resourcefulness"] = true
+	}
+
+	result := make([]string, 0, len(enchantmentlist))
+	for _, enchant := range enchantmentlist {
+		if !removeAttrs[enchant] {
+			result = append(result, enchant)
+		}
+	}
+	return result
+}
+
+///////////////////////////////////////////--- METHODS ----///////////////////////////////////////////////////////
+
+// add stats method
 func (s Stats) AddStats(others ...Stats) Stats {
 	result := s
 	for _, other := range others {
@@ -600,40 +662,7 @@ func (s Stats) AddStats(others ...Stats) Stats {
 	return result
 }
 
-func EchantBaseAttribExeptionAcc(enchantmentlist []string, itemtype Item_Accessory) []string {
-	for i := 0; i < len(enchantmentlist); i++ {
-		if itemtype.BaseAttribute.Strength[1] == 1 && enchantmentlist[i] == "Strength" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Vigor[1] == 1 && enchantmentlist[i] == "Vigor" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Agility[1] == 1 && enchantmentlist[i] == "Agility" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Dexterity[1] == 1 && enchantmentlist[i] == "Dexterity" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Will[1] == 1 && enchantmentlist[i] == "Will" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Knowledge[1] == 1 && enchantmentlist[i] == "Knowledge" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-		if itemtype.BaseAttribute.Resourcefulness[1] == 1 && enchantmentlist[i] == "Resourcefulness" {
-			enchantmentlist = append(enchantmentlist[:i], enchantmentlist[i+1:]...)
-			i--
-		}
-	}
-	return enchantmentlist
-}
-
+// add enchant method
 func (cs Computed_Stats) AddEnchant(others ...Computed_Stats) Computed_Stats {
 	result := cs // Start with the base `cs`
 	// Iterate over the variadic inputs and add them to the result
@@ -680,6 +709,8 @@ func (cs Computed_Stats) AddEnchant(others ...Computed_Stats) Computed_Stats {
 
 	return result
 }
+
+///////////////////////////////////////////////---FROTEND LOGIC--- ////////////////////////////////////////////////////////
 
 func RemoveSpaces(s string) string {
 	var result []rune

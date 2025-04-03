@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Builder</title>
 	<link rel="stylesheet" href="styles.css">
-	<script src="https://unpkg.com/htmx.org"></script>
 </head>
 <body>
 
@@ -13,22 +12,23 @@
     <div class="dropdown-group">
         <label for="classselection">Select Class</label>
         <!-- hx-get is applied to the entire <select> -->
-        <select id="classselection" name="classSelection" hx-trigger="change" hx-target="#ref" hx-swap="innerHTML" >
+        <select id="classselection" name="classSelection">
             <option value="" disabled selected>Select a class</option>
-            <option hx-get="/charbuilder/1">Fighter</option>
-            <option hx-get="/charbuilder/2">Barbarian</option>
-            <option hx-get="/charbuilder/3">Rogue</option>
-            <option hx-get="/charbuilder/4">Wizard</option>
-            <option hx-get="/charbuilder/5">Cleric</option>
-            <option hx-get="/charbuilder/6">Warlock</option>
-            <option hx-get="/charbuilder/7">Bard</option>
-            <option hx-get="/charbuilder/8">Druid</option>
-            <option hx-get="/charbuilder/9">Ranger</option>
+            <option get="/charbuilder/1">Fighter</option>
+            <option get="/charbuilder/2">Barbarian</option>
+            <option get="/charbuilder/3">Rogue</option>
+            <option get="/charbuilder/4">Wizard</option>
+            <option get="/charbuilder/5">Cleric</option>
+            <option get="/charbuilder/6">Warlock</option>
+            <option get="/charbuilder/7">Bard</option>
+            <option get="/charbuilder/8">Druid</option>
+            <option get="/charbuilder/9">Ranger</option>
         </select>
     </div>	
 </div>
 
 <form id="classForm">
+  
     <div id="ref">
 	</div>
 </form>

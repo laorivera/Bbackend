@@ -1,32 +1,39 @@
 {
-    "name": "Occultist Pants",
+    "name": "Doublet",
     "armorRatings": {
         "1": [
-            12
+            25
         ],
         "2": [
-            13
+            26,
+            27
         ],
         "3": [
-            14,
-            15
+            28,
+            29,
+            30,
+	    31,
+            32
         ],
         "4": [
-            16
+            33,
+            34
         ],
         "5": [
-            17
+            35
         ],
         "6": [
-            18
+            36
         ],
         "7": [
-            20,
-            21
+            40,
+            41,
+	    42
         ]
     },
+    "projectileReduction": 2.1,
     "BaseAttribute": {
-        "strength": {
+        "dexterity": {
             "1": 1,
             "2": 2,
             "3": 3,
@@ -55,7 +62,7 @@
         }
     },
     "moveSpeed": {
-            "1": -4
+            "1": -5
              },
     "type": "Cloth",
     "rarities": [
@@ -67,7 +74,7 @@
         6,
         7
     ],
-    "slotType": "Legs",
+    "slotType": "Chest",
     "gearScore": {
         "0": 0,
         "1": 1,
@@ -79,7 +86,7 @@
         "7": 50
     },
     "classes": [
-        "Warlock"
+        "Fighter"
     ],
     "numEnchants": {
         "3": 1,

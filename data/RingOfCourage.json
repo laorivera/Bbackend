@@ -1,7 +1,7 @@
 {
-  "name": "Fox Pendant",
+  "name": "Ring Of Courage",
   "BaseAttribute": {
-    "agility": {
+    "strength": {
       "3": 1,
       "4": 2,
       "5": 3,
@@ -11,9 +11,9 @@
   },
   "moveSpeed": 0,
   "type": "Accessory",
-  "flavortext": "Designed to enhance one's nimbleness, echoing the fox's swift and graceful movements.",
+  "flavortext": "Imbued with the essence of bravery, enhancing your strength.",
   "rarities": [3, 4, 5, 6, 7],
-  "slotType": "Necklace",
+  "slotType": "Ring",
   "ap": {
     "3": 1,
     "4": 1,
@@ -38,7 +38,6 @@
     "6": 24,
     "7": 30
   },
-  "classes": ["Fighter", "Barbarian", "Rogue", "Wizard", "Cleric", "Warlock", "Bard", "Druid", "Ranger"],
   "sellPrices": {
     "3": 7,
     "4": 12,

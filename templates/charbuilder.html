@@ -4,16 +4,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Builder</title>
-	<link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
-	<script src="https://unpkg.com/htmx.org"></script>
-    <style>
-    .scrollable-content {
-        height: 350px; /* Set a fixed height for the scrollable area */
-        overflow-y: auto; /* Enable vertical scrolling */
-        border: 1px solid #ccc; /* Optional: Add a border for better visibility */
-        padding: 10px; /* Optional: Add some padding */
-    }
-    </style>
+	<link rel="stylesheet" href="/static/styles.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
     <h1>Character Builder</h1>
@@ -108,6 +99,24 @@
             <select id="itemechantmentvalue2" name="enchantment_helmetvalue2">
 				<option value="">Select Enchanment</option>
                 {{range .helmet_enchantmentvaluetwo}}
+                    <option value="{{.}}">{{.}}</option>
+                {{end}}
+            </select>
+        </div>
+        <div class="dropdown-group">
+            <label for="itemenchanment3">Enchanment Three</label>
+            <select id="itemechantment3" name="enchantment_helmettype3">
+				<option value="">Select Enchanment</option>
+                {{range .helmet_enchantmenttypethree}}
+                    <option value="{{.}}">{{.}}</option>
+                {{end}}
+            </select>
+        </div>
+        <div class="dropdown-group">
+            <label for="itemenchanmentvalue3">Enchanment Value Three</label>
+            <select id="itemechantmentvalue3" name="enchantment_helmetvalue3">
+				<option value="">Select Enchanment</option>
+                {{range .helmet_enchantmentvaluethree}}
                     <option value="{{.}}">{{.}}</option>
                 {{end}}
             </select>
@@ -309,7 +318,7 @@
 			
         </div>
 	</div>
-    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;"> <!-- Ring From -->
+    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;"> <!-- Necklace From -->
         <div class="dropdown-group">
             <label for="itemSelect">Necklace</label>
             <select id="itemSelect" name="itemnecklace">
@@ -347,6 +356,49 @@
                 <select id="itemechantmentvalue" name="enchantment_necklacevalue">
                     <option value="">Select Enchanment</option>
                     {{range .necklace_enchantmentvalue}}
+                        <option value="{{.}}">{{.}}</option>
+                    {{end}}
+                </select>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;"> <!-- Ring From -->
+        <div class="dropdown-group">
+            <label for="itemSelect">Ring</label>
+            <select id="itemSelect" name="itemring">
+                <option value="">Select Ring</option>
+                {{range .ringlist}}
+                    <option value="{{.Name}}">{{.Name}}</option>
+                {{end}}
+            </select>
+        </div>
+        <div class="dropdown-group">
+                <label for="rarityselect">Rarity</label>
+                <select id="rarityselect" name="rarityselect_ring">
+                    <option value="">Select Rarity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>	
+        </div>     
+        
+        <div class="dropdown-group">
+                <label for="itemenchanment">Enchanments</label>
+                <select id="itemechantment" name="enchantment_ringtype">
+                    <option value="">Select Enchanment</option>
+                    {{range .ring_enchantmenttype}}
+                        <option value="{{.}}">{{.}}</option>
+                    {{end}}
+                </select>
+        </div>
+        <div class="dropdown-group">
+                <label for="itemenchanmentvalue">Enchanments</label>
+                <select id="itemechantmentvalue" name="enchantment_ringvalue">
+                    <option value="">Select Enchanment</option>
+                    {{range .ring_enchantmentvalue}}
                         <option value="{{.}}">{{.}}</option>
                     {{end}}
                 </select>
@@ -486,8 +538,6 @@
 
     <p>From Bonuses: {{.computedstats.BonusMagicalPower}} </p>
 
-    
-
     <!--
 
     <p>Primary Weapon: </p>
@@ -514,6 +564,12 @@
     -->
     
     <p>test {{.test}} </p>  
+
+    <p>test2 {{.test2}} </p>
+
+    <p>test3 {{.test3}} </p>
+
+    <p>test4 {{.test4}} </p>
     
 </div>
 

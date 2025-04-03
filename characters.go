@@ -6,7 +6,7 @@ type WeaponStats struct {
 	Attackthree float64
 }
 
-var characterStatsx = Stats{
+var characterHolder = Stats{
 	Strength:        0,
 	Vigor:           0,
 	Agility:         0,
@@ -37,13 +37,13 @@ var classFighter = Stats{
 }
 
 var classBarbarian = Stats{
-	Strength:        20,
+	Strength:        25,
 	Vigor:           25,
 	Agility:         13,
 	Dexterity:       12,
 	Will:            18,
 	Knowledge:       5,
-	Resourcefulness: 12,
+	Resourcefulness: 7,
 }
 
 var classRogue = Stats{
