@@ -411,8 +411,8 @@ func setupRoutes(r *gin.Engine) {
 	r.GET("/cloakratinglist/", Cloak_RatingList_Handler)
 
 	//ENCHANTMENT LISTS ENDPOINTS
-	r.GET("/enchamentlistarmor/", Helmet_EnchantmentList_Handler)
-	r.GET("/enchamentlistnecklace/", Necklace_EnchantmentList_Handler)
+	r.GET("/enchantmentlisthelmet/", Helmet_EnchantmentList_Handler)
+	r.GET("/enchantmentlistnecklace/", Necklace_EnchantmentList_Handler)
 	//r.GET("/enchamentlistaccessory/:classSelection", Enchantment_List_Handler_Accessory)
 
 	// THE ONE
