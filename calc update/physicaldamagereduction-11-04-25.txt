@@ -1,6 +1,4 @@
-{
-    "Name": "Physical_Damage_Reduction",
-	"Keys": [
+        "Keys": [
           {
             "Time": -300.0,
             "Value": -6.19
@@ -805,5 +803,3 @@
             "Time": 500.0,
             "Value": 0.74
           }
-     ]
-}

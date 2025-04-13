@@ -1,6 +1,6 @@
-{
-    "Name": "Physical_Damage",
-	"Keys": [
+BuffDurationMod": {
+        "InterpMode": "ERichCurveInterpMode::RCIM_Linear",
+        "Keys": [
           {
             "Time": 0.0,
             "Value": -0.8
@@ -82,28 +82,35 @@
             "Value": 0.395
           },
           {
-            "Time": 60.0,
-            "Value": 0.4
-          },
-          {
-            "Time": 68.0,
+            "Time": 64.0,
             "Value": 0.42
           },
           {
-            "Time": 81.0,
-            "Value": 0.4525
+            "Time": 70.0,
+            "Value": 0.45
           },
           {
-            "Time": 82.0,
+            "Time": 71.0,
             "Value": 0.455
           },
           {
-            "Time": 93.0,
-            "Value": 0.4825
+            "Time": 76.0,
+            "Value": 0.48
+          },
+          {
+            "Time": 86.0,
+            "Value": 0.53
+          },
+          {
+            "Time": 87.0,
+            "Value": 0.535
+          },
+          {
+            "Time": 98.0,
+            "Value": 0.59
           },
           {
             "Time": 100.0,
-            "Value": 0.5
+            "Value": 0.6
           }
-        ]
-}
+        ],

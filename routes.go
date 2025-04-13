@@ -175,6 +175,17 @@ func updateStatsHandler(c *gin.Context) {
 
 //////////\\\\\\\\\ ------->  LISTS ITEMS HANDLER <------- //////////\\\\\\\\\
 
+func itemDisplayHandler(c *gin.Context) {
+	selecteditem := c.Param("item")
+	item := Item_Armor{}
+
+	item = ItemsByNameArmor(selecteditem)
+
+	c.JSON(http.StatusOK, gin.H{
+		"item": item},
+	)
+}
+
 func Helmet_List_Handler(c *gin.Context) {
 	class := c.Param("classSelection")
 	helmetList := GetItemLists_Armor_Json(c, class)["Head"]

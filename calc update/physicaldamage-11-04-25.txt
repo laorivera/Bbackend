@@ -1,6 +1,4 @@
-{
-    "Name": "Physical_Damage",
-	"Keys": [
+        "Keys": [
           {
             "Time": 0.0,
             "Value": -0.8
@@ -105,5 +103,4 @@
             "Time": 100.0,
             "Value": 0.5
           }
-        ]
-}
+        ],

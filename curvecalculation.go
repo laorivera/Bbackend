@@ -11,7 +11,7 @@ func CalculateComputedValues(stats_compute Stats, rating_armor int, rating_speed
 
 	var result = Computed_Stats{
 
-		Health:                  runcurvehybrid(stats_compute.Strength, stats_compute.Vigor, "./calc/curvemaxhealth.json") - 5,
+		Health:                  runcurvehybrid(stats_compute.Strength, stats_compute.Vigor, "./calc/curvemaxhealth.json"),
 		MemoryCapacity:          runcurve(stats_compute.Knowledge, "./calc/curvememorycapacity.json"),
 		HealthRecovery:          runcurve(stats_compute.Vigor, "./calc/curvehealthrecovery.json") * 100,                                                  //calc display adjusment
 		ActionSpeed:             runcurvehybrid(stats_compute.Agility, stats_compute.Dexterity, "./calc/curvesactionspeed.json") * 100,                   //calc display adjusment

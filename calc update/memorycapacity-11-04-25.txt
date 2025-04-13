@@ -1,0 +1,16 @@
+      "MemoryCapacity": {
+        "InterpMode": "ERichCurveInterpMode::RCIM_Linear",
+        "Keys": [
+          {
+            "Time": 0.0,
+            "Value": 0.0
+          },
+          {
+            "Time": 6.0,
+            "Value": 0.0
+          },
+          {
+            "Time": 100.0,
+            "Value": 94.0
+          }
+        ],
