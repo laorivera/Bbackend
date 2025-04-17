@@ -112,19 +112,27 @@ func updateStatsHandler(c *gin.Context) {
 	//enchantmentList_Accessory_ValuesUnique := GetEnchantmentLists_Accessory_ValuesUnique(c)
 
 	computedStatsOther_Armor := Computed_Stats{}
-	computedStatsOther_Armor = computedStatsOther_Armor.AddEnchant(EnchantComputedOthers(enchantmentSelectedOther_ArmorUncommon), EnchantComputedOthers(enchantmentSelectedOther_ArmorRare), EnchantComputedOthers(enchantmentSelectedOther_ArmorEpic), EnchantComputedOthers(enchantmentSelectedOther_ArmorLegend), EnchantComputedOthers(enchantmentSelectedOther_ArmorUnique))
+	computedStatsOther_Armor = computedStatsOther_Armor.AddEnchant(EnchantComputedOthers(enchantmentSelectedOther_ArmorUncommon),
+		EnchantComputedOthers(enchantmentSelectedOther_ArmorRare), EnchantComputedOthers(enchantmentSelectedOther_ArmorEpic),
+		EnchantComputedOthers(enchantmentSelectedOther_ArmorLegend), EnchantComputedOthers(enchantmentSelectedOther_ArmorUnique))
+
 	computedStatsOther_Accesory := Computed_Stats{}
-	computedStatsOther_Accesory = computedStatsOther_Accesory.AddEnchant(EnchantComputedOthers(enchantmentSelectedOther_AccessoryUncommon), EnchantComputedOthers(enchantmentSelectedOther_AccessoryRare), EnchantComputedOthers(enchantmentSelectedOther_AccessoryEpic), EnchantComputedOthers(enchantmentSelectedOther_AccessoryLegend), EnchantComputedOthers(enchantmentSelectedOther_AccessoryUnique))
+	computedStatsOther_Accesory = computedStatsOther_Accesory.AddEnchant(EnchantComputedOthers(enchantmentSelectedOther_AccessoryUncommon),
+		EnchantComputedOthers(enchantmentSelectedOther_AccessoryRare), EnchantComputedOthers(enchantmentSelectedOther_AccessoryEpic),
+		EnchantComputedOthers(enchantmentSelectedOther_AccessoryLegend), EnchantComputedOthers(enchantmentSelectedOther_AccessoryUnique))
 
 	totalRating := RatingCalc(ratingSelected_Armor)
+
 	totalSpeed := SpeedCalc(itemsSelected_Armor, raritySelected_Armor)
 	//totalRatingWeapon := RatingCalc(ratingSelected_Weapon)
 
 	updatedStatsArmor := SetItemStats(classStatSelect, itemsSelected_Armor, raritySelected_Armor)
-	updatedStatsArmor = updatedStatsArmor.AddStats(setEnchantStats(enchantmentSelected_ArmorUncommon), setEnchantStats(enchantmentSelected_ArmorRare), setEnchantStats(enchantmentSelected_ArmorEpic), setEnchantStats(enchantmentSelected_ArmorLegend), setEnchantStats(enchantmentSelected_ArmorUnique))
+	updatedStatsArmor = updatedStatsArmor.AddStats(setEnchantStats(enchantmentSelected_ArmorUncommon), setEnchantStats(enchantmentSelected_ArmorRare),
+		setEnchantStats(enchantmentSelected_ArmorEpic), setEnchantStats(enchantmentSelected_ArmorLegend), setEnchantStats(enchantmentSelected_ArmorUnique))
 
 	updatedStatsAccessory := SetItemStatsAccessory(characterHolder, itemsSelected_Accessory, raritySelected_Accessory)
-	updatedStatsAccessory = updatedStatsAccessory.AddStats(setEnchantStats(enchantmentSelected_AccessoryUncommon), setEnchantStats(enchantmentSelected_AccessoryRare), setEnchantStats(enchantmentSelected_AccessoryEpic), setEnchantStats(enchantmentSelected_AccessoryLegend), setEnchantStats(enchantmentSelected_AccessoryUnique))
+	updatedStatsAccessory = updatedStatsAccessory.AddStats(setEnchantStats(enchantmentSelected_AccessoryUncommon), setEnchantStats(enchantmentSelected_AccessoryRare),
+		setEnchantStats(enchantmentSelected_AccessoryEpic), setEnchantStats(enchantmentSelected_AccessoryLegend), setEnchantStats(enchantmentSelected_AccessoryUnique))
 
 	updatedStats := Stats{}
 	updatedStats = updatedStats.AddStats(updatedStatsArmor, updatedStatsAccessory)
@@ -177,12 +185,11 @@ func updateStatsHandler(c *gin.Context) {
 
 func itemDisplayHandler(c *gin.Context) {
 	selecteditem := c.Param("item")
-	item := Item_Armor{}
 
-	item = ItemsByNameArmor(selecteditem)
+	item := ItemsByNameArmor(selecteditem)
 
 	c.JSON(http.StatusOK, gin.H{
-		"item": item},
+		"itemdata": item},
 	)
 }
 
@@ -279,6 +286,7 @@ func RingTwo_List_Handler(c *gin.Context) {
 func Helmet_RatingList_Handler(c *gin.Context) {
 
 	helmetRatingList := GetRatingLists_Armor(c)["helmet"]
+
 	c.JSON(http.StatusOK, gin.H{
 		"list": helmetRatingList},
 	)
@@ -426,7 +434,8 @@ func setupRoutes(r *gin.Engine) {
 	r.GET("/enchantmentlistnecklace/", Necklace_EnchantmentList_Handler)
 	//r.GET("/enchamentlistaccessory/:classSelection", Enchantment_List_Handler_Accessory)
 
-	// THE ONE
+	// THE ONES
+	r.GET("/itemdisplay/:item", itemDisplayHandler)
 	r.GET("/charbuilder/:classSelection", updateStatsHandler)
 
 	//r.GET("/charbuilder/", charBuilderHandler)

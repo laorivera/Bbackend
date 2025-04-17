@@ -14,7 +14,7 @@ type Item_Armor struct {
 	Name                string          `json:"name"`
 	ArmorRatings        map[int][]int   `json:"armorRatings"`
 	MaxHealthAdd        map[int]int     `json:"maxHealthAdd"`
-	MagicResistance     map[int][]int   `json:"magicResistance"`
+	MagicResistance     map[int][]int   `json:"magicalResistance"`
 	ProjectileReduction float64         `json:"projectileReduction"` // %
 	HeadshotReduction   float64         `json:"headshotReduction"`   // %
 	BaseAttribute       BaseAttribute   `json:"BaseAttribute"`       // BaseStats 1 to 7
