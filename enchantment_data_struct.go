@@ -20,7 +20,7 @@ var Enchantments = Enchantment{
 
 	Helmet: map[string][]float32{
 		"Strength": {1, 2}, "Vigor": {1, 2}, "Agility": {1, 2}, "Dexterity": {1, 2}, "Will": {1, 2}, "Knowledge": {1, 2}, "Resourcefulness": {1, 2},
-		"ArmorPenetration": {2, 3}, "PhysicalPowerBonus": {1, 2}, "PhysicalPower": {1, 2}, "MagicalPower": {1, 2}, "MagicPowerBonus": {1, 2}, "TrueMagicalDamage": {1, 1}, "AddiontalMagicalDamage": {1, 1}, "MagicPenetration": {2, 3},
+		"ArmorPenetration": {2, 3}, "PhysicalPowerBonus": {1, 2}, "PhysicalPower": {1, 2}, "MagicalPower": {1, 2}, "MagicalPowerBonus": {1, 2}, "TrueMagicalDamage": {1, 1}, "AddiontalMagicalDamage": {1, 1}, "MagicPenetration": {2, 3},
 		"ArmorRating": {3, 5}, "MagicResistance": {3, 5}, "PhysicalDamageReduction": {1, 1.5}, "MagicalDamageReduction": {1, 1.5}, "ProjectileReduction": {1, 1.5},
 		"ActionSpeed": {1, 1.5}, "SpellCastingSpeed": {1, 1.5},
 		"MaxHealthBonus": {1, 1.5}, "MaxHealthAdd": {2, 3},
@@ -31,7 +31,7 @@ var Enchantments = Enchantment{
 	Chest: map[string][]float32{
 		"Strength": {1, 2}, "Vigor": {1, 2}, "Agility": {1, 2}, "Dexterity": {1, 2}, "Will": {1, 2}, "Knowledge": {1, 2}, "Resourcefulness": {1, 2},
 		"PhysicalPowerBonus": {2, 3}, "PhysicalPower": {1, 3},
-		"MagicalPower": {1, 3}, "MagicPowerBonus": {2, 3},
+		"MagicalPower": {1, 3}, "MagicalPowerBonus": {2, 3},
 		"ArmorRating": {5, 10}, "MagicResistance": {5, 10}, "PhysicalDamageReduction": {1.5, 2}, "MagicalDamageReduction": {1.5, 2}, "ProjectileReduction": {1.5, 2},
 		"ActionSpeed": {1.5, 2}, "SpellCastingSpeed": {1.5, 2},
 		"MaxHealthBonus": {1.5, 3}, "MaxHealthAdd": {3, 5},
@@ -43,7 +43,7 @@ var Enchantments = Enchantment{
 	Gloves: map[string][]float32{
 		"Strength": {1, 2}, "Vigor": {1, 2}, "Agility": {1, 2}, "Dexterity": {1, 2}, "Will": {1, 2}, "Knowledge": {1, 2}, "Resourcefulness": {1, 2},
 		"PhysicalPowerBonus": {1, 2}, "PhysicalPower": {1, 2}, "ArmorPenetration": {2, 3}, "TruePhysicalDamage": {1}, "AddiontalPhysicalDamage": {1},
-		"MagicalPower": {1, 2}, "MagicPowerBonus": {1, 2}, "MagicPenetration": {2, 3},
+		"MagicalPower": {1, 2}, "MagicalPowerBonus": {1, 2}, "MagicPenetration": {2, 3},
 		"ArmorRating": {3, 5}, "MagicResistance": {3, 5}, "PhysicalDamageReduction": {1, 1.5}, "MagicalDamageReduction": {1, 1.5}, "ProjectileReduction": {1, 1.5},
 		"ActionSpeed": {1, 1.5}, "SpellCastingSpeed": {1, 1.5},
 		"MaxHealthBonus": {1, 1.5}, "MaxHealthAdd": {2, 3},
@@ -53,7 +53,7 @@ var Enchantments = Enchantment{
 	Pants: map[string][]float32{
 		"Strength": {1, 2}, "Vigor": {1, 2}, "Agility": {1, 2}, "Dexterity": {1, 2}, "Will": {1, 2}, "Knowledge": {1, 2}, "Resourcefulness": {1, 2},
 		"PhysicalPowerBonus": {2, 3}, "PhysicalPower": {1, 2},
-		"MagicalPower": {1, 2}, "MagicPowerBonus": {2, 3},
+		"MagicalPower": {1, 2}, "MagicalPowerBonus": {2, 3},
 		"ArmorRating": {5, 10}, "MagicResistance": {5, 10}, "PhysicalDamageReduction": {1.5, 2}, "MagicalDamageReduction": {1.5, 2}, "ProjectileReduction": {1.5, 2},
 		"ActionSpeed": {1.5, 2}, "SpellCastingSpeed": {1.5, 2},
 		"MaxHealthBonus": {1.5, 2}, "MaxHealthAdd": {3, 5},
@@ -64,7 +64,7 @@ var Enchantments = Enchantment{
 	Boots: map[string][]float32{
 		"Strength": {1, 2}, "Vigor": {1, 2}, "Agility": {1, 2}, "Dexterity": {1, 2}, "Will": {1, 2}, "Knowledge": {1, 2}, "Resourcefulness": {1, 2},
 		"PhysicalPowerBonus": {1, 2}, "PhysicalPower": {1, 2},
-		"MagicalPower": {1, 2}, "MagicPowerBonus": {1, 2},
+		"MagicalPower": {1, 2}, "MagicalPowerBonus": {1, 2},
 		"AmorRating": {3, 5}, "MagicResistance": {3, 5}, "PhysicalDamageReduction": {1, 1.5}, "MagicalDamageReduction": {1, 1.5}, "ProjectileReduction": {1, 1.5},
 		"MoveSpeed": {3, 5}, "MoveSpeedBonus": {1, 1.5},
 		"MaxHealthBonus": {1, 1.5}, "MaxHealthAdd": {2, 3},

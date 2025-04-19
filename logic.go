@@ -383,8 +383,6 @@ func ComputedTotal(computedone, computedtwo, computedthree Computed_Stats) Compu
 		result.RegularInteractionSpeed += stat.RegularInteractionSpeed
 		result.MoveSpeed += stat.MoveSpeed
 		result.MoveSpeedCalc += stat.MoveSpeedCalc
-		result.PhysicalPower += stat.PhysicalPower
-		result.MagicalPower += stat.MagicalPower
 		result.HealthRecovery += stat.HealthRecovery
 		result.ManualDexterity += stat.ManualDexterity
 		result.EquipSpeed += stat.EquipSpeed
@@ -409,13 +407,15 @@ func ComputedTotal(computedone, computedtwo, computedthree Computed_Stats) Compu
 		result.MemoryCapacity += stat.MemoryCapacity
 	}
 
+	result.PhysicalPower = computedone.PhysicalPower
+	result.MagicalPower = computedone.MagicalPower
 	result.PhysicalPowerBonus = computedone.PhysicalPowerBonus
 	result.MagicalPowerBonus = computedone.MagicalPowerBonus
 	result.MagicRating = computedone.MagicRating
 	result.BonusPhysicalDamageReduction = computedtwo.PhysicalDamageReduction
 	result.BonusMagicalDamageReduction = computedtwo.MagicalDamageReduction
-	result.BonusPhysicalPower = computedtwo.PhysicalPower
-	result.BonusMagicalPower = computedtwo.MagicalPower
+	result.BonusPhysicalPower = computedtwo.PhysicalPowerBonus
+	result.BonusMagicalPower = computedtwo.MagicalPowerBonus
 
 	return result
 }
@@ -427,11 +427,11 @@ func EnchantValuesCalc(enchantmentvalue string, enchantmenttype map[string][]flo
 	switch enchantmentvalue {
 	case "ArmorPenetration":
 		return RangeofEnchanmentValues(enchantmenttype[enchantmentvalue])
-	case "PhysicalDamageBonus":
+	case "PhysicalPowerBonus":
 		return RangeofEnchanmentValues(enchantmenttype[enchantmentvalue])
 	case "MagicPenetration":
 		return RangeofEnchanmentValues(enchantmenttype[enchantmentvalue])
-	case "MagicalDamageBonus":
+	case "MagicalPowerBonus":
 		return RangeofEnchanmentValues(enchantmenttype[enchantmentvalue])
 	case "PhysicalDamageReduction":
 		return RangeofEnchanmentValues(enchantmenttype[enchantmentvalue])
@@ -502,6 +502,8 @@ func EnchantComputedOthers(enchant []map[string]float64) Computed_Stats {
 				result.PhysicalPowerBonus = value
 			case "MagicalPower":
 				result.MagicalPower = value
+			case "MagicalPowerBonus":
+				result.MagicalPowerBonus = value
 			case "MagicPenetration":
 				result.MagicPenetration = value
 			case "ArmorPenetration":
@@ -679,6 +681,8 @@ func (cs Computed_Stats) AddEnchant(others ...Computed_Stats) Computed_Stats {
 		result.ManualDexterity += other.ManualDexterity
 		result.EquipSpeed += other.EquipSpeed
 		result.MagicalPower += other.MagicalPower
+		result.MagicalPowerBonus += other.MagicalPowerBonus
+
 		result.BuffDuration += other.BuffDuration
 		result.MagicRating += other.MagicRating
 		result.MagicalDamageReduction += other.MagicalDamageReduction
@@ -705,6 +709,9 @@ func (cs Computed_Stats) AddEnchant(others ...Computed_Stats) Computed_Stats {
 		result.FromArmorRating += other.FromArmorRating
 		result.BonusPhysicalDamageReduction += other.BonusPhysicalDamageReduction
 		result.BonusMagicalDamageReduction += other.BonusMagicalDamageReduction
+		//result.BonusPhysicalPower += other.BonusPhysicalPower
+		//result.BonusMagicalPower += other.BonusMagicalPower
+
 	}
 
 	return result
