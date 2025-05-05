@@ -1,0 +1,80 @@
+{
+  "name": "Warden Outfit",
+  "armorRatings": {
+    "1": [
+      45
+    ],
+    "2": [
+      46,
+      49
+    ],
+    "3": [
+      50,
+      54
+    ],
+    "4": [
+      55,
+      57
+    ],
+    "5": [
+      58,
+      59
+    ],
+    "6": [
+      60
+    ],
+    "7": [
+      64,
+      68
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Agility": {
+      "1": 2,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "moveSpeed": {
+    "1": -6
+  },
+  "type": "Leather",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Ranger",
+    "Warlock"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Crafted with extra layers of hardened leather, supplying body and neck protection."
+}

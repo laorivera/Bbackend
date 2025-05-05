@@ -1,0 +1,89 @@
+{
+  "name": "Dark Plate Armor",
+  "armorRatings": {
+    "1": [
+      69
+    ],
+    "2": [
+      73,
+      77
+    ],
+    "3": [
+      78,
+      81
+    ],
+    "4": [
+      82,
+      86
+    ],
+    "5": [
+      87,
+      91
+    ],
+    "6": [
+      92,
+      96
+    ],
+    "7": [
+      100,
+      105
+    ]
+  },
+  "magicalResistance": {
+        "1": [32],
+        "2": [34],
+        "3": [34],
+        "4": [36],
+        "5": [39],
+        "6": [41],
+        "7": [43]
+    },
+  "projectileReduction": 3.5,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Vigor": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4
+    }
+  },
+  "moveSpeed": {
+    "1": -15
+  },
+  "type": "Plate",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "This fashionable dark plate armor is heavy and strong, good against physical as well as magical attacks."
+}

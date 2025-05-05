@@ -1,0 +1,85 @@
+{
+  "name": "Darkleaf Boots",
+  "armorRatings": {
+    "1": [
+      11
+    ],
+    "2": [
+      12
+    ],
+    "3": [
+      13,
+      14
+    ],
+    "4": [
+      15
+    ],
+    "5": [
+      16
+    ],
+    "6": [
+      17
+    ],
+    "7": [
+      19,
+      20
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Strength": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 3,
+      "6": 4,
+      "7": 4
+    },
+    "Will": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4
+    }
+  },
+  "moveSpeed": {
+    "1": 6
+  },
+  "type": "Leather",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Foot",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter", "Barbarian", "Rogue", "Wizard", "Cleric" , "Warlock", "Bard", "Druid", "Ranger", "Sorcerer"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Renowned for their unique blend of flexibility and durability, a testament to the craftsmanship of woodland artisans."
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Adventurer Boots",
+  "armorRatings": {
+    "1": [
+      12,
+      13
+    ],
+    "2": [
+      14,
+      15
+    ],
+    "3": [
+      16,
+      17
+    ],
+    "4": [
+      18,
+      19
+    ],
+    "5": [
+      20,
+      21
+    ],
+    "6": [
+      22
+    ],
+    "7": [
+      24,
+      25
+    ]
+  },
+  "BaseAttribute": {
+    "dexterity": {
+      "1": 2,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "moveSpeed": {
+    "1": 6
+  },
+  "type": "Leather",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Foot",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter", "Barbarian", "Rogue", "Wizard", "Cleric", "Warlock", "Bard", "Druid", "Ranger", "Soccerer"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Hardy leather boots, coated with a waterproof wax, sealing in quality and craftsmanship that will last many seasons."
+}

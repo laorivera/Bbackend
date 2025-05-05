@@ -116,7 +116,7 @@ var classRanger = Stats{
 	Resourcefulness: 23,
 }
 
-var classSoccerer = Stats{
+var classSorcerer = Stats{
 	Strength:        10,
 	Vigor:           10,
 	Agility:         10,

@@ -1,0 +1,78 @@
+{
+  "name": "Visored Barbuta Helm",
+  "armorRatings": {
+    "1": [
+      23
+    ],
+    "2": [
+      24,
+      26
+    ],
+    "3": [
+      27,
+      29
+    ],
+    "4": [
+      30,
+      31
+    ],
+    "5": [
+      32
+    ],
+    "6": [
+      33
+    ],
+    "7": [
+      35,
+      36
+    ]
+  },
+  "projectileReduction": 1.8,
+  "headshotReduction": 16,
+  "BaseAttribute": {
+    "Will": {
+      "1": 2,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "moveSpeed": {
+    "1": -6
+  },
+  "type": "Plate",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Head",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "The inside of this intimidating helm is lined with a soft padding to help protect against head focused attacks."
+}

@@ -84,7 +84,7 @@
         "7": 50
     },
     "classes": [
-        "Fighter", "Barbarian", "Rogue", "Wizard", "Cleric" , "Warlock", "Bard", "Druid", "Ranger"
+        "Fighter", "Barbarian", "Rogue", "Wizard", "Cleric" , "Warlock", "Bard", "Druid", "Ranger", "Sorcerer"
     ],
     "numEnchants": {
         "3": 1,

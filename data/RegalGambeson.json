@@ -1,0 +1,80 @@
+{
+  "name": "Regal Gambeson",
+  "armorRatings": {
+    "1": [
+      43
+    ],
+    "2": [
+      44,
+      45
+    ],
+    "3": [
+      46,
+      48
+    ],
+    "4": [
+      49,
+      50
+    ],
+    "5": [
+      51,
+      52
+    ],
+    "6": [
+      53,
+      54
+    ],
+    "7": [
+      58,
+      62
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Vigor": {
+      "1": 2,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "moveSpeed": {
+    "1": -10
+  },
+  "type": "Cloth",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+      "Fighter", "Barbarian", "Rogue", "Wizard", "Cleric" , "Warlock", "Bard", "Druid", "Ranger", "Sorcerer"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Beautifully dyed quilting wool with smooth leather straps ensuring a good fit."
+}

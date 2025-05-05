@@ -9,7 +9,7 @@ import (
 
 // EJECUTA CALCULO ALL STATS CURVES
 
-// FIND ITEMS BY SLOT TYPE
+// FIND ARRAY ITEMS BY SLOT TYPE
 func ItemsBySlotType(class string, slot string) []Item_Armor {
 	switch class {
 	case "1":
@@ -87,7 +87,6 @@ func AccessoryBySlotType(slot string) []Item_Accessory {
 	for i := 0; i < len(Items.ItemsAccessory); i++ {
 		if slot == Items.ItemsAccessory[i].SlotType {
 			result = append(result, Items.ItemsAccessory[i])
-			break
 		}
 	}
 	return result
@@ -98,7 +97,6 @@ func AccessoryBySlotType_Json(slot string) []string {
 	for i := 0; i < len(Items.ItemsAccessory); i++ {
 		if slot == Items.ItemsAccessory[i].SlotType {
 			result = append(result, Items.ItemsAccessory[i].Name)
-			break
 		}
 	}
 	return result
@@ -124,6 +122,8 @@ func ItemsBySlotType_Json(class string, slot string) []string {
 		class = "Druid"
 	case "9":
 		class = "Ranger"
+	case "10":
+		class = "Sorcerer"
 	default:
 
 	}
@@ -140,7 +140,9 @@ func ItemsBySlotType_Json(class string, slot string) []string {
 	return result
 }
 
-// FIND ITEM BY NAME
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// FIND SINGLE ITEM BY NAME
 func ItemsByNameArmor(name string) Item_Armor {
 	var result Item_Armor
 	for i := 0; i < len(Items.ItemsArmor); i++ {
@@ -163,7 +165,7 @@ func ItemsByNameWeapon(name string) Item_Weapon {
 	return result
 }
 
-func ItemsByNameAccessory(name string) Item_Accessory {
+func ItemsByNameAccesory(name string) Item_Accessory {
 	var result Item_Accessory
 	for i := 0; i < len(Items.ItemsAccessory); i++ {
 		if name == Items.ItemsAccessory[i].Name {
@@ -174,7 +176,9 @@ func ItemsByNameAccessory(name string) Item_Accessory {
 	return result
 }
 
-// FIND ENCHANTMENT BY Slot
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// FIND ARRAY ENCHANTMENTS BY SLOT
 func EnchamentbySlot(list map[string][]float32) []string {
 	keys := []string{}
 	for key := range list {
@@ -209,7 +213,7 @@ func RangeofEnchanmentValues(value []float32) []float32 {
 
 // SELECT CLASS STATS AND DEFAULT IF NO CLASS SELECTED
 func SelectClass(classselected string) Stats {
-	allClases_array := [11]Stats{characterStats, classFighter, classBarbarian, classRogue, classWizard, classCleric, classWarlock, classBard, classDruid, classRanger, classSoccerer}
+	allClases_array := [11]Stats{characterStats, classFighter, classBarbarian, classRogue, classWizard, classCleric, classWarlock, classBard, classDruid, classRanger, classSorcerer}
 	int_converted, _ := strconv.Atoi(classselected)
 	for i := 0; i <= len(allClases_array); i++ {
 		if int_converted == i {
@@ -231,6 +235,7 @@ func readJSON(filename string, data interface{}) error {
 	return decoder.Decode(data)
 }
 
+// /////////////////////////////////////////////////////////////////////////////////////////////
 // CREATE AN ITEM
 func CreateItemArmor(itemfile string) Item_Armor {
 	var item Item_Armor // item to create
@@ -250,6 +255,7 @@ func CreateItemAccessory(itemfile string) Item_Accessory {
 	return item
 }
 
+// //////////////////////////////////////////////////////////////////////////////////////////////////
 // CALCULATE TOTAL ENCHANTMENT STATS
 func setEnchantStats(enchantments []map[string]int) Stats {
 	var totalStats Stats
@@ -270,13 +276,20 @@ func setEnchantStats(enchantments []map[string]int) Stats {
 				totalStats.Knowledge += value
 			case "Resourcefulness":
 				totalStats.Resourcefulness += value
+			case "AllAttributes":
+				totalStats.Strength += value
+				totalStats.Vigor += value
+				totalStats.Agility += value
+				totalStats.Dexterity += value
+				totalStats.Will += value
+				totalStats.Knowledge += value
 			}
 		}
 	}
 	return totalStats
 }
 
-// CALCULATE TOTAL ATTRIBUTE STATS OF ITEMS
+// CALCULATE TOTAL BASE ATTRIBUTE STATS OF ITEMS
 func SetItemStats(baseStats Stats, item []Item_Armor, rarity []int /* enchantments []map[string]int */) Stats {
 	// Calculate total by sum base stats and item stats
 	for i := 0; i < len(item) && i < len(rarity); i++ {
@@ -311,6 +324,7 @@ func SetItemStatsAccessory(baseStats Stats, item []Item_Accessory, rarity []int 
 	return baseStats
 }
 
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // CONVERT STRING INTO CHARACTER CLASS
 func InttoClass(convert string) string {
 	switch convert {
@@ -350,6 +364,7 @@ func StringtoFloat(convert string) float64 {
 	return floatkey
 }
 
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // CALCULATION TOTAL AMOR RATING
 func RatingCalc(ratings []int) int {
 	result := 0
@@ -363,7 +378,10 @@ func RatingCalc(ratings []int) int {
 func SpeedCalc(items []Item_Armor, rarity []int) int {
 	speedrating := 0
 	for i := 0; i < len(items); i++ {
-		speedrating += items[i].MoveSpeed[1]
+
+		if items[i].SlotType != "Foot" {
+			speedrating += items[i].MoveSpeed[1]
+		}
 		if items[i].SlotType == "Foot" {
 			speedrating += items[i].MoveSpeed[rarity[i]]
 		}
@@ -371,9 +389,36 @@ func SpeedCalc(items []Item_Armor, rarity []int) int {
 	return speedrating
 }
 
-func ComputedTotal(computedone, computedtwo, computedthree Computed_Stats) Computed_Stats {
+func BaseItemCalc(items []Item_Armor, rarity []int) Computed_Stats {
+	computed := Computed_Stats{}
+	for i := 0; i < len(items); i++ {
+		computed.Health += items[i].MaxHealthAdd[rarity[i]]
+		computed.ProjectileReduction += items[i].ProjectileReduction
+		computed.ProjectileReduction += items[i].ProjectileReductionRate[rarity[i]]
+		computed.HeadshotReduction += items[i].HeadshotReduction
+		computed.MoveSpeedBonus += items[i].MoveSpeedBonus
+		computed.ArmorPenetration += items[i].ArmorPenetration
+		computed.MagicPenetration += items[i].MagicPenetration
+		computed.ActionSpeed += items[i].ActionSpeed[0]
+		computed.MagicalDamageReduction += items[i].MagicalDamageReduction
+		computed.PhysicalDamageReduction += items[i].PhysicalDamageReduction
+		computed.Luck += items[i].Luck
+		computed.MagicalHealing += items[i].MagicalHealing[rarity[i]]
+		computed.MagicalPower += items[i].MagicalPower[rarity[i]]
+		computed.PhysicalPower += items[i].PhysicalPower
+		if len(items[i].MagicResistance[rarity[i]]) > 0 {
+			computed.MagicRating += items[i].MagicResistance[rarity[i]][0]
+		}
+		if len(items[i].MaxHealthBonus[rarity[i]]) > 0 {
+			computed.MaxHealthBonus += items[i].MaxHealthBonus[rarity[i]][i]
+		}
+	}
+	return computed
+}
 
-	stats := []Computed_Stats{computedone, computedtwo, computedthree}
+func ComputedTotal(computedone, computedtwo, computedthree, computedfour Computed_Stats) Computed_Stats {
+
+	stats := []Computed_Stats{computedone, computedtwo, computedthree, computedfour}
 
 	result := Computed_Stats{}
 
@@ -382,7 +427,7 @@ func ComputedTotal(computedone, computedtwo, computedthree Computed_Stats) Compu
 		result.ActionSpeed += stat.ActionSpeed
 		result.RegularInteractionSpeed += stat.RegularInteractionSpeed
 		result.MoveSpeed += stat.MoveSpeed
-		result.MoveSpeedCalc += stat.MoveSpeedCalc
+		result.MoveSpeedBonus += stat.MoveSpeedBonus
 		result.HealthRecovery += stat.HealthRecovery
 		result.ManualDexterity += stat.ManualDexterity
 		result.EquipSpeed += stat.EquipSpeed
@@ -471,7 +516,7 @@ func EnchantValuesCalc(enchantmentvalue string, enchantmenttype map[string][]flo
 func Enchantattrib(enchantmenttype string, enchantmentvalue string) map[string]int {
 
 	switch enchantmenttype {
-	case "Strength", "Vigor", "Agility", "Dexterity", "Will", "Knowledge", "Resourcefulness":
+	case "Strength", "Vigor", "Agility", "Dexterity", "Will", "Knowledge", "Resourcefulness", "AllAttributes":
 		return map[string]int{
 			enchantmenttype: StringtoInt(enchantmentvalue),
 		}
@@ -482,7 +527,7 @@ func Enchantattrib(enchantmenttype string, enchantmentvalue string) map[string]i
 func Enchantother(enchantmenttype string, enchantmentvalue string) map[string]float64 {
 
 	switch enchantmenttype {
-	case "Strength", "Vigor", "Agility", "Dexterity", "Will", "Knowledge", "Resourcefulness":
+	case "Strength", "Vigor", "Agility", "Dexterity", "Will", "Knowledge", "Resourcefulness", "AllAttributes":
 		return map[string]float64{}
 	default:
 		return map[string]float64{
@@ -497,61 +542,65 @@ func EnchantComputedOthers(enchant []map[string]float64) Computed_Stats {
 		for key, value := range item {
 			switch key {
 			case "PhysicalPower":
-				result.PhysicalPower = value
+				result.PhysicalPower += value
 			case "PhysicalPowerBonus":
-				result.PhysicalPowerBonus = value
+				result.PhysicalPowerBonus += value
 			case "MagicalPower":
-				result.MagicalPower = value
+				result.MagicalPower += value
 			case "MagicalPowerBonus":
-				result.MagicalPowerBonus = value
+				result.MagicalPowerBonus += value
 			case "MagicPenetration":
-				result.MagicPenetration = value
+				result.MagicPenetration += value
 			case "ArmorPenetration":
-				result.ArmorPenetration = value
+				result.ArmorPenetration += value
 			case "ActionSpeed":
-				result.ActionSpeed = value
+				result.ActionSpeed += value
 			case "RegularInteractionSpeed":
-				result.RegularInteractionSpeed = value
+				result.RegularInteractionSpeed += value
 			case "MagicalHealing":
-				result.MagicalHealing = int(value)
+				result.MagicalHealing += int(value)
 			case "Luck":
-				result.Luck = int(value)
+				result.Luck += int(value)
 			case "PhysicalDamageReduction":
-				result.PhysicalDamageReduction = value
+				result.PhysicalDamageReduction += value
 			case "MagicResistance":
-				result.MagicRating = value
+				result.MagicRating += value
 			case "MagicalDamageReduction":
-				result.MagicalDamageReduction = value
+				result.MagicalDamageReduction += value
 			case "ProjectileReduction":
-				result.ProjectileReduction = value
+				result.ProjectileReduction += value
 			case "HeadshotReduction":
-				result.HeadshotReduction = value
+				result.HeadshotReduction += value
 			case "SpellRecoveryBonus":
-				result.SpellRecoveryBonus = value
+				result.SpellRecoveryBonus += value
 			case "SpellCastingSpeed":
-				result.SpellCastingSpeed = value
+				result.SpellCastingSpeed += value
 			case "SpellRecovery":
-				result.SpellRecovery = value
+				result.SpellRecovery += value
 			case "MagicalInteractionSpeed":
-				result.MagicalInteractionSpeed = value
+				result.MagicalInteractionSpeed += value
 			case "CooldownReduction":
-				result.CooldownReduction = value
+				result.CooldownReduction += value
 			case "PhysicalHealing":
-				result.PhysicalHealing = int(value)
+				result.PhysicalHealing += int(value)
 			case "ArmorRating":
-				result.FromArmorRating = int(value)
+				result.FromArmorRating += int(value)
 			case "MaxHealthAdd":
-				result.Health = value
+				result.Health += value
 			case "MaxHealthBonus":
-				result.MaxHealthBonus = value
+				result.MaxHealthBonus += value
 			case "BuffDurationBonus":
-				result.BuffDuration = value
+				result.BuffDuration += value
 			case "DebuffDurationBonus":
-				result.DebuffDuration = value
+				result.DebuffDuration += value
 			case "MemoryCapacityAdd":
-				result.MemoryCapacity = value
+				result.MemoryCapacity += value
 			case "MemoryCapacityBonus":
-				result.MemoryCapacityBonus = value
+				result.MemoryCapacityBonus += value
+			case "MoveSpeedBonus":
+				result.MoveSpeedBonus += value
+			case "MoveSpeed":
+				result.MoveSpeed += value
 			}
 		}
 	}
@@ -666,7 +715,7 @@ func (s Stats) AddStats(others ...Stats) Stats {
 
 // add enchant method
 func (cs Computed_Stats) AddEnchant(others ...Computed_Stats) Computed_Stats {
-	result := cs // Start with the base `cs`
+	result := cs
 	// Iterate over the variadic inputs and add them to the result
 	for _, other := range others {
 		result.Health += other.Health
@@ -674,7 +723,7 @@ func (cs Computed_Stats) AddEnchant(others ...Computed_Stats) Computed_Stats {
 		result.ActionSpeed += other.ActionSpeed
 		result.RegularInteractionSpeed += other.RegularInteractionSpeed
 		result.MoveSpeed += other.MoveSpeed
-		result.MoveSpeedCalc += other.MoveSpeedCalc
+		result.MoveSpeedBonus += other.MoveSpeedBonus
 		result.PhysicalPower += other.PhysicalPower
 		result.PhysicalPowerBonus += other.PhysicalPowerBonus
 		result.HealthRecovery += other.HealthRecovery

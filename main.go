@@ -23,10 +23,10 @@ func main() {
 	})
 
 	// Directorio Javascript & CSS
-	r.Static("/static", "./static")
+	//r.Static("/static", "./static")
 
 	// Directorio Templates html
-	r.LoadHTMLGlob("templates/*")
+	//r.LoadHTMLGlob("templates/*")
 
 	// Function call routes
 	setupRoutes(r)

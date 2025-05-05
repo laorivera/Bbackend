@@ -1,0 +1,88 @@
+{
+  "name": "Darkgrove Robe",
+  "armorRatings": {
+    "1": [
+      36
+    ],
+    "2": [
+      38,
+      39
+    ],
+    "3": [
+      40,
+      43
+    ],
+    "4": [
+      44,
+      45
+    ],
+    "5": [
+      46,
+      47
+    ],
+    "6": [
+      48
+    ],
+    "7": [
+      53,
+      56
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Strength": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 3,
+      "6": 4,
+      "7": 4
+    },
+    "Will": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4
+    }
+  },
+  "moveSpeed": {
+    "1": -6
+  },
+  "type": "Cloth",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Druid"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "A robe crafted from natural fibers, imbued with the essence of the forest. Its earthy tones and soft texture resonate with the tranquility of nature."
+}

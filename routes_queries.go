@@ -36,16 +36,16 @@ func GetSelectedRatings_Armor(c *gin.Context) []int {
 }
 
 func GetSelectedItems_Accessory(c *gin.Context) []Item_Accessory {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	values := []Item_Accessory{}
 	for i := 0; i < len(slots); i++ {
-		values = append(values, ItemsByNameAccessory(c.Query("item"+slots[i])))
+		values = append(values, ItemsByNameAccesory(c.Query("item"+slots[i])))
 	}
 	return values
 }
 
 func GetSelectedRarities_Accessory(c *gin.Context) []int {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	values := []int{}
 	for i := 0; i < len(slots); i++ {
 		values = append(values, StringtoInt(c.Query("rarityselect_"+slots[i])))

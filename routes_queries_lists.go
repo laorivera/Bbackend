@@ -295,14 +295,17 @@ func GetEnchatmentLists_Armor_ValuesUnique(c *gin.Context) map[string][]float32 
 /////////\\\\\\\\\ --------------> ENCHCANTMENT LISTS ACCESSORY <------------------ //////////\\\\\\\\\
 
 func GetEnchatmentLists_Accessory_ExceptionBase(c *gin.Context) map[string][]string {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := map[string][]string{}
 	for i := 0; i < len(slots); i++ {
 		if slots[i] == "necklace" {
-			lists[slots[i]] = EnchantBaseAttribExeptionAcc(EnchamentbySlot(Enchantments.Necklace), ItemsByNameAccessory(c.Query("item"+slots[i])))
+			lists[slots[i]] = EnchantBaseAttribExeptionAcc(EnchamentbySlot(Enchantments.Necklace), ItemsByNameAccesory(c.Query("item"+slots[i])))
 		}
 		if slots[i] == "ring" {
-			lists[slots[i]] = EnchantBaseAttribExeptionAcc(EnchamentbySlot(Enchantments.Ring), ItemsByNameAccessory(c.Query("item"+slots[i])))
+			lists[slots[i]] = EnchantBaseAttribExeptionAcc(EnchamentbySlot(Enchantments.Ring), ItemsByNameAccesory(c.Query("item"+slots[i])))
+		}
+		if slots[i] == "ringtwo" {
+			lists[slots[i]] = EnchantBaseAttribExeptionAcc(EnchamentbySlot(Enchantments.Ring), ItemsByNameAccesory(c.Query("item"+slots[i])))
 		}
 	}
 	return lists
@@ -310,7 +313,7 @@ func GetEnchatmentLists_Accessory_ExceptionBase(c *gin.Context) map[string][]str
 }
 
 func GetEnchantmentLists_Accessory_ValuesUncommon(c *gin.Context) map[string][]float32 {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := map[string][]float32{}
 	for i := 0; i < len(slots); i++ {
 		Query := c.Query("enchantment_" + slots[i] + "type")
@@ -320,12 +323,15 @@ func GetEnchantmentLists_Accessory_ValuesUncommon(c *gin.Context) map[string][]f
 		if slots[i] == "ring" {
 			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
 		}
+		if slots[i] == "ringtwo" {
+			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
+		}
 	}
 	return lists
 }
 
 func GetEnchantmentLists_Accessory_TypeRare(c *gin.Context) map[string][]string {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := make(map[string][]string)
 
 	baseLists := GetEnchatmentLists_Accessory_ExceptionBase(c)
@@ -341,7 +347,7 @@ func GetEnchantmentLists_Accessory_TypeRare(c *gin.Context) map[string][]string 
 }
 
 func GetEnchantmentLists_Accessory_ValuesRare(c *gin.Context) map[string][]float32 {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := make(map[string][]float32)
 	for i := 0; i < len(slots); i++ {
 		Query := c.Query("enchantment_" + slots[i] + "type2")
@@ -351,12 +357,15 @@ func GetEnchantmentLists_Accessory_ValuesRare(c *gin.Context) map[string][]float
 		if slots[i] == "ring" {
 			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
 		}
+		if slots[i] == "ringtwo" {
+			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
+		}
 	}
 	return lists
 }
 
 func GetEnchantmentLists_Accessory_TypeEpic(c *gin.Context) map[string][]string {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := make(map[string][]string)
 
 	baseLists := GetEnchatmentLists_Accessory_ExceptionBase(c)
@@ -374,7 +383,7 @@ func GetEnchantmentLists_Accessory_TypeEpic(c *gin.Context) map[string][]string 
 }
 
 func GetEnchantmentLists_Accessory_ValuesEpic(c *gin.Context) map[string][]float32 {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := make(map[string][]float32)
 	for i := 0; i < len(slots); i++ {
 		Query := c.Query("enchantment_" + slots[i] + "type3")
@@ -384,12 +393,15 @@ func GetEnchantmentLists_Accessory_ValuesEpic(c *gin.Context) map[string][]float
 		if slots[i] == "ring" {
 			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
 		}
+		if slots[i] == "ringtwo" {
+			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
+		}
 	}
 	return lists
 }
 
 func GetEnchantmentLists_Accessory_TypeLegend(c *gin.Context) map[string][]string {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := make(map[string][]string)
 
 	baseLists := GetEnchatmentLists_Accessory_ExceptionBase(c)
@@ -408,7 +420,7 @@ func GetEnchantmentLists_Accessory_TypeLegend(c *gin.Context) map[string][]strin
 }
 
 func GetEnchantmentLists_Accessory_ValuesLegend(c *gin.Context) map[string][]float32 {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := make(map[string][]float32)
 	for i := 0; i < len(slots); i++ {
 		Query := c.Query("enchantment_" + slots[i] + "type4")
@@ -418,12 +430,15 @@ func GetEnchantmentLists_Accessory_ValuesLegend(c *gin.Context) map[string][]flo
 		if slots[i] == "ring" {
 			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
 		}
+		if slots[i] == "ringtwo" {
+			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
+		}
 	}
 	return lists
 }
 
 func GetEnchantmentLists_Accessory_TypeUnique(c *gin.Context) map[string][]string {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := make(map[string][]string)
 
 	baseLists := GetEnchatmentLists_Accessory_ExceptionBase(c)
@@ -443,7 +458,7 @@ func GetEnchantmentLists_Accessory_TypeUnique(c *gin.Context) map[string][]strin
 }
 
 func GetEnchantmentLists_Accessory_ValuesUnique(c *gin.Context) map[string][]float32 {
-	slots := []string{"necklace", "ring"}
+	slots := []string{"necklace", "ring", "ringtwo"}
 	lists := make(map[string][]float32)
 	for i := 0; i < len(slots); i++ {
 		Query := c.Query("enchantment_" + slots[i] + "type5")
@@ -451,6 +466,9 @@ func GetEnchantmentLists_Accessory_ValuesUnique(c *gin.Context) map[string][]flo
 			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Necklace)
 		}
 		if slots[i] == "ring" {
+			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
+		}
+		if slots[i] == "ringtwo" {
 			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.Ring)
 		}
 	}

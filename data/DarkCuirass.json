@@ -1,0 +1,98 @@
+{
+  "name": "Dark Cuirass",
+  "armorRatings": {
+    "1": [
+      80
+    ],
+    "2": [
+      81,
+      83
+    ],
+    "3": [
+      84,
+      86
+    ],
+    "4": [
+      87,
+      89
+    ],
+    "5": [
+      90,
+      92
+    ],
+    "6": [
+      93,
+      95
+    ],
+    "7": [
+      100,
+      105
+    ]
+  },
+  "projectileReduction": 3.5,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Resourcefulness": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 3
+    },
+    "Strength": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 2,
+      "5": 2,
+      "6": 2,
+      "7": 3
+    },
+    "Will": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 3,
+      "7": 3
+    }
+  },
+  "moveSpeed": {
+    "1": -14
+  },
+  "type": "Plate",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Forged from obsidian-infused steel offering exceptional protection, shielding its wearer from devastating blows."
+}

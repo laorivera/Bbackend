@@ -1,0 +1,81 @@
+{
+  "name": "Marauder Outfit",
+  "armorRatings": {
+    "1": [
+      40
+    ],
+    "2": [
+      42,
+      44
+    ],
+    "3": [
+      45,
+      49
+    ],
+    "4": [
+      50,
+      52
+    ],
+    "5": [
+      53,
+      55
+    ],
+    "6": [
+      56,
+      58
+    ],
+    "7": [
+      63,
+      67
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Agility": {
+      "1": 2,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "moveSpeed": {
+    "1": -6
+  },
+  "type": "Leather",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Rogue",
+    "Warlock"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "A mix of soft padding for comfort, leather for movability and plate armor for added protection."
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Fangs Of Death Necklace",
+  "armorRatings": {},
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {},
+  "moveSpeed": {
+    "1": 0
+  },
+  "type": "Necklace",
+  "rarities": [
+    5
+  ],
+  "slotType": "Necklace",
+  "gearScore": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 50,
+    "6": 0,
+    "7": 0
+  },
+  "classes": [
+    "Fighter"
+  ],
+  "numEnchants": {
+    "5": 4,
+    "all": 5
+  },
+  "flavorText": "Necklace crafted using a unique combination of teeth acquired from different beasts."
+}

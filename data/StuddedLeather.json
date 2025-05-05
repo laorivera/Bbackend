@@ -1,0 +1,90 @@
+{
+  "name": "Studded Leather",
+  "armorRatings": {
+    "1": [
+      41,
+      43
+    ],
+    "2": [
+      44,
+      46
+    ],
+    "3": [
+      47,
+      51
+    ],
+    "4": [
+      52,
+      53
+    ],
+    "5": [
+      54,
+      56
+    ],
+    "6": [
+      57,
+      58
+    ],
+    "7": [
+      62,
+      65
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Strength": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 3,
+      "6": 4,
+      "7": 4
+    },
+    "Vigor": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4
+    }
+  },
+  "moveSpeed": {
+    "1": -12
+  },
+  "type": "Leather",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Barbarian"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Armor with a network of metal studs meticulously embedded into supple leather, offering reliable defense without sacrificing mobility or comfort."
+}

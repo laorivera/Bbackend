@@ -1,0 +1,99 @@
+{
+  "name": "Open Sallet",
+  "armorRatings": {
+    "1": [
+      21
+    ],
+    "2": [
+      23,
+      24
+    ],
+    "3": [
+      25,
+      27
+    ],
+    "4": [
+      28,
+      29
+    ],
+    "5": [
+      30
+    ],
+    "6": [
+      31
+    ],
+    "7": [
+      33,
+      34
+    ]
+  },
+  "projectileReduction": 0.9,
+  "headshotReduction": 14,
+  "BaseAttribute": {
+    "Knowledge": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 2,
+      "5": 2,
+      "6": 2,
+      "7": 3
+    },
+    "Resourcefulness": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 3
+    },
+    "Will": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 3,
+      "7": 3
+    }
+  },
+  "moveSpeed": {
+    "1": -4
+  },
+  "type": "Plate",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Head",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter",
+    "Ranger",
+    "Cleric",
+    "Bard"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "The sturdy construction of this helm ensures reliable defense against both direct and glancing blows."
+}

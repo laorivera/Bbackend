@@ -1,0 +1,81 @@
+{
+  "name": "Cloth Pants",
+  "armorRatings": {
+    "1": [
+      15,
+      16
+    ],
+    "2": [
+      16,
+      17
+    ],
+    "3": [
+      17,
+      18
+    ],
+    "4": [
+      18,
+      19
+    ],
+    "5": [
+      19,
+      20
+    ],
+    "6": [
+      20,
+      21
+    ],
+    "7": [
+      23,
+      24
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Dexterity": {
+      "1": 2,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "moveSpeed": {
+    "1": -3
+  },
+  "type": "Cloth",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Legs",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+     "Fighter", "Barbarian", "Rogue", "Wizard", "Cleric" , "Warlock", "Bard", "Druid", "Ranger", "Sorcerer"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Comfy cloth pants, not offering much as far as protection."
+}

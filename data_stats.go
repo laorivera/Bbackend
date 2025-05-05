@@ -18,7 +18,7 @@ type Computed_Stats struct {
 	ActionSpeed                  float64
 	RegularInteractionSpeed      float64
 	MoveSpeed                    float64
-	MoveSpeedCalc                float64
+	MoveSpeedBonus               float64
 	PhysicalPower                float64
 	PhysicalPowerBonus           float64
 	HealthRecovery               float64

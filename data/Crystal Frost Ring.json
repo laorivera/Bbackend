@@ -1,0 +1,33 @@
+{
+  "name": "Crystal Frost Ring",
+  "armorRatings": {},
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {},
+  "moveSpeed": {
+    "1": 0
+  },
+  "type": "Ring",
+  "rarities": [
+    5
+  ],
+  "slotType": "Ring",
+  "gearScore": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 50,
+    "6": 0,
+    "7": 0
+  },
+  "classes": [
+    "Fighter"
+  ],
+  "numEnchants": {
+    "5": 4,
+    "all": 5
+  },
+  "flavorText": "A shard of eternal winter trapped in cobalt, this ring saps warmth from the wearer's soul, leaving behind only ice and silence."
+}

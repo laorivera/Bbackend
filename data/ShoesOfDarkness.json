@@ -1,0 +1,33 @@
+{
+  "name": "Shoes Of Darkness",
+  "armorRatings": {},
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {},
+  "moveSpeed": {
+    "1": 10
+  },
+  "type": "Cloth",
+  "rarities": [
+    4
+  ],
+  "slotType": "Foot",
+  "gearScore": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 40,
+    "5": 0,
+    "6": 0,
+    "7": 0
+  },
+  "classes": [
+    "Fighter"
+  ],
+  "numEnchants": {
+    "4": 3,
+    "all": 4
+  },
+  "flavorText": "Crafted with rare fabric, carrying the complex patina of darkness and power."
+}

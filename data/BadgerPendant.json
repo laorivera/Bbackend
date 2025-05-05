@@ -1,0 +1,47 @@
+{
+  "name": "Badger Pendant",
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Will": {
+      "3": 1,
+      "4": 2,
+      "5": 3,
+      "6": 4,
+      "7": 5
+    }
+  },
+  "moveSpeed": {
+    "1": 0
+  },
+  "type": "Necklace",
+  "rarities": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Necklace",
+  "gearScore": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 9,
+    "4": 12,
+    "5": 18,
+    "6": 24,
+    "7": 30
+  },
+  "classes": [
+    "Fighter"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Channel the badger's tenacious spirit with this pendant, designed to amplify your will."
+}

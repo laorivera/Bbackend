@@ -1,0 +1,37 @@
+{
+  "name": "Robe Of Darkness",
+  "armorRatings": {},
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {},
+  "moveSpeed": {
+    "1": -5
+  },
+  "type": "Cloth",
+  "rarities": [
+    4
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 40,
+    "5": 0,
+    "6": 0,
+    "7": 0
+  },
+  "classes": [
+    "Wizard",
+    "Cleric",
+    "Warlock",
+    "Druid",
+    "Sorcerer"
+  ],
+  "numEnchants": {
+    "4": 3,
+    "all": 4
+  },
+  "flavorText": "An oracle robe crafted using enchanted materials tainted with darkness."
+}

@@ -1,0 +1,100 @@
+{
+  "name": "Pourpoint",
+  "armorRatings": {
+    "1": [
+      38
+    ],
+    "2": [
+      39,
+      40
+    ],
+    "3": [
+      41,
+      42
+    ],
+    "4": [
+      43,
+      45
+    ],
+    "5": [
+      46,
+      47
+    ],
+    "6": [
+      48
+    ],
+    "7": [
+      52,
+      56
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Knowledge": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 2,
+      "5": 2,
+      "6": 2,
+      "7": 3
+    },
+    "Resourcefulness": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 3
+    },
+    "Will": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 3,
+      "7": 3
+    }
+  },
+  "moveSpeed": {
+    "1": -6
+  },
+  "type": "Cloth",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter",
+    "Ranger",
+    "Bard",
+    "Rogue"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "A padded doublet design to help absorb impact and provide added defense with adjustable straps."
+}

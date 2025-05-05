@@ -1,0 +1,84 @@
+{
+  "name": "Ornate Jazerant",
+  "armorRatings": {
+    "1": [
+      38
+    ],
+    "2": [
+      40,
+      41
+    ],
+    "3": [
+      42,
+      44
+    ],
+    "4": [
+      45,
+      46
+    ],
+    "5": [
+      47,
+      48
+    ],
+    "6": [
+      49,
+      50
+    ],
+    "7": [
+      54,
+      58
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Dexterity": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4
+    }
+  },
+  "moveSpeed": {
+    "1": -8
+  },
+  "type": "Cloth",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter",
+    "Ranger",
+    "Bard",
+    "Warlock",
+    "Rogue"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Crafted consisting of chain mail between layers of fabric or leather, designed to add protection against slashing and piercing attacks."
+}

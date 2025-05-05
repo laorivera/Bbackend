@@ -1,0 +1,79 @@
+{
+  "name": "Great Helm",
+  "armorRatings": {
+    "1": [
+      34
+    ],
+    "2": [
+      36,
+      37
+    ],
+    "3": [
+      38,
+      40
+    ],
+    "4": [
+      41,
+      42
+    ],
+    "5": [
+      43
+    ],
+    "6": [
+      44
+    ],
+    "7": [
+      46,
+      47
+    ]
+  },
+  "projectileReduction": 2.1,
+  "headshotReduction": 23,
+  "BaseAttribute": {
+    "Knowledge": {
+      "1": 2,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "moveSpeed": {
+    "1": -8
+  },
+  "type": "Plate",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Head",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter",
+    "Cleric"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "This heavy helm offers a significant amount of protection against head attacks."
+}

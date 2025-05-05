@@ -1,0 +1,81 @@
+{
+  "name": "Templar Armor",
+  "armorRatings": {
+    "1": [
+      60
+    ],
+    "2": [
+      62,
+      64
+    ],
+    "3": [
+      65,
+      68
+    ],
+    "4": [
+      69,
+      71
+    ],
+    "5": [
+      72,
+      74
+    ],
+    "6": [
+      75,
+      77
+    ],
+    "7": [
+      82,
+      87
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Will": {
+      "1": 2,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "moveSpeed": {
+    "1": -11
+  },
+  "type": "Plate",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter",
+    "Cleric"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "A brilliant blend of plate and cloth armor, helping to protect against physical and magic attacks."
+}

@@ -1,0 +1,76 @@
+{
+  "name": "Stitched Turnshoe",
+  "armorRatings": {
+    "1": [
+      11
+    ],
+    "2": [
+      12
+    ],
+    "3": [
+      13,
+      14
+    ],
+    "4": [
+      15
+    ],
+    "5": [
+      16
+    ],
+    "6": [
+      17
+    ],
+    "7": [
+      19,
+      20
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Will": {
+      "1": 2,
+      "2": 3,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    }
+  },
+  "moveSpeed": {
+    "1": 5
+  },
+  "type": "Leather",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Foot",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Fighter", "Barbarian", "Rogue", "Wizard", "Cleric" , "Warlock", "Bard", "Druid", "Ranger", "Sorcerer"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Designed with superior flexibility and comfort, allowing for swift and agile movements on any terrain."
+}

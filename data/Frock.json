@@ -1,0 +1,91 @@
+{
+  "name": "Frock",
+  "armorRatings": {
+    "1": [
+      26
+    ],
+    "2": [
+      28
+    ],
+    "3": [
+      29,
+      34
+    ],
+    "4": [
+      35,
+      36
+    ],
+    "5": [
+      37,
+      38
+    ],
+    "6": [
+      39
+    ],
+    "7": [
+      42,
+      45
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Agility": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4
+    },
+    "Knowledge": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 3,
+      "6": 4,
+      "7": 4
+    }
+  },
+  "moveSpeed": {
+    "1": -6
+  },
+  "type": "Cloth",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Wizard",
+    "Cleric",
+    "Warlock",
+    "Druid",
+    "Sorcerer"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "Made with broadcloth, a much heavier wool. Humble and modest."
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Dread Hood",
+  "armorRatings": {},
+  "projectileReduction": 0,
+  "headshotReduction": 8,
+  "BaseAttribute": {},
+  "moveSpeed": {
+    "1": -3
+  },
+  "type": "Leather",
+  "rarities": [
+    4
+  ],
+  "slotType": "Head",
+  "gearScore": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 40,
+    "5": 0,
+    "6": 0,
+    "7": 0
+  },
+  "classes": [
+    "Ranger",
+    "Rogue",
+    "Warlock"
+  ],
+  "numEnchants": {
+    "4": 3,
+    "all": 4
+  },
+  "flavorText": "Crafted using the remnants of the demonic, imbuing it with a thirst for devastation."
+}

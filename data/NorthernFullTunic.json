@@ -1,0 +1,89 @@
+{
+  "name": "Northern Full Tunic",
+  "armorRatings": {
+    "1": [
+      65
+    ],
+    "2": [
+      66,
+      69
+    ],
+    "3": [
+      70,
+      73
+    ],
+    "4": [
+      74,
+      77
+    ],
+    "5": [
+      78,
+      81
+    ],
+    "6": [
+      82,
+      85
+    ],
+    "7": [
+      86,
+      89
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Agility": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4
+    },
+    "Dexterity": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 3,
+      "6": 4,
+      "7": 4
+    }
+  },
+  "moveSpeed": {
+    "1": -14
+  },
+  "type": "Plate",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Barbarian"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "When functionality meets comfort you get a soft tunic with closely weaved chainmail vest on top."
+}

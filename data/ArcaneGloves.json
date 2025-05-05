@@ -1,0 +1,91 @@
+{
+  "name": "Arcane Gloves",
+  "armorRatings": {
+    "1": [
+      6,
+      7
+    ],
+    "2": [
+      7,
+      8
+    ],
+    "3": [
+      8,
+      9
+    ],
+    "4": [
+      9,
+      10
+    ],
+    "5": [
+      10,
+      11
+    ],
+    "6": [
+      11,
+      12
+    ],
+    "7": [
+      14
+    ]
+  },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Agility": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4
+    },
+    "Will": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 3,
+      "6": 4,
+      "7": 4
+    }
+  },
+  "moveSpeed": {
+    "1": 0
+  },
+  "type": "Cloth",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Hands",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Wizard",
+    "Cleric",
+    "Sorcerer"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "These gloves were stitched from thin yet durable sections of flax and leather, featuring a vibrant blue polished stone whose purpose remains a subject of quiet speculation."
+}

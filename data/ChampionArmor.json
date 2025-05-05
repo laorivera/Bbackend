@@ -1,0 +1,99 @@
+{
+  "name": "Champion Armor",
+  "armorRatings": {
+    "1": [
+      63
+    ],
+    "2": [
+      65,
+      67
+    ],
+    "3": [
+      68,
+      72
+    ],
+    "4": [
+      73,
+      75
+    ],
+    "5": [
+      76,
+      77
+    ],
+    "6": [
+      78,
+      80
+    ],
+    "7": [
+      84,
+      89
+    ]
+  },
+   "magicalResistance": {
+        "1": [15],
+        "2": [15],
+        "3": [15],
+        "4": [15],
+        "5": [15],
+        "6": [15],
+        "7": [15]
+    },
+  "projectileReduction": 0,
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "Strength": {
+      "1": 1,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 3,
+      "6": 3,
+      "7": 4
+    },
+    "Vigor": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 3,
+      "5": 3,
+      "6": 4,
+      "7": 4
+    }
+  },
+  "moveSpeed": {
+    "1": -12
+  },
+  "type": "Plate",
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "slotType": "Chest",
+  "gearScore": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 15,
+    "4": 20,
+    "5": 30,
+    "6": 40,
+    "7": 50
+  },
+  "classes": [
+    "Cleric",
+    "Warlock"
+  ],
+  "numEnchants": {
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "7": 1
+  },
+  "flavorText": "It is said, good armor on your back is sometimes better and more reliable than the companions you adventure with."
+}
