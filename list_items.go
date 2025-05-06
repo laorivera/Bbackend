@@ -112,6 +112,8 @@ type Item struct {
 	RingOfVitality       Item_Accessory
 	RingOfWisdom         Item_Accessory
 	RingOfResolve        Item_Accessory
+	TatteredCloak        Item_Armor
+	SplendidCloak        Item_Armor
 }
 
 var item = Item{
@@ -226,6 +228,8 @@ var item = Item{
 	RingOfVitality:       CreateItemAccessory("./data/RingOfVitality.json"),
 	RingOfWisdom:         CreateItemAccessory("./data/RingOfWisdom.json"),
 	RingOfResolve:        CreateItemAccessory("./data/RingOfResolve.json"),
+	TatteredCloak:        CreateItemArmor("./data/TatteredCloak.json"),
+	SplendidCloak:        CreateItemArmor("./data/SplendidCloak.json"),
 }
 
 type List_Items struct {
@@ -325,6 +329,8 @@ var Items = List_Items{
 		item.OldShoes,
 		item.Pourpoint,
 		item.TemplarArmor,
+		item.TatteredCloak,
+		item.SplendidCloak,
 	},
 	ItemsWeapon: []Item_Weapon{
 		item.ArmingSword,
