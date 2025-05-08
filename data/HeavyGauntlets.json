@@ -28,7 +28,15 @@
       32
     ]
   },
-  "projectileReduction": 0,
+  "projectileReductionRate": {
+      "1": 1.5,
+      "2": 1.7,
+      "3": 2,
+      "4": 2.2,
+      "5": 2.5,
+      "6": 2.7,
+      "7": 2.7
+    },
   "headshotReduction": 0,
   "BaseAttribute": {
     "Dexterity": {

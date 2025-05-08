@@ -48,7 +48,7 @@ func GetRatingLists_Armor(c *gin.Context) map[string][]int {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	ratings := map[string][]int{}
 	for i := 0; i < len(slots); i++ {
-		ratings[slots[i]] = ItemsByNameArmor(c.Query("item" + slots[i])).ArmorRatings[StringtoInt(c.Query("rarityselect_"+slots[i]))]
+		ratings[slots[i]] = CompleteArrayInt(ItemsByNameArmor(c.Query("item" + slots[i])).ArmorRatings[StringtoInt(c.Query("rarityselect_"+slots[i]))])
 	}
 	return ratings
 }

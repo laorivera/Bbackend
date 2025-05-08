@@ -16,6 +16,7 @@ func main() {
 		allowedOrigins := []string{
 			"http://52.67.71.173:4200", // Angular dev server
 			"http://52.67.71.173:8080", // Your Gin backend (if needed)
+			"http://localhost:4200",    // Localhost for Angular dev server
 		}
 
 		// Get the request's Origin

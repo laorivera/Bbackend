@@ -114,6 +114,9 @@ type Item struct {
 	RingOfResolve        Item_Accessory
 	TatteredCloak        Item_Armor
 	SplendidCloak        Item_Armor
+	OccultistBoots       Item_Armor
+	PlateBoots           Item_Armor
+	VisoredSallet        Item_Armor
 }
 
 var item = Item{
@@ -230,6 +233,9 @@ var item = Item{
 	RingOfResolve:        CreateItemAccessory("./data/RingOfResolve.json"),
 	TatteredCloak:        CreateItemArmor("./data/TatteredCloak.json"),
 	SplendidCloak:        CreateItemArmor("./data/SplendidCloak.json"),
+	OccultistBoots:       CreateItemArmor("./data/OccultistBoots.json"),
+	PlateBoots:           CreateItemArmor("./data/PlateBoots.json"),
+	VisoredSallet:        CreateItemArmor("./data/VisoredSallet.json"),
 }
 
 type List_Items struct {
@@ -331,6 +337,9 @@ var Items = List_Items{
 		item.TemplarArmor,
 		item.TatteredCloak,
 		item.SplendidCloak,
+		item.OccultistBoots,
+		item.PlateBoots,
+		item.VisoredSallet,
 	},
 	ItemsWeapon: []Item_Weapon{
 		item.ArmingSword,

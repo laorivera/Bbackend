@@ -28,7 +28,7 @@ type Item_Armor struct {
 	BuffDuration            float64           `json:"buffDuration"`
 	MagicalPower            map[int]float64   `json:"magicalPower"`
 	MagicalPowerBonus       map[int]float64   `json:"magicalPowerBonus"`
-	RegularInteractionSpeed map[int][]float64 `json:"regularInteraction"`
+	RegularInteractionSpeed map[int]float64   `json:"regularInteraction"`
 	MagicalHealing          map[int]int       `json:"magicalHealing"`
 	ActionSpeed             map[int]float64   `json:"actionSpeed"`
 	MagicalDamageReduction  float64           `json:"magicalDamageReduction"`

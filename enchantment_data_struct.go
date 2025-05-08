@@ -80,6 +80,7 @@ var Enchantments = Enchantment{
 	},
 
 	Cloak: map[string][]float32{
+		"Strength": {1, 2}, "Vigor": {1, 2}, "Agility": {1, 2}, "Dexterity": {1, 2}, "Will": {1, 2}, "Knowledge": {1, 2}, "Resourcefulness": {1, 2},
 		"PhysicalPower": {1, 2}, "ArmorPenetration": {2.5, 3.5}, "TruePhysicalDamage": {1}, "AddiontalPhysicalDamage": {1},
 		"MagicalPower": {1, 2}, "MagicPenetration": {2.5, 3.5}, "TrueMagicalDamage": {1}, "AddiontalMagicalDamage": {1},
 		"ArmorRating": {3, 5}, "MagicResistance": {3, 5}, "PhysicalDamageReduction": {1, 1.5}, "MagicalDamageReduction": {1, 1.5}, "ProjectileReduction": {1, 1.5},

@@ -790,3 +790,28 @@ func ImageLocation(itemtype string, itemname []string) []map[string]string {
 	}
 	return result
 }
+
+func CompleteArrayInt(array []int) []int {
+	// Handle edge cases
+	if len(array) == 0 {
+		return []int{}
+	}
+	if len(array) == 1 {
+		return []int{array[0]}
+	}
+
+	// For arrays with 2+ elements, only use first two
+	start, end := array[0], array[1]
+
+	// Handle case where start > end
+	if start > end {
+		start, end = end, start
+	}
+
+	result := make([]int, 0, end-start+1)
+	for x := start; x <= end; x++ {
+		result = append(result, x)
+	}
+
+	return result
+}
