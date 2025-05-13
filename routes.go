@@ -12,6 +12,8 @@ func updateStatsHandler(c *gin.Context) {
 	class := c.Param("classSelection")
 	classStatSelect := SelectClass(class)
 	//printClass := InttoClass(c.Param("classSelection"))
+	raceSelectedStats := raceStats[GetSelectedRace(c)]
+	raceSelectedComputed := raceComputed[GetSelectedRace(c)]
 
 	itemsSelected_Armor := GetSelectedItems_Armor(c) //Items query selection Armor
 	raritySelected_Armor := GetSelectedRarities_Armor(c)
@@ -75,12 +77,6 @@ func updateStatsHandler(c *gin.Context) {
 		EnchantComputedOthers(enchantmentSelectedOther_AccessoryRare), EnchantComputedOthers(enchantmentSelectedOther_AccessoryEpic),
 		EnchantComputedOthers(enchantmentSelectedOther_AccessoryLegend), EnchantComputedOthers(enchantmentSelectedOther_AccessoryUnique))
 
-	totalRating := RatingCalc(ratingSelected_Armor)
-
-	totalBaseItem := BaseItemCalc(itemsSelected_Armor, raritySelected_Armor)
-
-	totalSpeed := SpeedCalc(itemsSelected_Armor, raritySelected_Armor)
-
 	updatedBaseEchant_StatsArmor := SetItemStats(classStatSelect, itemsSelected_Armor, raritySelected_Armor)
 	updatedBaseEchant_StatsArmor = updatedBaseEchant_StatsArmor.AddStats(setEnchantStats(enchantmentSelected_ArmorUncommon), setEnchantStats(enchantmentSelected_ArmorRare),
 		setEnchantStats(enchantmentSelected_ArmorEpic), setEnchantStats(enchantmentSelected_ArmorLegend), setEnchantStats(enchantmentSelected_ArmorUnique))
@@ -90,11 +86,17 @@ func updateStatsHandler(c *gin.Context) {
 		setEnchantStats(enchantmentSelected_AccessoryEpic), setEnchantStats(enchantmentSelected_AccessoryLegend), setEnchantStats(enchantmentSelected_AccessoryUnique))
 
 	updatedTotalStats := Stats{}
-	updatedTotalStats = updatedTotalStats.AddStats(updatedBaseEchant_StatsArmor, updatedBaseEnchant_StatsAccessory)
+	updatedTotalStats = updatedTotalStats.AddStats(updatedBaseEchant_StatsArmor, updatedBaseEnchant_StatsAccessory, raceSelectedStats)
 
-	computedStatsCurve := CalculateComputedValues(updatedTotalStats, totalRating, totalSpeed, computedStatsEnchant_Other_Armor, computedStatsEnchant_Other_Accesory, totalBaseItem)
+	totalRating := RatingCalc(ratingSelected_Armor)
 
-	computedStatsTotal := ComputedTotal(computedStatsCurve, computedStatsEnchant_Other_Armor, computedStatsEnchant_Other_Accesory, totalBaseItem)
+	totalBaseItem := BaseItemCalc(itemsSelected_Armor, raritySelected_Armor)
+
+	totalSpeed := SpeedCalc(itemsSelected_Armor, raritySelected_Armor)
+
+	computedStatsCurve := CalculateComputedValues(updatedTotalStats, totalRating, totalSpeed, computedStatsEnchant_Other_Armor, computedStatsEnchant_Other_Accesory, totalBaseItem, raceSelectedComputed)
+
+	computedStatsTotal := ComputedTotal(computedStatsCurve, computedStatsEnchant_Other_Armor, computedStatsEnchant_Other_Accesory, totalBaseItem, raceSelectedComputed)
 
 	/*
 		c.HTML(http.StatusOK, "charbuilder.html", gin.H{

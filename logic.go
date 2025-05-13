@@ -416,9 +416,9 @@ func BaseItemCalc(items []Item_Armor, rarity []int) Computed_Stats {
 	return computed
 }
 
-func ComputedTotal(computedone, computedtwo, computedthree, computedfour Computed_Stats) Computed_Stats {
+func ComputedTotal(curvetotal, enchatarmor, enchantacc, totalitembase, racetotal Computed_Stats) Computed_Stats {
 
-	stats := []Computed_Stats{computedone, computedtwo, computedthree, computedfour}
+	stats := []Computed_Stats{curvetotal, enchatarmor, enchantacc, totalitembase, racetotal}
 
 	result := Computed_Stats{}
 
@@ -452,15 +452,15 @@ func ComputedTotal(computedone, computedtwo, computedthree, computedfour Compute
 		result.MemoryCapacity += stat.MemoryCapacity
 	}
 
-	result.PhysicalPower = computedone.PhysicalPower
-	result.MagicalPower = computedone.MagicalPower
-	result.PhysicalPowerBonus = computedone.PhysicalPowerBonus
-	result.MagicalPowerBonus = computedone.MagicalPowerBonus
-	result.MagicRating = computedone.MagicRating
-	result.BonusPhysicalDamageReduction = computedtwo.PhysicalDamageReduction
-	result.BonusMagicalDamageReduction = computedtwo.MagicalDamageReduction
-	result.BonusPhysicalPower = computedtwo.PhysicalPowerBonus
-	result.BonusMagicalPower = computedtwo.MagicalPowerBonus
+	result.PhysicalPower = curvetotal.PhysicalPower
+	result.MagicalPower = curvetotal.MagicalPower
+	result.PhysicalPowerBonus = curvetotal.PhysicalPowerBonus
+	result.MagicalPowerBonus = curvetotal.MagicalPowerBonus
+	result.MagicRating = curvetotal.MagicRating
+	result.BonusPhysicalDamageReduction = enchatarmor.PhysicalDamageReduction
+	result.BonusMagicalDamageReduction = enchatarmor.MagicalDamageReduction
+	result.BonusPhysicalPower = enchatarmor.PhysicalPowerBonus
+	result.BonusMagicalPower = enchatarmor.MagicalPowerBonus
 
 	return result
 }

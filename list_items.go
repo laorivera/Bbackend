@@ -117,6 +117,7 @@ type Item struct {
 	OccultistBoots       Item_Armor
 	PlateBoots           Item_Armor
 	VisoredSallet        Item_Armor
+	VisoredBarbutaHelm   Item_Armor
 }
 
 var item = Item{
@@ -236,6 +237,7 @@ var item = Item{
 	OccultistBoots:       CreateItemArmor("./data/OccultistBoots.json"),
 	PlateBoots:           CreateItemArmor("./data/PlateBoots.json"),
 	VisoredSallet:        CreateItemArmor("./data/VisoredSallet.json"),
+	VisoredBarbutaHelm:   CreateItemArmor("./data/VisoredBarbutaHelm.json"),
 }
 
 type List_Items struct {
@@ -340,6 +342,7 @@ var Items = List_Items{
 		item.OccultistBoots,
 		item.PlateBoots,
 		item.VisoredSallet,
+		item.VisoredBarbutaHelm,
 	},
 	ItemsWeapon: []Item_Weapon{
 		item.ArmingSword,

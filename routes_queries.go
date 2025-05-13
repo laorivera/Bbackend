@@ -237,3 +237,10 @@ func GetSelectedEnchantmentsOther_AccessoryUnique(c *gin.Context) []map[string]f
 	}
 	return enchantments
 }
+
+///////\\\\\\ --------------> Race Selection  <------------------///////////\\\\\\\\\
+
+func GetSelectedRace(c *gin.Context) string {
+	var raceSelected = c.Query("race")
+	return raceSelected
+}
