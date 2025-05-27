@@ -479,7 +479,6 @@ func GetEnchantmentLists_Weapon_ExceptionBase(c *gin.Context) map[string][]strin
 			if ItemsByNameWeapon(c.Query("item"+slots[i])).SlotType == "Main Hand" {
 				lists[slots[i]] = EnchamentbySlot(Enchantments.WeaponOneHand)
 			}
-
 		}
 		/*
 			if slots[i] == "pwt" {
