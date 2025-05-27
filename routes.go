@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -21,6 +22,10 @@ func updateStatsHandler(c *gin.Context) {
 
 	itemsSelected_Accessory := GetSelectedItems_Accessory(c) //Items query selection Accessory
 	raritySelected_Accessory := GetSelectedRarities_Accessory(c)
+
+	//itemSelected_Weapon := GetSelected_Weapons(c)//Items query selection Weapon
+	//raritySelected_Weapon := GetSelectedRarities_Weapons(c)
+	//ratingSelected_Weapon := GetSelectedRatings_Weapons(c)
 
 	//Enchatment query selected Armor
 	enchantmentSelected_ArmorUncommon := GetSelectedEnchantmentsBase_ArmorUncommon(c)
@@ -48,23 +53,6 @@ func updateStatsHandler(c *gin.Context) {
 	enchantmentSelectedOther_AccessoryLegend := GetSelectedEnchantmentsOther_AccessoryLegend(c)
 	enchantmentSelectedOther_AccessoryUnique := GetSelectedEnchantmentsOther_AccessoryUnique(c)
 
-	//list weapon query by class
-	//primaryWeaponList := WeaponsBySlotType(c.Param("classSelection"), "Main Hand")
-
-	/*
-		itemsSelected_Weapon := []Item_Weapon{
-				ItemsByNameWeapon(c.Query("itemweapon")),
-			}
-
-		raritySelected_Weapon := []int{
-				StringtoInt(c.Query("rarityselect_weapon")),
-			}
-
-		ratingSelected_Weapon := []int{
-				StringtoInt(c.Query("weaponrating")),
-			}
-	*/
-
 	//ratingListPrimaryWeapon := ItemsByNameWeapon(c.Query("itemprimaryweapon")).DamageRatings[StringtoInt(c.Query("rarityselect_weapon"))]
 
 	computedStatsEnchant_Other_Armor := Computed_Stats{}
@@ -84,6 +72,8 @@ func updateStatsHandler(c *gin.Context) {
 	updatedBaseEnchant_StatsAccessory := SetItemStatsAccessory(characterHolder, itemsSelected_Accessory, raritySelected_Accessory)
 	updatedBaseEnchant_StatsAccessory = updatedBaseEnchant_StatsAccessory.AddStats(setEnchantStats(enchantmentSelected_AccessoryUncommon), setEnchantStats(enchantmentSelected_AccessoryRare),
 		setEnchantStats(enchantmentSelected_AccessoryEpic), setEnchantStats(enchantmentSelected_AccessoryLegend), setEnchantStats(enchantmentSelected_AccessoryUnique))
+
+	//updatedStatsEnchant_Weapon := SetItemStatsWeapon(itemSelected_Weapon, raritySelected_Weapon)
 
 	updatedTotalStats := Stats{}
 	updatedTotalStats = updatedTotalStats.AddStats(updatedBaseEchant_StatsArmor, updatedBaseEnchant_StatsAccessory, raceSelectedStats)
@@ -142,12 +132,14 @@ func updateStatsHandler(c *gin.Context) {
 func itemDisplayHandler(c *gin.Context) {
 	selecteditem := c.Param("item")
 
-	item := ItemsByNameArmor(selecteditem)
+	fmt.Println("Selected item:", selecteditem)
 	itemAccesory := ItemsByNameAccesory(selecteditem)
+	itemWeapon := ItemsByNameWeapon(selecteditem)
 
 	c.JSON(http.StatusOK, gin.H{
-		"itemdata":    item,
-		"itemdataacc": itemAccesory,
+		"itemdata":       item,
+		"itemdataacc":    itemAccesory,
+		"itemdataweapon": itemWeapon,
 	})
 }
 
@@ -231,6 +223,16 @@ func Ring_List_Handler(c *gin.Context) {
 	)
 }
 
+func Pwo_List_Handler(c *gin.Context) {
+	class := c.Param("classSelection")
+	primaryWeaponList := GetItemLists_Weapon_Json(c, class)["Main Hand"]
+	imagePwo := ImageLocation("Main Hand", primaryWeaponList)
+
+	c.JSON(http.StatusOK, gin.H{
+		"list": imagePwo},
+	)
+}
+
 //////////\\\\\\\\\ ------->   RATING LISTS HANDLER <------- //////////\\\\\\\\\
 
 func Helmet_RatingList_Handler(c *gin.Context) {
@@ -274,6 +276,14 @@ func Cloak_RatingList_Handler(c *gin.Context) {
 	cloakRatingList := GetRatingLists_Armor(c)["cloak"]
 	c.JSON(http.StatusOK, gin.H{
 		"list": cloakRatingList},
+	)
+}
+
+func Pwo_RatingList_Handler(c *gin.Context) {
+
+	primaryWeaponRatingList := GetRatingLists_Weapon(c)["pwo"]
+	c.JSON(http.StatusOK, gin.H{
+		"list": primaryWeaponRatingList},
 	)
 }
 
@@ -557,6 +567,37 @@ func RingTwo_EnchantmentList_Handler(c *gin.Context) {
 	})
 }
 
+func Pwo_EnchantmentList_Handler(c *gin.Context) {
+	primaryWeapon_EnchantmentName := map[string][]string{}
+	primaryWeapon_EnchantmentValues := map[string][]float32{}
+
+	primaryWeapon_EnchantmentName["Uncommon"] = GetEnchantmentLists_Weapon_ExceptionBase(c)["pwo"]
+	primaryWeapon_EnchantmentName["Rare"] = GetEnchantmentLists_Weapon_TypeRare(c)["pwo"]
+	primaryWeapon_EnchantmentName["Epic"] = GetEnchantmentLists_Weapon_TypeEpic(c)["pwo"]
+	primaryWeapon_EnchantmentName["Legend"] = GetEnchantmentLists_Weapon_TypeLegend(c)["pwo"]
+	primaryWeapon_EnchantmentName["Unique"] = GetEnchantmentLists_Weapon_TypeUnique(c)["pwo"]
+
+	primaryWeapon_EnchantmentValues["Uncommon"] = GetEnchantmentLists_Weapon_ValuesUncommon(c)["pwo"]
+	primaryWeapon_EnchantmentValues["Rare"] = GetEnchantmentLists_Weapon_ValuesRare(c)["pwo"]
+	primaryWeapon_EnchantmentValues["Epic"] = GetEnchantmentLists_Weapon_ValuesEpic(c)["pwo"]
+	primaryWeapon_EnchantmentValues["Legend"] = GetEnchantmentLists_Weapon_ValuesLegend(c)["pwo"]
+	primaryWeapon_EnchantmentValues["Unique"] = GetEnchantmentLists_Weapon_ValuesUnique(c)["pwo"]
+
+	c.JSON(http.StatusOK, gin.H{
+		"listname_uncommon":  primaryWeapon_EnchantmentName["Uncommon"],
+		"listvalue_uncommon": primaryWeapon_EnchantmentValues["Uncommon"],
+		"listname_rare":      primaryWeapon_EnchantmentName["Rare"],
+		"listvalue_rare":     primaryWeapon_EnchantmentValues["Rare"],
+		"listname_epic":      primaryWeapon_EnchantmentName["Epic"],
+		"listvalue_epic":     primaryWeapon_EnchantmentValues["Epic"],
+		"listname_legend":    primaryWeapon_EnchantmentName["Legend"],
+		"listvalue_legend":   primaryWeapon_EnchantmentValues["Legend"],
+		"listname_unique":    primaryWeapon_EnchantmentName["Unique"],
+		"listvalue_unique":   primaryWeapon_EnchantmentValues["Unique"],
+	})
+
+}
+
 //////////\\\\\\\\\ ------->   ROUTES  <------- //////////\\\\\\\\\
 
 func setupRoutes(r *gin.Engine) {
@@ -567,9 +608,9 @@ func setupRoutes(r *gin.Engine) {
 	r.GET("/pantslist/:classSelection", Pants_List_Handler)
 	r.GET("/bootslist/:classSelection", Boots_List_Handler)
 	r.GET("/cloaklist/:classSelection", Cloak_List_Handler)
+	r.GET("/pwolist/:classSelection", Pwo_List_Handler)
 	r.GET("/necklacelist/", Necklace_List_Handler)
 	r.GET("/ringlist/", Ring_List_Handler)
-	//r.GET("/ringtwolist/", RingTwo_List_Handler)
 
 	// RATING LISTS ENDPOINTS
 	r.GET("/helmetratinglist/", Helmet_RatingList_Handler)
@@ -578,6 +619,7 @@ func setupRoutes(r *gin.Engine) {
 	r.GET("/pantsratinglist/", Pants_RatingList_Handler)
 	r.GET("/bootsratinglist/", Boots_RatingList_Handler)
 	r.GET("/cloakratinglist/", Cloak_RatingList_Handler)
+	r.GET("/pworatinglist/", Pwo_RatingList_Handler)
 
 	//ENCHANTMENT LISTS ENDPOINTS
 	r.GET("/enchantmentlisthelmet/", Helmet_EnchantmentList_Handler)
@@ -586,6 +628,9 @@ func setupRoutes(r *gin.Engine) {
 	r.GET("/enchantmentlistpants/", Pants_EnchantmentList_Handler)
 	r.GET("/enchantmentlistboots/", Boots_EnchantmentList_Handler)
 	r.GET("/enchantmentlistcloak/", Cloak_EnchantmentList_Handler)
+
+	r.GET("/enchantmentlistpwo/", Pwo_EnchantmentList_Handler)
+
 	r.GET("/enchantmentlistnecklace/", Necklace_EnchantmentList_Handler)
 	r.GET("/enchantmentlistring/", Ring_EnchantmentList_Handler)
 	r.GET("/enchantmentlistringtwo/", RingTwo_EnchantmentList_Handler)

@@ -7,8 +7,6 @@ import (
 	"strconv"
 )
 
-// EJECUTA CALCULO ALL STATS CURVES
-
 // FIND ARRAY ITEMS BY SLOT TYPE
 func ItemsBySlotType(class string, slot string) []Item_Armor {
 	switch class {
@@ -132,6 +130,44 @@ func ItemsBySlotType_Json(class string, slot string) []string {
 		for _, c := range Items.ItemsArmor[i].Classes {
 			if c == class && slot == Items.ItemsArmor[i].SlotType {
 				result = append(result, Items.ItemsArmor[i].Name)
+				break
+			}
+		}
+
+	}
+	return result
+}
+
+func WeaponsBySlotType_Json(class string, slot string) []string {
+	switch class {
+	case "1":
+		class = "Fighter"
+	case "2":
+		class = "Barbarian"
+	case "3":
+		class = "Rogue"
+	case "4":
+		class = "Wizard"
+	case "5":
+		class = "Cleric"
+	case "6":
+		class = "Warlock"
+	case "7":
+		class = "Bard"
+	case "8":
+		class = "Druid"
+	case "9":
+		class = "Ranger"
+	case "10":
+		class = "Sorcerer"
+	default:
+
+	}
+	var result []string
+	for i := 0; i < len(Items.ItemsWeapon); i++ {
+		for _, c := range Items.ItemsWeapon[i].Classes {
+			if c == class && slot == Items.ItemsWeapon[i].SlotType {
+				result = append(result, Items.ItemsWeapon[i].Name)
 				break
 			}
 		}

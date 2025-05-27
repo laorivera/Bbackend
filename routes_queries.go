@@ -5,6 +5,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func GetSelectedRace(c *gin.Context) string {
+	var raceSelected = c.Query("race")
+	return raceSelected
+}
+
 // get selected armors
 func GetSelectedItems_Armor(c *gin.Context) []Item_Armor {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
@@ -14,8 +19,6 @@ func GetSelectedItems_Armor(c *gin.Context) []Item_Armor {
 	}
 	return values
 }
-
-// get selected rarities
 func GetSelectedRarities_Armor(c *gin.Context) []int {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	values := []int{}
@@ -24,8 +27,6 @@ func GetSelectedRarities_Armor(c *gin.Context) []int {
 	}
 	return values
 }
-
-// get selected ratings
 func GetSelectedRatings_Armor(c *gin.Context) []int {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	values := []int{}
@@ -34,7 +35,6 @@ func GetSelectedRatings_Armor(c *gin.Context) []int {
 	}
 	return values
 }
-
 func GetSelectedItems_Accessory(c *gin.Context) []Item_Accessory {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	values := []Item_Accessory{}
@@ -43,12 +43,36 @@ func GetSelectedItems_Accessory(c *gin.Context) []Item_Accessory {
 	}
 	return values
 }
-
 func GetSelectedRarities_Accessory(c *gin.Context) []int {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	values := []int{}
 	for i := 0; i < len(slots); i++ {
 		values = append(values, StringtoInt(c.Query("rarityselect_"+slots[i])))
+	}
+	return values
+}
+
+func GetSelected_Weapons(c *gin.Context) []Item_Weapon {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	values := []Item_Weapon{}
+	for i := 0; i < len(slots); i++ {
+		values = append(values, ItemsByNameWeapon(c.Query("item"+slots[i])))
+	}
+	return values
+}
+func GetSelectedRarities_Weapons(c *gin.Context) []int {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	values := []int{}
+	for i := 0; i < len(slots); i++ {
+		values = append(values, StringtoInt(c.Query("rarityselect_"+slots[i])))
+	}
+	return values
+}
+func GetSelectedRatings_Weapons(c *gin.Context) []int {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	values := []int{}
+	for i := 0; i < len(slots); i++ {
+		values = append(values, StringtoInt(c.Query("weaponrating_"+slots[i])))
 	}
 	return values
 }
@@ -63,7 +87,6 @@ func GetSelectedEnchantmentsOther_ArmorUncommon(c *gin.Context) []map[string]flo
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsOther_ArmorRare(c *gin.Context) []map[string]float64 {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	enchantments := []map[string]float64{}
@@ -72,7 +95,6 @@ func GetSelectedEnchantmentsOther_ArmorRare(c *gin.Context) []map[string]float64
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsOther_ArmorEpic(c *gin.Context) []map[string]float64 {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	enchantments := []map[string]float64{}
@@ -81,7 +103,6 @@ func GetSelectedEnchantmentsOther_ArmorEpic(c *gin.Context) []map[string]float64
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsOther_ArmorLegend(c *gin.Context) []map[string]float64 {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	enchantments := []map[string]float64{}
@@ -90,7 +111,6 @@ func GetSelectedEnchantmentsOther_ArmorLegend(c *gin.Context) []map[string]float
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsOther_ArmorUnique(c *gin.Context) []map[string]float64 {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	enchantments := []map[string]float64{}
@@ -109,7 +129,6 @@ func GetSelectedEnchantmentsBase_ArmorUncommon(c *gin.Context) []map[string]int 
 
 	return enchantments
 }
-
 func GetSelectedEnchantmentsBase_ArmorRare(c *gin.Context) []map[string]int {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	enchantments := []map[string]int{}
@@ -118,7 +137,6 @@ func GetSelectedEnchantmentsBase_ArmorRare(c *gin.Context) []map[string]int {
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsBase_ArmorEpic(c *gin.Context) []map[string]int {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	enchantments := []map[string]int{}
@@ -127,7 +145,6 @@ func GetSelectedEnchantmentsBase_ArmorEpic(c *gin.Context) []map[string]int {
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsBase_ArmorLegend(c *gin.Context) []map[string]int {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	enchantments := []map[string]int{}
@@ -136,7 +153,6 @@ func GetSelectedEnchantmentsBase_ArmorLegend(c *gin.Context) []map[string]int {
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsBase_ArmorUnique(c *gin.Context) []map[string]int {
 	slots := []string{"helmet", "chest", "gloves", "pants", "boots", "cloak"}
 	enchantments := []map[string]int{}
@@ -156,7 +172,6 @@ func GetSelectedEnchantmentsBase_AccessoryUncommon(c *gin.Context) []map[string]
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsBase_AccessoryRare(c *gin.Context) []map[string]int {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	enchantments := []map[string]int{}
@@ -165,7 +180,6 @@ func GetSelectedEnchantmentsBase_AccessoryRare(c *gin.Context) []map[string]int 
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsBase_AccessoryEpic(c *gin.Context) []map[string]int {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	enchantments := []map[string]int{}
@@ -174,7 +188,6 @@ func GetSelectedEnchantmentsBase_AccessoryEpic(c *gin.Context) []map[string]int 
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsBase_AccessoryLegend(c *gin.Context) []map[string]int {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	enchantments := []map[string]int{}
@@ -183,7 +196,6 @@ func GetSelectedEnchantmentsBase_AccessoryLegend(c *gin.Context) []map[string]in
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsBase_AccessoryUnique(c *gin.Context) []map[string]int {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	enchantments := []map[string]int{}
@@ -201,7 +213,6 @@ func GetSelectedEnchantmentsOther_AccessoryUncommon(c *gin.Context) []map[string
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsOther_AccessoryRare(c *gin.Context) []map[string]float64 {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	enchantments := []map[string]float64{}
@@ -210,7 +221,6 @@ func GetSelectedEnchantmentsOther_AccessoryRare(c *gin.Context) []map[string]flo
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsOther_AccessoryEpic(c *gin.Context) []map[string]float64 {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	enchantments := []map[string]float64{}
@@ -219,7 +229,6 @@ func GetSelectedEnchantmentsOther_AccessoryEpic(c *gin.Context) []map[string]flo
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsOther_AccessoryLegend(c *gin.Context) []map[string]float64 {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	enchantments := []map[string]float64{}
@@ -228,7 +237,6 @@ func GetSelectedEnchantmentsOther_AccessoryLegend(c *gin.Context) []map[string]f
 	}
 	return enchantments
 }
-
 func GetSelectedEnchantmentsOther_AccessoryUnique(c *gin.Context) []map[string]float64 {
 	slots := []string{"necklace", "ring", "ringtwo"}
 	enchantments := []map[string]float64{}
@@ -238,9 +246,87 @@ func GetSelectedEnchantmentsOther_AccessoryUnique(c *gin.Context) []map[string]f
 	return enchantments
 }
 
-///////\\\\\\ --------------> Race Selection  <------------------///////////\\\\\\\\\
+///////\\\\\\ --------------> ENCHANTMENT SELECTION WEAPON  <------------------///////////\\\\\\\\\
 
-func GetSelectedRace(c *gin.Context) string {
-	var raceSelected = c.Query("race")
-	return raceSelected
+func GetSelectedEnchantmentsBase_WeaponUncommon(c *gin.Context) []map[string]int {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]int{}
+
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantattrib(c.Query("enchantment_"+slots[i]+"type"), c.Query("enchantment_"+slots[i]+"value")))
+	}
+	return enchantments
+}
+func GetSelectedEnchantmentsBase_WeaponRare(c *gin.Context) []map[string]int {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]int{}
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantattrib(c.Query("enchantment_"+slots[i]+"type2"), c.Query("enchantment_"+slots[i]+"value2")))
+	}
+	return enchantments
+}
+func GetSelectedEnchantmentsBase_WeaponEpic(c *gin.Context) []map[string]int {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]int{}
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantattrib(c.Query("enchantment_"+slots[i]+"type3"), c.Query("enchantment_"+slots[i]+"value3")))
+	}
+	return enchantments
+}
+func GetSelectedEnchantmentsBase_WeaponLegend(c *gin.Context) []map[string]int {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]int{}
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantattrib(c.Query("enchantment_"+slots[i]+"type4"), c.Query("enchantment_"+slots[i]+"value4")))
+	}
+	return enchantments
+}
+func GetSelectedEnchantmentsBase_WeaponUnique(c *gin.Context) []map[string]int {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]int{}
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantattrib(c.Query("enchantment_"+slots[i]+"type5"), c.Query("enchantment_"+slots[i]+"value5")))
+	}
+	return enchantments
+}
+
+func GetSelectedEnchantmentsOther_WeaponUncommon(c *gin.Context) []map[string]float64 {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]float64{}
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantother(c.Query("enchantment_"+slots[i]+"type"), c.Query("enchantment_"+slots[i]+"value")))
+	}
+	return enchantments
+}
+func GetSelectedEnchantmentsOther_WeaponRare(c *gin.Context) []map[string]float64 {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]float64{}
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantother(c.Query("enchantment_"+slots[i]+"type2"), c.Query("enchantment_"+slots[i]+"value2")))
+	}
+	return enchantments
+}
+func GetSelectedEnchantmentsOther_WeaponEpic(c *gin.Context) []map[string]float64 {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]float64{}
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantother(c.Query("enchantment_"+slots[i]+"type3"), c.Query("enchantment_"+slots[i]+"value3")))
+	}
+	return enchantments
+}
+func GetSelectedEnchantmentsOther_WeaponLegend(c *gin.Context) []map[string]float64 {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]float64{}
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantother(c.Query("enchantment_"+slots[i]+"type4"), c.Query("enchantment_"+slots[i]+"value4")))
+	}
+	return enchantments
+}
+func GetSelectedEnchantmentsOther_WeaponUnique(c *gin.Context) []map[string]float64 {
+	slots := []string{"pwo", "pwt", "swo", "swt"}
+	enchantments := []map[string]float64{}
+	for i := 0; i < len(slots); i++ {
+		enchantments = append(enchantments, Enchantother(c.Query("enchantment_"+slots[i]+"type5"), c.Query("enchantment_"+slots[i]+"value5")))
+	}
+	return enchantments
 }
