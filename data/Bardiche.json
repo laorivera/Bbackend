@@ -5,17 +5,18 @@
         "Warlock"
     ],
     "damageRatings": {
-        "1": [48],
-        "2": [49, 52],
-        "3": [53, 56],
-        "4": [57, 60],
-        "5": [61, 64],
-        "6": [65, 68],
-        "7": [69, 72]
+        "1": [54],
+        "2": [55],
+        "3": [56],
+        "4": [57],
+        "5": [58],
+        "6": [59],
+        "7": [60]
     },
     "moveSpeed": -45,
-    "damageType": "Slash",
+    "damageTypes": ["Slash"],
     "impactZones": [100, 70],
+    "comboDamage": [100, 105, 120],
     "impactPower": 5,
     "type": "Polearm, Axe",
     "rarities": [1, 2, 3, 4, 5, 6],

@@ -1,44 +1,44 @@
 {
-    "Name": "Arming Sword",
+    "Name": "Castillon Dagger",
     "classes": [
         "Fighter",
-        "Bard",
-	"Archer"
+        "Rogue",
+        "Bard"
     ],
     "damageRatings": {
         "1": [
-            27
+            20
         ],
         "2": [
-            28
+            30
         ],
         "3": [
-	    29
-        ],
-        "4": [
-	    30
-        ],
-        "5": [
-	    31
-        ],
-        "6": [
 	    32
         ],
+        "4": [
+	    34
+        ],
+        "5": [
+	    37
+        ],
+        "6": [
+	    39
+        ],
 	"7":[
-	    33
+	    40
 	]
     },
-    "moveSpeed": {"1":-20},
+    "moveSpeed": {"1":-10},
     "damageTypes": ["Slash", "Slash", "Pierce"],  
     "impactZones": [100, 90, 70],
-    "comboDamage": [100, 105, 110],
+    "comboDamage": [100, 100, 130],
     "impactPower": 2,
-    "type": ["Sword"],
+    "type": ["Dagger"],
     "rarities": [
-        1, 2, 3, 4, 5, 6
+        1, 2, 3, 4, 5, 6, 7
     ],
     "handType": "One Handed",
-    "slotType": "Main Hand",
+    "slotType": "Off Hand",
     "gearScore": {
         "0": 0,
         "1": 1,
@@ -51,7 +51,7 @@
     },
     "invWidth": 1,
     "invHeight": 3,
-    "flavorText": "A thin blade with leather bindings, supporting a firm grip for hasty attacks that feel light to the hand.",
+    "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip",
     "ap": {
         "3": 2,
         "4": 3,

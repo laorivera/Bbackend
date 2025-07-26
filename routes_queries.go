@@ -72,7 +72,7 @@ func GetSelectedRatings_Weapons(c *gin.Context) []int {
 	slots := []string{"pwo", "pwt", "swo", "swt"}
 	values := []int{}
 	for i := 0; i < len(slots); i++ {
-		values = append(values, StringtoInt(c.Query("weaponrating_"+slots[i])))
+		values = append(values, StringtoInt(c.Query("armorrating_"+slots[i])))
 	}
 	return values
 }

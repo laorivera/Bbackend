@@ -58,7 +58,14 @@ type Computed_Stats struct {
 
 type Computed_Stats_Weapon struct {
 	PrimaryWeapon        WeaponStats
-	SecundaryWeapon      WeaponStats
+	SecondaryWeapon      WeaponStats
 	PrimaryImpactPower   int
 	SecondaryImpactPower int
+}
+
+type WeaponStats struct {
+	Attackone   float64
+	Attacktwo   float64
+	Attackthree float64
+	Attackfour  float64
 }

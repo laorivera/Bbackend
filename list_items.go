@@ -118,6 +118,8 @@ type Item struct {
 	PlateBoots           Item_Armor
 	VisoredSallet        Item_Armor
 	VisoredBarbutaHelm   Item_Armor
+	CastillonDagger      Item_Weapon
+	Buckler              Item_Weapon
 }
 
 var item = Item{
@@ -238,6 +240,8 @@ var item = Item{
 	PlateBoots:           CreateItemArmor("./data/PlateBoots.json"),
 	VisoredSallet:        CreateItemArmor("./data/VisoredSallet.json"),
 	VisoredBarbutaHelm:   CreateItemArmor("./data/VisoredBarbutaHelm.json"),
+	CastillonDagger:      CreateItemWeapon("./data/CastillonDagger.json"),
+	Buckler:              CreateItemWeapon("./data/Buckler.json"),
 }
 
 type List_Items struct {
@@ -347,6 +351,8 @@ var Items = List_Items{
 	ItemsWeapon: []Item_Weapon{
 		item.ArmingSword,
 		item.Bardiche,
+		item.CastillonDagger,
+		item.Buckler,
 	},
 	ItemsAccessory: []Item_Accessory{
 		item.FoxPendant,

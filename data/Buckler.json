@@ -1,0 +1,112 @@
+{
+  "name": "Buckler",
+  "classes": [
+    "Fighter",
+    "Cleric",
+    "Bard"
+  ],
+  "damageRatings": {},
+  "moveSpeed": {
+    "1": -7
+  },
+  "moveSpeedBonus": 0,
+  "damageTypes": [
+    "Slash",
+    "Slash",
+    "Slash"
+  ],
+  "impactZones": [
+    100,
+    100,
+    100
+  ],
+  "impactPower": 0,
+  "comboDamage": [
+    100,
+    100,
+    100
+  ],
+  "type": [
+    "Shield"
+  ],
+  "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "handType": "One Handed",
+  "slotType": "Off Hand",
+  "gearScore": {},
+  "invWidth": 2,
+  "invHeight": 2,
+  "flavorText": "A small shield with a handle located directly behind the boss, guarding oneself in close-quarter combat.",
+  "ap": {},
+  "xp": {},
+  "numEnchants": {},
+  "maxHealthAdd": {},
+  "maxHealthBonus": {},
+  "magicalResistance": {},
+  "projectileReduction": 0,
+  "projectileReductionRate": {},
+  "headshotReduction": 0,
+  "BaseAttribute": {
+    "strength": {},
+    "vigor": {},
+    "agility": {},
+    "dexterity": {},
+    "will": {},
+    "knowledge": {},
+    "resourcefulness": {}
+  },
+  "physicalPower": 0,
+  "armorPenetration": 0,
+  "magicPenetration": 0,
+  "buffDuration": 0,
+  "magicalPower": {},
+  "magicalPowerBonus": {},
+  "regularInteraction": {},
+  "magicalHealing": {},
+  "actionSpeed": {},
+  "magicalDamageReduction": 0,
+  "physicalDamageReduction": 0,
+  "luck": 0,
+  "armorRating": {
+    "1": [
+      17
+    ],
+    "2": [
+      18
+    ],
+    "3": [
+      19,
+      20
+    ],
+    "4": [
+      21,
+      22
+    ],
+    "5": [
+      23,
+      24
+    ],
+    "6": [
+      25,
+      26
+    ],
+    "7": [
+      27,
+      28
+    ]
+  },
+  "impactResistance": 6,
+  "artifactName": "Delirium",
+  "maxAmmoCount": 0,
+  "maxCount": 1,
+  "wearingDelayTime": 0,
+  "unequipTime": 0.67,
+  "sellPrices": {}
+}

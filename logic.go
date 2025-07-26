@@ -182,7 +182,7 @@ func WeaponsBySlotType_Json(class string, slot string) []string {
 func ItemsByNameArmor(name string) Item_Armor {
 	var result Item_Armor
 	for i := 0; i < len(Items.ItemsArmor); i++ {
-		if name == Items.ItemsArmor[i].Name {
+		if Items.ItemsArmor[i].Name == name {
 			result = Items.ItemsArmor[i]
 			return result
 		}
@@ -501,6 +501,46 @@ func ComputedTotal(curvetotal, enchatarmor, enchantacc, totalitembase, racetotal
 	return result
 }
 
+func WeaponDamageCalc(weapons []Item_Weapon, rarity []int, powerbonus float64, rating []int) Computed_Stats_Weapon {
+	var result Computed_Stats_Weapon
+	for i := 0; i < len(weapons); i++ {
+		if weapons[i].SlotType == "Main Hand" {
+			result.PrimaryWeapon.Attackone += float64(rating[i]) * (float64((weapons[i].ComboDamage[0])) / 100)
+			result.PrimaryWeapon.Attacktwo += float64(rating[i]) * (float64((weapons[i].ComboDamage[1])) / 100)
+			result.PrimaryWeapon.Attackthree += float64(rating[i]) * (float64((weapons[i].ComboDamage[2])) / 100)
+
+			println(weapons[i].DamageRatings[1][0])
+			println(rating[i])
+		}
+		if weapons[i].SlotType == "Main Hand" && len(weapons[i].ComboDamage) >= 4 {
+			result.PrimaryWeapon.Attackfour += float64(rating[i]) * (float64((weapons[i].ComboDamage[3])) / 100)
+		}
+		if weapons[i].ImpactPower <= 3 {
+			result.PrimaryImpactPower = weapons[i].ImpactPower
+		}
+
+		if weapons[i].SlotType == "Off Hand" && len(weapons[i].ComboDamage) <= 3 {
+			result.SecondaryWeapon.Attackone += float64(rating[i]) * (float64((weapons[i].ComboDamage[0])) / 100)
+			result.SecondaryWeapon.Attacktwo += float64(rating[i]) * (float64((weapons[i].ComboDamage[1])) / 100)
+			result.SecondaryWeapon.Attackthree += float64(rating[i]) * (float64((weapons[i].ComboDamage[2])) / 100)
+		}
+		if weapons[i].SlotType == "Off Hand" && len(weapons[i].ComboDamage) >= 4 {
+			result.SecondaryWeapon.Attackfour += float64(rating[i]) * (float64((weapons[i].ComboDamage[3])) / 100)
+		}
+	}
+	//println(result.PrimaryImpactPower)
+	//println(result.SecondaryWeapon.Attackone)
+	//println(result.SecondaryWeapon.Attacktwo)
+	//println(result.SecondaryWeapon.Attackthree)
+	//println(result.SecondaryWeapon.Attackfour)
+	//println(result.PrimaryWeapon.Attackone)
+	//println(result.PrimaryWeapon.Attacktwo)
+	//println(result.PrimaryWeapon.Attackthree)
+	//println(result.PrimaryWeapon.Attackfour)
+
+	return result
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 func EnchantValuesCalc(enchantmentvalue string, enchantmenttype map[string][]float32) []float32 {
@@ -648,6 +688,7 @@ func EnchantComputedOthers(enchant []map[string]float64) Computed_Stats {
 func EnchantBaseAttribExeption(enchantmentlist []string, itemtype Item_Armor) []string {
 	// Create a map of attributes to remove
 	removeAttrs := make(map[string]bool)
+
 	if itemtype.BaseAttribute.Strength[1] == 1 {
 		removeAttrs["Strength"] = true
 	}

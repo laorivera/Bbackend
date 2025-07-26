@@ -1,11 +1,5 @@
 package main
 
-type WeaponStats struct {
-	Attackone   float64
-	Attacktwo   float64
-	Attackthree float64
-}
-
 var characterHolder = Stats{
 	Strength:        0,
 	Vigor:           0,
@@ -37,13 +31,13 @@ var classFighter = Stats{
 }
 
 var classBarbarian = Stats{
-	Strength:        25,
+	Strength:        20,
 	Vigor:           25,
 	Agility:         13,
 	Dexterity:       12,
 	Will:            18,
 	Knowledge:       5,
-	Resourcefulness: 7,
+	Resourcefulness: 12,
 }
 
 var classRogue = Stats{
