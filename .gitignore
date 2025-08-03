@@ -18,3 +18,4 @@ Thumbs.db
 # Ignore directories
 /vendor/
 node_modules/
+/calc/
