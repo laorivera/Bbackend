@@ -1,36 +1,35 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Hand Crossbow",
   "classes": [
     "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Ranger",
+    "Bard"
   ],
   "damageRatings": {
     "1": [
-      19
+      17
     ],
     "2": [
-      20
+      18
     ],
     "3": [
-      21
+      19
     ],
     "4": [
-      22
+      20
     ],
     "5": [
-      23
+      21
     ],
     "6": [
-      24
+      22
     ],
     "7": [
-      25
+      23
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -25
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -43,15 +42,15 @@
     100,
     100
   ],
-  "impactPower": 0,
+  "impactPower": 3,
   "comboDamage": [
     100,
     100,
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "crossbow",
+    "Crossbow"
   ],
   "rarities": [
     1,
@@ -65,9 +64,9 @@
   "handType": "One Handed",
   "slotType": "Off Hand",
   "gearScore": {},
-  "invWidth": 1,
+  "invWidth": 2,
   "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "flavorText": "A small crossbow that seems suitable for holding and shooting with one hand.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -101,9 +100,9 @@
   "armorRating": {},
   "impactResistance": 0,
   "artifactName": "",
-  "maxAmmoCount": 0,
+  "maxAmmoCount": 1,
   "maxCount": 1,
-  "wearingDelayTime": 0,
+  "wearingDelayTime": 1,
   "unequipTime": 0.6,
   "sellPrices": {}
 }

@@ -1,36 +1,12 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Pavise",
   "classes": [
-    "Rogue",
     "Fighter",
-    "Bard",
-    "Druid"
+    "Ranger"
   ],
-  "damageRatings": {
-    "1": [
-      19
-    ],
-    "2": [
-      20
-    ],
-    "3": [
-      21
-    ],
-    "4": [
-      22
-    ],
-    "5": [
-      23
-    ],
-    "6": [
-      24
-    ],
-    "7": [
-      25
-    ]
-  },
+  "damageRatings": {},
   "moveSpeed": {
-    "1": -10
+    "1": -50
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +26,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "shield",
+    "Shield"
   ],
   "rarities": [
     1,
@@ -62,12 +38,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
-  "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invWidth": 3,
+  "invHeight": 4,
+  "flavorText": "An extremely large shield with a prominent ridge crafted in it's center, offering maximum protection.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -98,12 +74,39 @@
   "magicalDamageReduction": 0,
   "physicalDamageReduction": 0,
   "luck": 0,
-  "armorRating": {},
-  "impactResistance": 0,
+  "armorRating": {
+    "1": [
+      30
+    ],
+    "2": [
+      31
+    ],
+    "3": [
+      32,
+      33
+    ],
+    "4": [
+      34,
+      35
+    ],
+    "5": [
+      36,
+      37
+    ],
+    "6": [
+      38,
+      39
+    ],
+    "7": [
+      40,
+      41
+    ]
+  },
+  "impactResistance": 6,
   "artifactName": "",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "unequipTime": 1.13,
   "sellPrices": {}
 }

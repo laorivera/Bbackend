@@ -1,10 +1,8 @@
 {
-  "name": "Castillon Dagger",
-  "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+  "name": "Survival Bow",
+  "classes": [ 
+    "Ranger",
+    "Bard"
   ],
   "damageRatings": {
     "1": [
@@ -30,7 +28,7 @@
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -30
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -43,15 +41,15 @@
     100,
     100
   ],
-  "impactPower": 0,
+  "impactPower": 3,
   "comboDamage": [
     100,
     100,
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "bow",
+    "Bow"
   ],
   "rarities": [
     1,
@@ -62,12 +60,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 3,
+  "flavorText": "This fast and lightweight wooden bow was improvised by adventurers for survival.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -100,10 +98,10 @@
   "luck": 0,
   "armorRating": {},
   "impactResistance": 0,
-  "artifactName": "",
-  "maxAmmoCount": 0,
+  "artifactName": "Elven Bow of Truth",
+  "maxAmmoCount": 10,
   "maxCount": 1,
-  "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "wearingDelayTime": 1,
+  "unequipTime": 1,
   "sellPrices": {}
 }

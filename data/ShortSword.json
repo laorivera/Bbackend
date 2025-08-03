@@ -1,36 +1,36 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Short Sword",
   "classes": [
-    "Rogue",
     "Fighter",
-    "Bard",
-    "Druid"
+    "Rogue",
+    "Ranger",
+    "Bard"
   ],
   "damageRatings": {
     "1": [
-      19
-    ],
-    "2": [
-      20
-    ],
-    "3": [
-      21
-    ],
-    "4": [
-      22
-    ],
-    "5": [
       23
     ],
-    "6": [
+    "2": [
       24
     ],
-    "7": [
+    "3": [
       25
+    ],
+    "4": [
+      26
+    ],
+    "5": [
+      27
+    ],
+    "6": [
+      28
+    ],
+    "7": [
+      29
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -15
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +50,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "sword",
+    "Sword"
   ],
   "rarities": [
     1,
@@ -66,8 +66,8 @@
   "slotType": "Off Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 3,
+  "flavorText": "A short and broad blade melded to a fine point with a round pommel at it's base.",
   "ap": {},
   "xp": {},
   "numEnchants": {},

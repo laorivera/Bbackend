@@ -1,36 +1,34 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Halberd",
   "classes": [
-    "Rogue",
     "Fighter",
-    "Bard",
-    "Druid"
+    "Warlock"
   ],
   "damageRatings": {
     "1": [
-      19
+      56
     ],
     "2": [
-      20
+      57
     ],
     "3": [
-      21
+      58
     ],
     "4": [
-      22
+      59
     ],
     "5": [
-      23
+      60
     ],
     "6": [
-      24
+      61
     ],
     "7": [
-      25
+      62
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -45
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +48,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "polearm",
+    "Polearm"
   ],
   "rarities": [
     1,
@@ -62,12 +60,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
-  "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invWidth": 2,
+  "invHeight": 5,
+  "flavorText": "A two handed pole-arm with a long reach, devised with an axe blade containing a sharp spike firmly fasted to the end.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -99,11 +97,11 @@
   "physicalDamageReduction": 0,
   "luck": 0,
   "armorRating": {},
-  "impactResistance": 0,
-  "artifactName": "",
+  "impactResistance": 4,
+  "artifactName": "Cinder",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "unequipTime": 1,
   "sellPrices": {}
 }

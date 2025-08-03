@@ -1,36 +1,33 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Recurve Bow",
   "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Ranger"
   ],
   "damageRatings": {
     "1": [
-      19
+      29
     ],
     "2": [
-      20
+      30
     ],
     "3": [
-      21
+      31
     ],
     "4": [
-      22
+      32
     ],
     "5": [
-      23
+      33
     ],
     "6": [
-      24
+      34
     ],
     "7": [
-      25
+      35
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -40
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -43,15 +40,15 @@
     100,
     100
   ],
-  "impactPower": 0,
+  "impactPower": 3,
   "comboDamage": [
     100,
     100,
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "bow",
+    "Bow"
   ],
   "rarities": [
     1,
@@ -62,12 +59,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main-Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 3,
+  "flavorText": "Crafted with bends, striking a balance between speed and accuracy, capable of dispatching enemies from afar.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -100,10 +97,10 @@
   "luck": 0,
   "armorRating": {},
   "impactResistance": 0,
-  "artifactName": "",
-  "maxAmmoCount": 0,
+  "artifactName": "Pestilence",
+  "maxAmmoCount": 8,
   "maxCount": 1,
-  "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "wearingDelayTime": 2,
+  "unequipTime": 0.8,
   "sellPrices": {}
 }

@@ -1,36 +1,36 @@
-{
-  "name": "Castillon Dagger",
+{ 
+  "name": "Cross Bow",
   "classes": [
-    "Rogue",
     "Fighter",
-    "Bard",
-    "Druid"
+    "Ranger",
+    "Wizard",
+    "Bard"
   ],
   "damageRatings": {
     "1": [
-      19
+      34
     ],
     "2": [
-      20
+      35
     ],
     "3": [
-      21
+      36
     ],
     "4": [
-      22
+      37
     ],
     "5": [
-      23
+      38
     ],
     "6": [
-      24
+      39
     ],
     "7": [
-      25
+      40
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -50
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -43,15 +43,15 @@
     100,
     100
   ],
-  "impactPower": 0,
+  "impactPower": 4,
   "comboDamage": [
     100,
     100,
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "crossbow",
+    "Crossbow"
   ],
   "rarities": [
     1,
@@ -62,12 +62,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
-  "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invWidth": 2,
+  "invHeight": 3,
+  "flavorText": "A powerful mechanical weapon, a single-shot crossbow with a crank that's very abrasive to the hand.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -101,9 +101,9 @@
   "armorRating": {},
   "impactResistance": 0,
   "artifactName": "",
-  "maxAmmoCount": 0,
+  "maxAmmoCount": 1,
   "maxCount": 1,
-  "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "wearingDelayTime": 1,
+  "unequipTime": 1.27,
   "sellPrices": {}
 }

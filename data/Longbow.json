@@ -1,36 +1,33 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Longbow",
   "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Ranger"
   ],
   "damageRatings": {
     "1": [
-      19
+      35
     ],
     "2": [
-      20
+      36
     ],
     "3": [
-      21
+      37
     ],
     "4": [
-      22
+      38
     ],
     "5": [
-      23
+      39
     ],
     "6": [
-      24
+      40
     ],
     "7": [
-      25
+      41
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -50
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -43,15 +40,15 @@
     100,
     100
   ],
-  "impactPower": 0,
+  "impactPower": 3,
   "comboDamage": [
     100,
     100,
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "bow",
+    "Bow"
   ],
   "rarities": [
     1,
@@ -62,12 +59,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 4,
+  "flavorText": "Carved from yew wood with reinforced leather binds for steady gripping. It strikes from long distances with accuracy.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -100,10 +97,10 @@
   "luck": 0,
   "armorRating": {},
   "impactResistance": 0,
-  "artifactName": "",
-  "maxAmmoCount": 0,
+  "artifactName": "Nipalan",
+  "maxAmmoCount": 6,
   "maxCount": 1,
-  "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "wearingDelayTime": 1,
+  "unequipTime": 0.87,
   "sellPrices": {}
 }

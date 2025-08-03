@@ -1,32 +1,29 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Stilleto Dagger",
   "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Rogue"
   ],
   "damageRatings": {
     "1": [
-      19
+      16
     ],
     "2": [
-      20
+      17
     ],
     "3": [
-      21
+      18
     ],
     "4": [
-      22
+      19
     ],
     "5": [
-      23
+      20
     ],
     "6": [
-      24
+      21
     ],
     "7": [
-      25
+      22
     ]
   },
   "moveSpeed": {
@@ -67,7 +64,7 @@
   "gearScore": {},
   "invWidth": 1,
   "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "flavorText": "A slim and subtle assassination weapon with a thick, sturdy hilt that allows for masterful combat techniques.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -100,7 +97,7 @@
   "luck": 0,
   "armorRating": {},
   "impactResistance": 0,
-  "artifactName": "",
+  "artifactName": "Deathbloom",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,

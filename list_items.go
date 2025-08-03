@@ -120,6 +120,41 @@ type Item struct {
 	VisoredBarbutaHelm   Item_Armor
 	CastillonDagger      Item_Weapon
 	Buckler              Item_Weapon
+	CeremonialStaff      Item_Weapon
+	Club                 Item_Weapon
+	Crossbow             Item_Weapon
+	CrystalBall          Item_Weapon
+	CrystalSword         Item_Weapon
+	DoubleAxe            Item_Weapon
+	Falchion             Item_Weapon
+	FellinAxe            Item_Weapon
+	FranciscaAxe         Item_Weapon
+	Hachet               Item_Weapon
+	Halberd              Item_Weapon
+	HandCrossbow         Item_Weapon
+	HeaterShield         Item_Weapon
+	HorsemanAxe          Item_Weapon
+	KrissDagger          Item_Weapon
+	LaternShield         Item_Weapon
+	Longbow              Item_Weapon
+	Longsword            Item_Weapon
+	MagicStaff           Item_Weapon
+	MorningStar          Item_Weapon
+	Pavise               Item_Weapon
+	Quarterstaff         Item_Weapon
+	Rapier               Item_Weapon
+	RecurveBow           Item_Weapon
+	RoundShield          Item_Weapon
+	Spear                Item_Weapon
+	Spellbook            Item_Weapon
+	StilletoDagger       Item_Weapon
+	SurvivalBow          Item_Weapon
+	ThrowingKnife        Item_Weapon
+	VikingSword          Item_Weapon
+	WarHammer            Item_Weapon
+	WarMaul              Item_Weapon
+	WindlassCrossbow     Item_Weapon
+	Zweihander           Item_Weapon
 }
 
 var item = Item{
@@ -242,6 +277,41 @@ var item = Item{
 	VisoredBarbutaHelm:   CreateItemArmor("./data/VisoredBarbutaHelm.json"),
 	CastillonDagger:      CreateItemWeapon("./data/CastillonDagger.json"),
 	Buckler:              CreateItemWeapon("./data/Buckler.json"),
+	CeremonialStaff:      CreateItemWeapon("./data/CeremonialStaff.json"),
+	Club:                 CreateItemWeapon("./data/Club.json"),
+	Crossbow:             CreateItemWeapon("./data/Crossbow.json"),
+	CrystalBall:          CreateItemWeapon("./data/CrystalBall.json"),
+	CrystalSword:         CreateItemWeapon("./data/CrystalSword.json"),
+	DoubleAxe:            CreateItemWeapon("./data/DoubleAxe.json"),
+	Falchion:             CreateItemWeapon("./data/Falchion.json"),
+	FellinAxe:            CreateItemWeapon("./data/FellinAxe.json"),
+	FranciscaAxe:         CreateItemWeapon("./data/FranciscaAxe.json"),
+	Hachet:               CreateItemWeapon("./data/Hachet.json"),
+	Halberd:              CreateItemWeapon("./data/Halberd.json"),
+	HandCrossbow:         CreateItemWeapon("./data/HandCrossbow.json"),
+	HeaterShield:         CreateItemWeapon("./data/HeaterShield.json"),
+	HorsemanAxe:          CreateItemWeapon("./data/HorsemanAxe.json"),
+	KrissDagger:          CreateItemWeapon("./data/KrissDagger.json"),
+	LaternShield:         CreateItemWeapon("./data/LaternShield.json"),
+	Longbow:              CreateItemWeapon("./data/Longbow.json"),
+	Longsword:            CreateItemWeapon("./data/Longsword.json"),
+	MagicStaff:           CreateItemWeapon("./data/MagicStaff.json"),
+	MorningStar:          CreateItemWeapon("./data/MorningStar.json"),
+	Pavise:               CreateItemWeapon("./data/Pavise.json"),
+	Quarterstaff:         CreateItemWeapon("./data/Quarterstaff.json"),
+	Rapier:               CreateItemWeapon("./data/Rapier.json"),
+	RecurveBow:           CreateItemWeapon("./data/RecurveBow.json"),
+	RoundShield:          CreateItemWeapon("./data/RoundShield.json"),
+	Spear:                CreateItemWeapon("./data/Spear.json"),
+	Spellbook:            CreateItemWeapon("./data/Spellbook.json"),
+	StilletoDagger:       CreateItemWeapon("./data/StilletoDagger.json"),
+	SurvivalBow:          CreateItemWeapon("./data/SurvivalBow.json"),
+	ThrowingKnife:        CreateItemWeapon("./data/ThrowingKnife.json"),
+	VikingSword:          CreateItemWeapon("./data/VikingSword.json"),
+	WarHammer:            CreateItemWeapon("./data/WarHammer.json"),
+	WarMaul:              CreateItemWeapon("./data/WarMaul.json"),
+	WindlassCrossbow:     CreateItemWeapon("./data/WindlassCrossbow.json"),
+	Zweihander:           CreateItemWeapon("./data/Zweihander.json"),
 }
 
 type List_Items struct {
@@ -353,6 +423,41 @@ var Items = List_Items{
 		item.Bardiche,
 		item.CastillonDagger,
 		item.Buckler,
+		item.CeremonialStaff,
+		item.Club,
+		item.Crossbow,
+		item.CrystalBall,
+		item.CrystalSword,
+		item.DoubleAxe,
+		item.Falchion,
+		item.FellinAxe,
+		item.FranciscaAxe,
+		item.Hachet,
+		item.Halberd,
+		item.HandCrossbow,
+		item.HeaterShield,
+		item.HorsemanAxe,
+		item.KrissDagger,
+		item.LaternShield,
+		item.Longbow,
+		item.Longsword,
+		item.MagicStaff,
+		item.MorningStar,
+		item.Pavise,
+		item.Quarterstaff,
+		item.Rapier,
+		item.RecurveBow,
+		item.RoundShield,
+		item.Spear,
+		item.Spellbook,
+		item.StilletoDagger,
+		item.SurvivalBow,
+		item.ThrowingKnife,
+		item.VikingSword,
+		item.WarHammer,
+		item.WarMaul,
+		item.WindlassCrossbow,
+		item.Zweihander,
 	},
 	ItemsAccessory: []Item_Accessory{
 		item.FoxPendant,

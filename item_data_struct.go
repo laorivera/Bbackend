@@ -51,6 +51,7 @@ type Item_Weapon struct {
 	Name                    string            `json:"name"`
 	Classes                 []string          `json:"classes"` // List of classes (e.g., "Fighter", "Barbarian")
 	DamageRatings           map[int][]int     `json:"damageRatings"`
+	ArmorRatings            map[int][]int     `json:"armorRatings"`
 	MoveSpeed               map[int]int       `json:"moveSpeed"`
 	MoveSpeedBonus          float64           `json:"moveSpeedbonus"`
 	DamageTypes             []string          `json:"damageTypes"`

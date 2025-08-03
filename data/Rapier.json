@@ -1,36 +1,35 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Rapier",
   "classes": [
+    "Ranger",
     "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Bard"
   ],
   "damageRatings": {
     "1": [
-      19
-    ],
-    "2": [
       20
     ],
-    "3": [
+    "2": [
       21
     ],
-    "4": [
+    "3": [
       22
     ],
-    "5": [
+    "4": [
       23
     ],
-    "6": [
+    "5": [
       24
     ],
-    "7": [
+    "6": [
       25
+    ],
+    "7": [
+      26
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -15
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +49,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "sword",
+    "Sword"
   ],
   "rarities": [
     1,
@@ -63,11 +62,11 @@
     7
   ],
   "handType": "One Handed",
-  "slotType": "Off Hand",
+  "slotType": "Main Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 3,
+  "flavorText": "A slender but sharp blade crafted with a protective hand guard. Effective at both cutting and thrusting.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -100,10 +99,10 @@
   "luck": 0,
   "armorRating": {},
   "impactResistance": 0,
-  "artifactName": "",
+  "artifactName": "Viola",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "unequipTime": 1,
   "sellPrices": {}
 }

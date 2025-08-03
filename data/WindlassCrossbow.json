@@ -1,36 +1,33 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Windlass Crossbow",
   "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Ranger"
   ],
   "damageRatings": {
     "1": [
-      19
+      43
     ],
     "2": [
-      20
+      44
     ],
     "3": [
-      21
+      45
     ],
     "4": [
-      22
+      46
     ],
     "5": [
-      23
+      47
     ],
     "6": [
-      24
+      48
     ],
     "7": [
-      25
+      49
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -50
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -43,15 +40,15 @@
     100,
     100
   ],
-  "impactPower": 0,
+  "impactPower": 6,
   "comboDamage": [
     100,
     100,
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "crossbow",
+    "Crossbow"
   ],
   "rarities": [
     1,
@@ -62,12 +59,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
-  "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invWidth": 2,
+  "invHeight": 4,
+  "flavorText": "Crafted with added metal around it's wooden bend for a more stable shot, requiring a bit of effort to reload.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -101,9 +98,9 @@
   "armorRating": {},
   "impactResistance": 0,
   "artifactName": "",
-  "maxAmmoCount": 0,
+  "maxAmmoCount": 1,
   "maxCount": 1,
-  "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "wearingDelayTime": 1,
+  "unequipTime": 1.27,
   "sellPrices": {}
 }

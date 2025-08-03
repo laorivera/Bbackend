@@ -1,36 +1,14 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Crystal Ball",
   "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Wizard",
+    "Warlock",
+    "Druid",
+    "Sorcerer"
   ],
-  "damageRatings": {
-    "1": [
-      19
-    ],
-    "2": [
-      20
-    ],
-    "3": [
-      21
-    ],
-    "4": [
-      22
-    ],
-    "5": [
-      23
-    ],
-    "6": [
-      24
-    ],
-    "7": [
-      25
-    ]
-  },
+  "damageRatings": {},
   "moveSpeed": {
-    "1": -10
+    "1": -15
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +28,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "magicstuff",
+    "MagicStuff"
   ],
   "rarities": [
     1,
@@ -65,9 +43,9 @@
   "handType": "One Handed",
   "slotType": "Off Hand",
   "gearScore": {},
-  "invWidth": 1,
+  "invWidth": 2,
   "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "flavorText": "A dense glass ball made of mysterious origins, able to harness and focus magical energy.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -100,10 +78,10 @@
   "luck": 0,
   "armorRating": {},
   "impactResistance": 0,
-  "artifactName": "",
+  "artifactName": "Zirkzi's Eye",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "unequipTime": 0.67,
   "sellPrices": {}
 }

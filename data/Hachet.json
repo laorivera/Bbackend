@@ -1,36 +1,34 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Hachet",
   "classes": [
-    "Rogue",
     "Fighter",
-    "Bard",
-    "Druid"
+    "Barbarian"
   ],
   "damageRatings": {
     "1": [
-      19
+      27
     ],
     "2": [
-      20
+      28
     ],
     "3": [
-      21
+      29
     ],
     "4": [
-      22
+      30
     ],
     "5": [
-      23
+      31
     ],
     "6": [
-      24
+      32
     ],
     "7": [
-      25
+      33
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -20
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +48,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "axe",
+    "Axe"
   ],
   "rarities": [
     1,
@@ -66,8 +64,8 @@
   "slotType": "Off Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 3,
+  "flavorText": "Compact in size and balanced weight makes it easy to wield for both utility and combat purposes.",
   "ap": {},
   "xp": {},
   "numEnchants": {},

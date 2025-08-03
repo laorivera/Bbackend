@@ -1,36 +1,35 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Club",
   "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
+    "Barbarian",
+    "Cleric",
     "Druid"
   ],
   "damageRatings": {
     "1": [
-      19
+      28
     ],
     "2": [
-      20
+      29
     ],
     "3": [
-      21
+      30
     ],
     "4": [
-      22
+      31
     ],
     "5": [
-      23
+      32
     ],
     "6": [
-      24
+      33
     ],
     "7": [
-      25
+      34
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -20
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +49,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "mace",
+    "Mace"
   ],
   "rarities": [
     1,
@@ -63,11 +62,11 @@
     7
   ],
   "handType": "One Handed",
-  "slotType": "Off Hand",
+  "slotType": "Main Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 3,
+  "flavorText": "Simple and effective, this solid wood club is a go-to for those who prefer straightforward, reliable weaponry.",
   "ap": {},
   "xp": {},
   "numEnchants": {},

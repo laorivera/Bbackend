@@ -1,36 +1,36 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Fellin Axe",
   "classes": [
-    "Rogue",
+    "Barbarian",
     "Fighter",
-    "Bard",
+    "Cleric",
     "Druid"
   ],
   "damageRatings": {
     "1": [
-      19
+      31
     ],
     "2": [
-      20
+      32
     ],
     "3": [
-      21
+      33
     ],
     "4": [
-      22
+      34
     ],
     "5": [
-      23
+      35
     ],
     "6": [
-      24
+      36
     ],
     "7": [
-      25
+      37
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -20
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -40,20 +40,29 @@
   ],
   "impactZones": [
     100,
-    100,
+    80,
     100
   ],
-  "impactPower": 0,
+  "impactPower": 4,
   "comboDamage": [
     100,
     100,
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "axe",
+    "Axe",
+    "mace",
+    "Mace"
   ],
   "rarities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
     1,
     2,
     3,
@@ -63,11 +72,11 @@
     7
   ],
   "handType": "One Handed",
-  "slotType": "Off Hand",
+  "slotType": "Main Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 3,
+  "flavorText": "A slow and heavy mace designed with crown-shaped blunt edges, supporting even reckless swings.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -100,7 +109,7 @@
   "luck": 0,
   "armorRating": {},
   "impactResistance": 0,
-  "artifactName": "",
+  "artifactName": "Soulscraper",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,

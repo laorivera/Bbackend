@@ -1,36 +1,13 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Heater Shield",
   "classes": [
-    "Rogue",
     "Fighter",
-    "Bard",
-    "Druid"
+    "Cleric",
+    "Warlock"
   ],
-  "damageRatings": {
-    "1": [
-      19
-    ],
-    "2": [
-      20
-    ],
-    "3": [
-      21
-    ],
-    "4": [
-      22
-    ],
-    "5": [
-      23
-    ],
-    "6": [
-      24
-    ],
-    "7": [
-      25
-    ]
-  },
+  "damageRatings": {},
   "moveSpeed": {
-    "1": -10
+    "1": -15
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +27,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "shield",
+    "Shield"
   ],
   "rarities": [
     1,
@@ -65,9 +42,9 @@
   "handType": "One Handed",
   "slotType": "Off Hand",
   "gearScore": {},
-  "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invWidth": 2,
+  "invHeight": 3,
+  "flavorText": "Made from attenuated wood overlaid with leather, providing more defenses and stability against brunt attacks.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -98,12 +75,41 @@
   "magicalDamageReduction": 0,
   "physicalDamageReduction": 0,
   "luck": 0,
-  "armorRating": {},
-  "impactResistance": 0,
-  "artifactName": "",
+  "armorRating": {
+    "1": [
+      20,
+      21
+    ],
+    "2": [
+      22,
+      23
+    ],
+    "3": [
+      24,
+      26
+    ],
+    "4": [
+      27,
+      29
+    ],
+    "5": [
+      30,
+      32
+    ],
+    "6": [
+      33,
+      35
+    ],
+    "7": [
+      36,
+      38
+    ]
+  },
+  "impactResistance": 5,
+  "artifactName": "Aegis",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "unequipTime": 0.67,
   "sellPrices": {}
 }

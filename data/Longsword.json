@@ -1,36 +1,35 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Longsword",
   "classes": [
-    "Rogue",
     "Fighter",
-    "Bard",
-    "Druid"
+    "Warlock",
+    "Sorcerer"
   ],
   "damageRatings": {
     "1": [
-      19
+      38
     ],
     "2": [
-      20
+      39
     ],
     "3": [
-      21
+      40
     ],
     "4": [
-      22
+      41
     ],
     "5": [
-      23
+      42
     ],
     "6": [
-      24
+      43
     ],
     "7": [
-      25
+      44
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -30
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +49,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "sword",
+    "Sword"
   ],
   "rarities": [
     1,
@@ -62,12 +61,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 4,
+  "flavorText": "A very long blade crafted from durable metal with a staunch hilt, heavy yet still feels nimble in your grasp.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -99,11 +98,11 @@
   "physicalDamageReduction": 0,
   "luck": 0,
   "armorRating": {},
-  "impactResistance": 0,
-  "artifactName": "",
+  "impactResistance": 3,
+  "artifactName": "Fulgor",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "unequipTime": 1.1,
   "sellPrices": {}
 }

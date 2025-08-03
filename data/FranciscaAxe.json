@@ -1,32 +1,31 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Francisca Axe",
   "classes": [
-    "Rogue",
+    "Barbarian",
     "Fighter",
-    "Bard",
-    "Druid"
+    "Bard"
   ],
   "damageRatings": {
     "1": [
-      19
+      9
     ],
     "2": [
-      20
+      10
     ],
     "3": [
-      21
+      11
     ],
     "4": [
-      22
+      12
     ],
     "5": [
-      23
+      13
     ],
     "6": [
-      24
+      14
     ],
     "7": [
-      25
+      15
     ]
   },
   "moveSpeed": {
@@ -43,15 +42,16 @@
     100,
     100
   ],
-  "impactPower": 0,
+  "impactPower": 4,
   "comboDamage": [
     100,
     100,
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "axe",
+    "Axe",
+    "Throwable"
   ],
   "rarities": [
     1,
@@ -62,12 +62,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Utility",
   "gearScore": {},
   "invWidth": 1,
   "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "flavorText": "A Lightweight small throwing axe that can take out enemies from a distance.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -102,8 +102,8 @@
   "impactResistance": 0,
   "artifactName": "",
   "maxAmmoCount": 0,
-  "maxCount": 1,
-  "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "maxCount": 2,
+  "wearingDelayTime": 1.75,
+  "unequipTime": 0,
   "sellPrices": {}
 }

@@ -1,36 +1,35 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Zweihander",
   "classes": [
-    "Rogue",
     "Fighter",
-    "Bard",
-    "Druid"
+    "Barbarian",
+    "Warlock"
   ],
   "damageRatings": {
     "1": [
-      19
+      42
     ],
     "2": [
-      20
+      43
     ],
     "3": [
-      21
+      44
     ],
     "4": [
-      22
+      45
     ],
     "5": [
-      23
+      46
     ],
     "6": [
-      24
+      47
     ],
     "7": [
-      25
+      48
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -40
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +49,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "sword",
+    "Sword"
   ],
   "rarities": [
     1,
@@ -62,12 +61,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
   "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invHeight": 4,
+  "flavorText": "The sheer weight and length of this mighty double-edge blade can be felt pulling on you as you swing.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -100,10 +99,10 @@
   "luck": 0,
   "armorRating": {},
   "impactResistance": 0,
-  "artifactName": "",
+  "artifactName": "Bloodthirst",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "unequipTime": 1,
   "sellPrices": {}
 }

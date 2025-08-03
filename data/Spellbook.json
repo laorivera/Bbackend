@@ -1,32 +1,33 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Spellbook",
   "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Wizard",
+    "Cleric",
+    "Warlock",
+    "Druid",
+    "Sorcerer"
   ],
   "damageRatings": {
     "1": [
-      19
+      18
     ],
     "2": [
-      20
+      19
     ],
     "3": [
-      21
+      20
     ],
     "4": [
-      22
+      21
     ],
     "5": [
-      23
+      22
     ],
     "6": [
-      24
+      23
     ],
     "7": [
-      25
+      24
     ]
   },
   "moveSpeed": {
@@ -43,15 +44,15 @@
     100,
     100
   ],
-  "impactPower": 0,
+  "impactPower": 2,
   "comboDamage": [
     100,
     100,
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "magicstuff",
+    "MagicStuff"
   ],
   "rarities": [
     1,
@@ -62,12 +63,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
-  "invWidth": 1,
+  "invWidth": 2,
   "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "flavorText": "Crafted from engraved leather bindings and pages etched with magical ancient runes and markings.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -100,10 +101,10 @@
   "luck": 0,
   "armorRating": {},
   "impactResistance": 0,
-  "artifactName": "",
+  "artifactName": "Spellweaver",
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "unequipTime": 0.9,
   "sellPrices": {}
 }

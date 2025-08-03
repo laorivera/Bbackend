@@ -1,32 +1,29 @@
 {
-  "name": "Castillon Dagger",
+  "name": "Kris Dagger",
   "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Rogue"
   ],
   "damageRatings": {
     "1": [
-      19
+      15
     ],
     "2": [
-      20
+      16
     ],
     "3": [
-      21
+      17
     ],
     "4": [
-      22
+      18
     ],
     "5": [
-      23
+      19
     ],
     "6": [
-      24
+      20
     ],
     "7": [
-      25
+      21
     ]
   },
   "moveSpeed": {
@@ -63,11 +60,11 @@
     7
   ],
   "handType": "One Handed",
-  "slotType": "Off Hand",
+  "slotType": "Main Hand",
   "gearScore": {},
   "invWidth": 1,
   "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "flavorText": "A wavy blade that causes multiple jagged wounds with every stab. It's handle, also curved for a better grip.",
   "ap": {},
   "xp": {},
   "numEnchants": {},

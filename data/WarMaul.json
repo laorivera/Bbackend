@@ -1,36 +1,34 @@
 {
-  "name": "Castillon Dagger",
+  "name": "War Maul",
   "classes": [
-    "Rogue",
-    "Fighter",
-    "Bard",
-    "Druid"
+    "Barbarian",
+    "Cleric"
   ],
   "damageRatings": {
     "1": [
-      19
+      50
     ],
     "2": [
-      20
+      51
     ],
     "3": [
-      21
+      52
     ],
     "4": [
-      22
+      53
     ],
     "5": [
-      23
+      54
     ],
     "6": [
-      24
+      55
     ],
     "7": [
-      25
+      56
     ]
   },
   "moveSpeed": {
-    "1": -10
+    "1": -50
   },
   "moveSpeedBonus": 0,
   "damageTypes": [
@@ -50,8 +48,8 @@
     100
   ],
   "type": [
-    "dagger",
-    "Dagger"
+    "mace",
+    "Mace"
   ],
   "rarities": [
     1,
@@ -62,12 +60,12 @@
     6,
     7
   ],
-  "handType": "One Handed",
-  "slotType": "Off Hand",
+  "handType": "Two Handed",
+  "slotType": "Main Hand",
   "gearScore": {},
-  "invWidth": 1,
-  "invHeight": 2,
-  "flavorText": "Crafted with a fine blade narrowing to a sharp point. The hilts riveted design ensuring a firm grip.",
+  "invWidth": 2,
+  "invHeight": 4,
+  "flavorText": "Only the sturdiest wooden hilt could sustain the giant metal slab on top. The weight of this maul can be felt in every swing.",
   "ap": {},
   "xp": {},
   "numEnchants": {},
@@ -104,6 +102,6 @@
   "maxAmmoCount": 0,
   "maxCount": 1,
   "wearingDelayTime": 0,
-  "unequipTime": 0.6,
+  "unequipTime": 1,
   "sellPrices": {}
 }
