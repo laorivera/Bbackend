@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-// FIND ARRAY ITEMS BY SLOT TYPE
+// FIND ITEMS BY SLOT TYPE
 func ItemsBySlotType(class string, slot string) []Item_Armor {
 	switch class {
 	case "1":

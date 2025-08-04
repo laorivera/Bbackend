@@ -129,7 +129,7 @@ type Item struct {
 	Falchion             Item_Weapon
 	FellinAxe            Item_Weapon
 	FranciscaAxe         Item_Weapon
-	Hachet               Item_Weapon
+	Hatchet              Item_Weapon
 	Halberd              Item_Weapon
 	HandCrossbow         Item_Weapon
 	HeaterShield         Item_Weapon
@@ -286,7 +286,7 @@ var item = Item{
 	Falchion:             CreateItemWeapon("./data/Falchion.json"),
 	FellinAxe:            CreateItemWeapon("./data/FellinAxe.json"),
 	FranciscaAxe:         CreateItemWeapon("./data/FranciscaAxe.json"),
-	Hachet:               CreateItemWeapon("./data/Hachet.json"),
+	Hatchet:              CreateItemWeapon("./data/Hatchet.json"),
 	Halberd:              CreateItemWeapon("./data/Halberd.json"),
 	HandCrossbow:         CreateItemWeapon("./data/HandCrossbow.json"),
 	HeaterShield:         CreateItemWeapon("./data/HeaterShield.json"),
@@ -432,7 +432,7 @@ var Items = List_Items{
 		item.Falchion,
 		item.FellinAxe,
 		item.FranciscaAxe,
-		item.Hachet,
+		item.Hatchet,
 		item.Halberd,
 		item.HandCrossbow,
 		item.HeaterShield,

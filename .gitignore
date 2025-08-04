@@ -12,6 +12,8 @@ Thumbs.db
 *.log
 
 # Ignore Go build files
+curvecalculation.go
+broute.go
 *.out
 *.o
 
