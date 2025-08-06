@@ -471,7 +471,6 @@ func GetEnchantmentLists_Weapon_ExceptionBase(c *gin.Context) map[string][]strin
 				lists[slots[i]] = EnchamentbySlot(Enchantments.PhysicalTwoHand)
 			}
 		}
-
 		if slots[i] == "pwt" {
 			if ItemsByNameWeapon(c.Query("item"+slots[i])).SlotType == "Off Hand" {
 				lists[slots[i]] = EnchamentbySlot(Enchantments.WeaponOneHand)
@@ -540,7 +539,6 @@ func GetEnchantmentLists_Weapon_ValuesRare(c *gin.Context) map[string][]float32 
 		if slots[i] == "pwo" {
 			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.WeaponOneHand)
 		}
-
 		if slots[i] == "pwt" {
 			lists[slots[i]] = EnchantValuesCalc(Query, Enchantments.WeaponOneHand)
 		}
