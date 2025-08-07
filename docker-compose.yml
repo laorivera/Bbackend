@@ -1,0 +1,8 @@
+# services:
+#  your_service:
+#    image: bdock:latest
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: "1"
+#          memory: 1G

@@ -12,7 +12,7 @@ Thumbs.db
 *.log
 
 # Ignore Go build files
-curvecalculation.go
+bcalculation.go
 broute.go
 *.out
 *.o
