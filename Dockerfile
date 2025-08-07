@@ -11,7 +11,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o /docker-gs-ping
 
 
-FROM alpine:3.19
+FROM alpine:3.22
 WORKDIR /app
 
 
