@@ -1,8 +1,7 @@
-# services:
-#  your_service:
-#    image: bdock:latest
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: "1"
-#          memory: 1G
+ services:
+  your_service:
+   image: bdock:latest
+   ports:
+    - "8080:8080"
+    
+    

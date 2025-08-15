@@ -14,9 +14,9 @@ func main() {
 	r.Use(func(c *gin.Context) {
 
 		allowedOrigins := []string{
-			"http://52.67.71.173:4200", // Angular
-			"http://52.67.71.173:8080", // backend
-			"http://localhost:4200",    // Local
+			"https://laorivera.github.io", // Angular app
+			"http://localhost:4200",
+			"http://10.8.0.0/24",
 		}
 
 		// Get the request's Origin

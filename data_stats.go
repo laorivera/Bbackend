@@ -54,6 +54,8 @@ type Computed_Stats struct {
 	BonusMagicalDamageReduction  float64
 	BonusPhysicalPower           float64
 	BonusMagicalPower            float64
+	TruePhysicalDamage           int
+	TrueMagicalDamage            int
 }
 
 type Computed_Stats_Weapon struct {

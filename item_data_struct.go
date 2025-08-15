@@ -21,6 +21,8 @@ type Item_Armor struct {
 	HeadshotReduction       float64           `json:"headshotReduction"` //
 	BaseAttribute           BaseAttribute     `json:"BaseAttribute"`     //
 	PhysicalPower           float64           `json:"physicalPower"`
+	TruePhysicalDamage      map[int]int       `json:"truePhysicalDamage"`
+	TrueMagicalDamage       map[int]int       `json:"trueMagicalDamage"`
 	MoveSpeed               map[int]int       `json:"moveSpeed"` //
 	MoveSpeedBonus          float64           `json:"moveSpeedbonus"`
 	ArmorPenetration        float64           `json:"armorpPenetration"`
@@ -54,6 +56,8 @@ type Item_Weapon struct {
 	ArmorRatings            map[int][]int     `json:"armorRatings"`
 	MoveSpeed               map[int]int       `json:"moveSpeed"`
 	MoveSpeedBonus          float64           `json:"moveSpeedbonus"`
+	TruePhysicalDamage      map[int]int       `json:"truePhysicalDamage"`
+	TrueMagicalDamage       map[int]int       `json:"trueMagicalDamage"`
 	DamageTypes             []string          `json:"damageTypes"`
 	ImpactZones             []int             `json:"impactZones"`
 	ImpactPower             int               `json:"impactPower"`
@@ -91,24 +95,26 @@ type Item_Weapon struct {
 }
 
 type Item_Accessory struct {
-	Name           string          `json:"name"`
-	Classes        []string        `json:"classes"` // List of classes (e.g., "Fighter", "Barbarian")
-	MaxHealthAdd   map[int]float64 `json:"maxHealthAdd"`
-	MoveSpeed      map[int]int     `json:"moveSpeed"` //
-	MoveSpeedBonus float64         `json:"moveSpeedbonus"`
-	BaseAttribute  BaseAttribute   `json:"BaseAttribute"` // BaseStats 1 to 7
-	Luck           map[int]int     `json:"luck"`
-	Type           string          `json:"type"`         // Accessory type
-	Rarities       []int           `json:"rarities"`     // List of rarities
-	SlotType       string          `json:"slotType"`     // Slot type (e.g., "Necklace")
-	InvWidth       int             `json:"invWidth"`     // Inventory width
-	InvHeight      int             `json:"invHeight"`    // Inventory height
-	FlavorText     string          `json:"flavorText"`   // Description text
-	MaxAmmoCount   int             `json:"maxAmmoCount"` // Max ammo count
-	MaxCount       int             `json:"maxCount"`     // Max count
-	AP             map[int]int     `json:"ap"`           // Action points for levels 3 to 7
-	XP             map[int]int     `json:"xp"`           // XP for levels 1 to 7
-	GearScore      map[int]int     `json:"gearScore"`    // Gear score for levels 0 to 7
-	NumEnchants    map[int]int     `json:"numEnchants"`  // Number of enchants for levels 3 to 7
+	Name               string          `json:"name"`
+	Classes            []string        `json:"classes"` // List of classes (e.g., "Fighter", "Barbarian")
+	MaxHealthAdd       map[int]float64 `json:"maxHealthAdd"`
+	MoveSpeed          map[int]int     `json:"moveSpeed"` //
+	MoveSpeedBonus     float64         `json:"moveSpeedbonus"`
+	BaseAttribute      BaseAttribute   `json:"BaseAttribute"` // BaseStats 1 to 7
+	TruePhysicalDamage map[int]int     `json:"truePhysicalDamage"`
+	TrueMagicalDamage  map[int]int     `json:"trueMagicalDamage"`
+	Luck               map[int]int     `json:"luck"`
+	Type               string          `json:"type"`         // Accessory type
+	Rarities           []int           `json:"rarities"`     // List of rarities
+	SlotType           string          `json:"slotType"`     // Slot type (e.g., "Necklace")
+	InvWidth           int             `json:"invWidth"`     // Inventory width
+	InvHeight          int             `json:"invHeight"`    // Inventory height
+	FlavorText         string          `json:"flavorText"`   // Description text
+	MaxAmmoCount       int             `json:"maxAmmoCount"` // Max ammo count
+	MaxCount           int             `json:"maxCount"`     // Max count
+	AP                 map[int]int     `json:"ap"`           // Action points for levels 3 to 7
+	XP                 map[int]int     `json:"xp"`           // XP for levels 1 to 7
+	GearScore          map[int]int     `json:"gearScore"`    // Gear score for levels 0 to 7
+	NumEnchants        map[int]int     `json:"numEnchants"`  // Number of enchants for levels 3 to 7
 
 }
